@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="1" lineNum="7" parent="globals" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="6" lineNum="49" parent="globals" pc="268435486" symbol="getApp"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="6" lineNum="50" parent="globals" pc="268435496" symbol="getApp"/>
+        <entry filename="c:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\bin\\gen\\006-B3905-00\\source\\Rez.mcgen" id="7" lineNum="7" parent="globals/Rez" pc="268435507" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="8" lineNum="4" parent="globals/HyroxDelegate" pc="268435527" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="9" lineNum="5" parent="globals/HyroxView" pc="268435539" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="10" lineNum="9" parent="globals/HyroxApp" pc="268435551" symbol="&lt;init&gt;"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="11" lineNum="28" parent="globals/HyroxDelegate" pc="268435563" symbol="onBack"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="11" lineNum="29" parent="globals/HyroxDelegate" pc="268435565" symbol="onBack"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="11" lineNum="30" parent="globals/HyroxDelegate" pc="268435584" symbol="onBack"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="11" lineNum="32" parent="globals/HyroxDelegate" pc="268435589" symbol="onBack"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="12" lineNum="6" parent="globals/HyroxDelegate" pc="268435591" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="12" lineNum="7" parent="globals/HyroxDelegate" pc="268435593" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="10" parent="globals/HyroxDelegate" pc="268435606" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="11" parent="globals/HyroxDelegate" pc="268435609" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="14" parent="globals/HyroxDelegate" pc="268435618" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="15" parent="globals/HyroxDelegate" pc="268435634" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="16" parent="globals/HyroxDelegate" pc="268435653" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="17" parent="globals/HyroxDelegate" pc="268435668" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="18" parent="globals/HyroxDelegate" pc="268435687" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="20" parent="globals/HyroxDelegate" pc="268435702" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="21" parent="globals/HyroxDelegate" pc="268435713" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxDelegate.mc" id="13" lineNum="24" parent="globals/HyroxDelegate" pc="268435718" symbol="onKey"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="14" lineNum="41" parent="globals/HyroxView" pc="268435720" symbol="getBigFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="14" lineNum="42" parent="globals/HyroxView" pc="268435722" symbol="getBigFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="14" lineNum="42" parent="globals/HyroxView" pc="268435731" symbol="getBigFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="14" lineNum="43" parent="globals/HyroxView" pc="268435737" symbol="getBigFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="14" lineNum="43" parent="globals/HyroxView" pc="268435746" symbol="getBigFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="14" lineNum="44" parent="globals/HyroxView" pc="268435752" symbol="getBigFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="15" lineNum="47" parent="globals/HyroxView" pc="268435755" symbol="getLabelFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="15" lineNum="48" parent="globals/HyroxView" pc="268435757" symbol="getLabelFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="15" lineNum="48" parent="globals/HyroxView" pc="268435766" symbol="getLabelFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="15" lineNum="49" parent="globals/HyroxView" pc="268435772" symbol="getLabelFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="157" parent="globals/HyroxView" pc="268435775" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="159" parent="globals/HyroxView" pc="268435778" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="160" parent="globals/HyroxView" pc="268435794" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="161" parent="globals/HyroxView" pc="268435798" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="162" parent="globals/HyroxView" pc="268435808" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="164" parent="globals/HyroxView" pc="268435830" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="165" parent="globals/HyroxView" pc="268435846" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="167" parent="globals/HyroxView" pc="268435866" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="170" parent="globals/HyroxView" pc="268435919" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="16" lineNum="171" parent="globals/HyroxView" pc="268435936" symbol="drawHRPill"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="17" lineNum="11" parent="globals/HyroxView" pc="268435963" symbol="onLayout"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="18" lineNum="52" parent="globals/HyroxView" pc="268435966" symbol="getNameFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="18" lineNum="53" parent="globals/HyroxView" pc="268435968" symbol="getNameFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="18" lineNum="53" parent="globals/HyroxView" pc="268435977" symbol="getNameFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="18" lineNum="54" parent="globals/HyroxView" pc="268435983" symbol="getNameFont"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="178" parent="globals/HyroxView" pc="268435986" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="180" parent="globals/HyroxView" pc="268435989" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="181" parent="globals/HyroxView" pc="268436006" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="185" parent="globals/HyroxView" pc="268436049" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="186" parent="globals/HyroxView" pc="268436066" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="190" parent="globals/HyroxView" pc="268436130" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="191" parent="globals/HyroxView" pc="268436147" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="195" parent="globals/HyroxView" pc="268436182" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="196" parent="globals/HyroxView" pc="268436198" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="197" parent="globals/HyroxView" pc="268436214" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="198" parent="globals/HyroxView" pc="268436224" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="199" parent="globals/HyroxView" pc="268436240" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="200" parent="globals/HyroxView" pc="268436257" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="201" parent="globals/HyroxView" pc="268436277" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="19" lineNum="202" parent="globals/HyroxView" pc="268436293" symbol="drawFinish"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="20" lineNum="7" parent="globals/HyroxView" pc="268436331" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="20" lineNum="8" parent="globals/HyroxView" pc="268436333" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="15" parent="globals/HyroxView" pc="268436346" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="16" parent="globals/HyroxView" pc="268436349" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="17" parent="globals/HyroxView" pc="268436361" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="18" parent="globals/HyroxView" pc="268436373" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="19" parent="globals/HyroxView" pc="268436385" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="20" parent="globals/HyroxView" pc="268436397" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="23" parent="globals/HyroxView" pc="268436409" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="24" parent="globals/HyroxView" pc="268436427" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="27" parent="globals/HyroxView" pc="268436435" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="28" parent="globals/HyroxView" pc="268436447" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="29" parent="globals/HyroxView" pc="268436458" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="30" parent="globals/HyroxView" pc="268436480" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="31" parent="globals/HyroxView" pc="268436491" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="32" parent="globals/HyroxView" pc="268436515" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="33" parent="globals/HyroxView" pc="268436526" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="34" parent="globals/HyroxView" pc="268436548" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="21" lineNum="35" parent="globals/HyroxView" pc="268436559" symbol="onUpdate"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="59" parent="globals/HyroxView" pc="268436582" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="62" parent="globals/HyroxView" pc="268436585" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="63" parent="globals/HyroxView" pc="268436602" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="68" parent="globals/HyroxView" pc="268436637" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="69" parent="globals/HyroxView" pc="268436654" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="74" parent="globals/HyroxView" pc="268436689" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="75" parent="globals/HyroxView" pc="268436705" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="76" parent="globals/HyroxView" pc="268436721" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="77" parent="globals/HyroxView" pc="268436731" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="78" parent="globals/HyroxView" pc="268436747" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="79" parent="globals/HyroxView" pc="268436764" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="80" parent="globals/HyroxView" pc="268436787" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="22" lineNum="81" parent="globals/HyroxView" pc="268436803" symbol="drawReady"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="23" lineNum="209" parent="globals/HyroxView" pc="268436833" symbol="drawSaved"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="23" lineNum="211" parent="globals/HyroxView" pc="268436835" symbol="drawSaved"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="23" lineNum="212" parent="globals/HyroxView" pc="268436852" symbol="drawSaved"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="23" lineNum="216" parent="globals/HyroxView" pc="268436898" symbol="drawSaved"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="23" lineNum="217" parent="globals/HyroxView" pc="268436915" symbol="drawSaved"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="88" parent="globals/HyroxView" pc="268436954" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="91" parent="globals/HyroxView" pc="268436957" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="92" parent="globals/HyroxView" pc="268436980" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="93" parent="globals/HyroxView" pc="268436990" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="94" parent="globals/HyroxView" pc="268437000" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="95" parent="globals/HyroxView" pc="268437013" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="98" parent="globals/HyroxView" pc="268437029" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="99" parent="globals/HyroxView" pc="268437074" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="100" parent="globals/HyroxView" pc="268437100" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="101" parent="globals/HyroxView" pc="268437114" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="105" parent="globals/HyroxView" pc="268437142" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="106" parent="globals/HyroxView" pc="268437171" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="107" parent="globals/HyroxView" pc="268437193" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="108" parent="globals/HyroxView" pc="268437213" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="109" parent="globals/HyroxView" pc="268437227" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="113" parent="globals/HyroxView" pc="268437247" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="114" parent="globals/HyroxView" pc="268437277" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="115" parent="globals/HyroxView" pc="268437315" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="116" parent="globals/HyroxView" pc="268437329" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="121" parent="globals/HyroxView" pc="268437370" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="122" parent="globals/HyroxView" pc="268437408" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="123" parent="globals/HyroxView" pc="268437425" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="128" parent="globals/HyroxView" pc="268437472" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="131" parent="globals/HyroxView" pc="268437489" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="24" lineNum="132" parent="globals/HyroxView" pc="268437502" symbol="drawActive"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="25" lineNum="138" parent="globals/HyroxView" pc="268437523" symbol="drawProgressBar"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="25" lineNum="140" parent="globals/HyroxView" pc="268437526" symbol="drawProgressBar"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="25" lineNum="141" parent="globals/HyroxView" pc="268437542" symbol="drawProgressBar"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="25" lineNum="144" parent="globals/HyroxView" pc="268437546" symbol="drawProgressBar"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="25" lineNum="145" parent="globals/HyroxView" pc="268437562" symbol="drawProgressBar"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="25" lineNum="148" parent="globals/HyroxView" pc="268437579" symbol="drawProgressBar"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="25" lineNum="149" parent="globals/HyroxView" pc="268437601" symbol="drawProgressBar"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="25" lineNum="150" parent="globals/HyroxView" pc="268437608" symbol="drawProgressBar"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxView.mc" id="25" lineNum="151" parent="globals/HyroxView" pc="268437622" symbol="drawProgressBar"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="26" lineNum="94" parent="globals/HyroxModel" pc="268437643" symbol="setStationsFromMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="26" lineNum="95" parent="globals/HyroxModel" pc="268437646" symbol="setStationsFromMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="26" lineNum="96" parent="globals/HyroxModel" pc="268437655" symbol="setStationsFromMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="26" lineNum="97" parent="globals/HyroxModel" pc="268437671" symbol="setStationsFromMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="26" lineNum="98" parent="globals/HyroxModel" pc="268437690" symbol="setStationsFromMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="26" lineNum="99" parent="globals/HyroxModel" pc="268437706" symbol="setStationsFromMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="26" lineNum="100" parent="globals/HyroxModel" pc="268437740" symbol="setStationsFromMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="26" lineNum="103" parent="globals/HyroxModel" pc="268437782" symbol="setStationsFromMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="27" lineNum="119" parent="globals/HyroxModel" pc="268437801" symbol="onTick"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="27" lineNum="120" parent="globals/HyroxModel" pc="268437804" symbol="onTick"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="27" lineNum="121" parent="globals/HyroxModel" pc="268437819" symbol="onTick"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="27" lineNum="124" parent="globals/HyroxModel" pc="268437834" symbol="onTick"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="27" lineNum="125" parent="globals/HyroxModel" pc="268437846" symbol="onTick"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="27" lineNum="126" parent="globals/HyroxModel" pc="268437863" symbol="onTick"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="27" lineNum="128" parent="globals/HyroxModel" pc="268437880" symbol="onTick"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="27" lineNum="131" parent="globals/HyroxModel" pc="268437888" symbol="onTick"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="28" lineNum="167" parent="globals/HyroxModel" pc="268437900" symbol="saveAndTransmit"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="28" lineNum="168" parent="globals/HyroxModel" pc="268437903" symbol="saveAndTransmit"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="28" lineNum="175" parent="globals/HyroxModel" pc="268437962" symbol="saveAndTransmit"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="28" lineNum="176" parent="globals/HyroxModel" pc="268437981" symbol="saveAndTransmit"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="28" lineNum="179" parent="globals/HyroxModel" pc="268438021" symbol="saveAndTransmit"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="28" lineNum="180" parent="globals/HyroxModel" pc="268438041" symbol="saveAndTransmit"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="28" lineNum="181" parent="globals/HyroxModel" pc="268438053" symbol="saveAndTransmit"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="29" lineNum="212" parent="globals/HyroxModel" pc="268438065" symbol="getProgress"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="29" lineNum="213" parent="globals/HyroxModel" pc="268438067" symbol="getProgress"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="29" lineNum="213" parent="globals/HyroxModel" pc="268438077" symbol="getProgress"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="29" lineNum="214" parent="globals/HyroxModel" pc="268438082" symbol="getProgress"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="135" parent="globals/HyroxModel" pc="268438106" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="136" parent="globals/HyroxModel" pc="268438109" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="137" parent="globals/HyroxModel" pc="268438123" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="138" parent="globals/HyroxModel" pc="268438130" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="141" parent="globals/HyroxModel" pc="268438134" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="142" parent="globals/HyroxModel" pc="268438148" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="143" parent="globals/HyroxModel" pc="268438161" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="145" parent="globals/HyroxModel" pc="268438200" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="152" parent="globals/HyroxModel" pc="268438272" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="153" parent="globals/HyroxModel" pc="268438280" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="155" parent="globals/HyroxModel" pc="268438295" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="156" parent="globals/HyroxModel" pc="268438309" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="157" parent="globals/HyroxModel" pc="268438321" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="158" parent="globals/HyroxModel" pc="268438330" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="30" lineNum="159" parent="globals/HyroxModel" pc="268438342" symbol="advance"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="31" lineNum="108" parent="globals/HyroxModel" pc="268438360" symbol="startSession"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="31" lineNum="109" parent="globals/HyroxModel" pc="268438362" symbol="startSession"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="31" lineNum="110" parent="globals/HyroxModel" pc="268438374" symbol="startSession"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="31" lineNum="111" parent="globals/HyroxModel" pc="268438382" symbol="startSession"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="31" lineNum="112" parent="globals/HyroxModel" pc="268438390" symbol="startSession"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="31" lineNum="113" parent="globals/HyroxModel" pc="268438398" symbol="startSession"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="31" lineNum="115" parent="globals/HyroxModel" pc="268438407" symbol="startSession"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="31" lineNum="116" parent="globals/HyroxModel" pc="268438436" symbol="startSession"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="32" lineNum="185" parent="globals/HyroxModel" pc="268438468" symbol="onTransmitComplete"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="32" lineNum="186" parent="globals/HyroxModel" pc="268438471" symbol="onTransmitComplete"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="32" lineNum="187" parent="globals/HyroxModel" pc="268438483" symbol="onTransmitComplete"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="32" lineNum="189" parent="globals/HyroxModel" pc="268438494" symbol="onTransmitComplete"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="32" lineNum="190" parent="globals/HyroxModel" pc="268438518" symbol="onTransmitComplete"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="33" lineNum="69" parent="globals/HyroxModel" pc="268438546" symbol="buildDefaultStations"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="33" lineNum="70" parent="globals/HyroxModel" pc="268438549" symbol="buildDefaultStations"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="33" lineNum="77" parent="globals/HyroxModel" pc="268438556" symbol="buildDefaultStations"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="33" lineNum="78" parent="globals/HyroxModel" pc="268438560" symbol="buildDefaultStations"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="33" lineNum="79" parent="globals/HyroxModel" pc="268438576" symbol="buildDefaultStations"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="33" lineNum="83" parent="globals/HyroxModel" pc="268438631" symbol="buildDefaultStations"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="33" lineNum="84" parent="globals/HyroxModel" pc="268438647" symbol="buildDefaultStations"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="33" lineNum="90" parent="globals/HyroxModel" pc="268438703" symbol="buildDefaultStations"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="199" parent="globals/HyroxModel" pc="268438706" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="200" parent="globals/HyroxModel" pc="268438709" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="201" parent="globals/HyroxModel" pc="268438751" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="203" parent="globals/HyroxModel" pc="268438760" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="204" parent="globals/HyroxModel" pc="268438774" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="205" parent="globals/HyroxModel" pc="268438793" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="205" parent="globals/HyroxModel" pc="268438810" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="206" parent="globals/HyroxModel" pc="268438818" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="206" parent="globals/HyroxModel" pc="268438835" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="207" parent="globals/HyroxModel" pc="268438844" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="207" parent="globals/HyroxModel" pc="268438861" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="34" lineNum="209" parent="globals/HyroxModel" pc="268438873" symbol="getCurrentAccentColor"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="35" lineNum="193" parent="globals/HyroxModel" pc="268438879" symbol="doExit"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="35" lineNum="194" parent="globals/HyroxModel" pc="268438881" symbol="doExit"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="36" lineNum="217" parent="globals/HyroxModel" pc="268438893" symbol="formatTime"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="36" lineNum="218" parent="globals/HyroxModel" pc="268438896" symbol="formatTime"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="36" lineNum="219" parent="globals/HyroxModel" pc="268438904" symbol="formatTime"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="36" lineNum="220" parent="globals/HyroxModel" pc="268438915" symbol="formatTime"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="36" lineNum="221" parent="globals/HyroxModel" pc="268438922" symbol="formatTime"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="36" lineNum="222" parent="globals/HyroxModel" pc="268438929" symbol="formatTime"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="36" lineNum="224" parent="globals/HyroxModel" pc="268438989" symbol="formatTime"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="45" parent="globals/HyroxModel" pc="268439025" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="46" parent="globals/HyroxModel" pc="268439028" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="47" parent="globals/HyroxModel" pc="268439040" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="48" parent="globals/HyroxModel" pc="268439053" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="49" parent="globals/HyroxModel" pc="268439066" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="50" parent="globals/HyroxModel" pc="268439082" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="51" parent="globals/HyroxModel" pc="268439097" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="53" parent="globals/HyroxModel" pc="268439112" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="54" parent="globals/HyroxModel" pc="268439124" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="55" parent="globals/HyroxModel" pc="268439132" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="56" parent="globals/HyroxModel" pc="268439140" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="57" parent="globals/HyroxModel" pc="268439148" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="58" parent="globals/HyroxModel" pc="268439157" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="59" parent="globals/HyroxModel" pc="268439165" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="60" parent="globals/HyroxModel" pc="268439173" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="61" parent="globals/HyroxModel" pc="268439181" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="63" parent="globals/HyroxModel" pc="268439189" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxModel.mc" id="37" lineNum="64" parent="globals/HyroxModel" pc="268439202" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="38" lineNum="20" parent="globals/HyroxApp" pc="268439221" symbol="onStart"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="28" parent="globals/HyroxApp" pc="268439224" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="29" parent="globals/HyroxApp" pc="268439227" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="30" parent="globals/HyroxApp" pc="268439235" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="30" parent="globals/HyroxApp" pc="268439241" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="32" parent="globals/HyroxApp" pc="268439245" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="33" parent="globals/HyroxApp" pc="268439255" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="33" parent="globals/HyroxApp" pc="268439261" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="35" parent="globals/HyroxApp" pc="268439265" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="36" parent="globals/HyroxApp" pc="268439282" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="37" parent="globals/HyroxApp" pc="268439294" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="39" parent="globals/HyroxApp" pc="268439316" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="39" lineNum="40" parent="globals/HyroxApp" pc="268439328" symbol="onPhoneMessage"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="40" lineNum="23" parent="globals/HyroxApp" pc="268439357" symbol="getInitialView"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="40" lineNum="24" parent="globals/HyroxApp" pc="268439359" symbol="getInitialView"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="41" lineNum="11" parent="globals/HyroxApp" pc="268439406" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="41" lineNum="12" parent="globals/HyroxApp" pc="268439408" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="41" lineNum="13" parent="globals/HyroxApp" pc="268439420" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="41" lineNum="15" parent="globals/HyroxApp" pc="268439445" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="41" lineNum="16" parent="globals/HyroxApp" pc="268439460" symbol="initialize"/>
+        <entry filename="C:\\Users\\johan\\Personal Projects\\Workout Tracker\\Workout-Tracker\\fittrack-garmin-watch\\source\\HyroxApp.mc" id="42" lineNum="45" parent="globals/HyroxApp" pc="268439490" symbol="onStop"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8" object="true" symbol="HyroxView"/>
+        <entry id="21" method="true" symbol="buildDefaultStations"/>
+        <entry id="32" method="true" symbol="saveAndTransmit"/>
+        <entry id="8389939" method="true" symbol="registerForPhoneAppMessages"/>
+        <entry field="true" id="8389163" symbol="COLOR_ORANGE"/>
+        <entry id="51" symbol="ready"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="20" method="true" symbol="advance"/>
+        <entry id="40" method="true" symbol="startSession"/>
+        <entry id="14" method="true" symbol="drawReady"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="30" symbol="isRound"/>
+        <entry id="8390063" method="true" symbol="onTransmitComplete"/>
+        <entry field="true" id="46" symbol="AppName"/>
+        <entry id="4" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="26" method="true" symbol="formatTime"/>
+        <entry id="8388631" module="true" symbol="Activity"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="8389081" method="true" symbol="onBack"/>
+        <entry id="7" object="true" symbol="HyroxModel"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="9" symbol="gModel"/>
+        <entry id="49" symbol="finish"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry id="6" object="true" symbol="HyroxDelegate"/>
+        <entry field="true" id="8389161" symbol="COLOR_RED"/>
+        <entry id="52" symbol="transmitMessage"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry id="11" method="true" symbol="drawFinish"/>
+        <entry field="true" id="43" symbol="totalTimer"/>
+        <entry id="28" method="true" symbol="getProgress"/>
+        <entry field="true" id="19" symbol="_timer"/>
+        <entry field="true" id="47" symbol="ShowHRTitle"/>
+        <entry id="48" symbol="active"/>
+        <entry id="8388637" module="true" symbol="Communications"/>
+        <entry id="16" method="true" symbol="getBigFont"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry field="true" id="29" symbol="hrValue"/>
+        <entry field="true" id="37" symbol="simulationId"/>
+        <entry id="5" object="true" symbol="HyroxApp"/>
+        <entry id="27" method="true" symbol="getCurrentAccentColor"/>
+        <entry id="10" method="true" symbol="drawActive"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="35" method="true" symbol="setStationsFromMessage"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="42" symbol="totalSteps"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="44" method="true" symbol="onPhoneMessage"/>
+        <entry field="true" id="45" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry field="true" id="34" symbol="screenW"/>
+        <entry field="true" id="33" symbol="screenH"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="25" method="true" symbol="doExit"/>
+        <entry field="true" id="23" symbol="centerY"/>
+        <entry field="true" id="22" symbol="centerX"/>
+        <entry id="31" method="true" symbol="onTick"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="13" method="true" symbol="drawProgressBar"/>
+        <entry field="true" id="39" symbol="splits"/>
+        <entry id="12" method="true" symbol="drawHRPill"/>
+        <entry field="true" id="41" symbol="stations"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="50" symbol="saved"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry field="true" id="8389164" symbol="COLOR_YELLOW"/>
+        <entry id="17" method="true" symbol="getLabelFont"/>
+        <entry id="8389097" method="true" symbol="onKey"/>
+        <entry field="true" id="38" symbol="splitTimer"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry field="true" id="8389487" symbol="state"/>
+        <entry field="true" id="24" symbol="currentStep"/>
+        <entry id="15" method="true" symbol="drawSaved"/>
+        <entry id="18" method="true" symbol="getNameFont"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry field="true" id="36" symbol="showHR"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435719" name="keyEvent" stackId="1" startPc="268435606"/>
+        <entry endPc="268435719" name="key" stackId="2" startPc="268435609"/>
+        <entry arg="true" endPc="268435754" name="W" stackId="1" startPc="268435720"/>
+        <entry arg="true" endPc="268435774" name="W" stackId="1" startPc="268435755"/>
+        <entry arg="true" endPc="268435962" name="dc" stackId="1" startPc="268435775"/>
+        <entry arg="true" endPc="268435962" name="W" stackId="2" startPc="268435775"/>
+        <entry arg="true" endPc="268435962" name="H" stackId="3" startPc="268435775"/>
+        <entry arg="true" endPc="268435962" name="cx" stackId="4" startPc="268435775"/>
+        <entry endPc="268435961" name="pillW" stackId="5" startPc="268435778"/>
+        <entry endPc="268435961" name="pillH" stackId="6" startPc="268435778"/>
+        <entry endPc="268435961" name="pillX" stackId="7" startPc="268435778"/>
+        <entry endPc="268435961" name="pillY" stackId="8" startPc="268435778"/>
+        <entry endPc="268435961" name="hrStr" stackId="9" startPc="268435778"/>
+        <entry arg="true" endPc="268435985" name="W" stackId="1" startPc="268435966"/>
+        <entry arg="true" endPc="268436330" name="dc" stackId="1" startPc="268435986"/>
+        <entry arg="true" endPc="268436330" name="W" stackId="2" startPc="268435986"/>
+        <entry arg="true" endPc="268436330" name="H" stackId="3" startPc="268435986"/>
+        <entry arg="true" endPc="268436330" name="cx" stackId="4" startPc="268435986"/>
+        <entry arg="true" endPc="268436330" name="cy" stackId="5" startPc="268435986"/>
+        <entry endPc="268436329" name="btnW" stackId="6" startPc="268435989"/>
+        <entry endPc="268436329" name="btnH" stackId="7" startPc="268435989"/>
+        <entry endPc="268436329" name="btnX" stackId="8" startPc="268435989"/>
+        <entry endPc="268436329" name="btnY" stackId="9" startPc="268435989"/>
+        <entry arg="true" endPc="268436581" name="dc" stackId="1" startPc="268436346"/>
+        <entry endPc="268436580" name="W" stackId="2" startPc="268436349"/>
+        <entry endPc="268436580" name="H" stackId="3" startPc="268436349"/>
+        <entry endPc="268436580" name="cx" stackId="4" startPc="268436349"/>
+        <entry endPc="268436580" name="cy" stackId="5" startPc="268436349"/>
+        <entry endPc="268436580" name="round" stackId="6" startPc="268436349"/>
+        <entry endPc="268436580" name="s" stackId="7" startPc="268436349"/>
+        <entry arg="true" endPc="268436832" name="dc" stackId="1" startPc="268436582"/>
+        <entry arg="true" endPc="268436832" name="W" stackId="2" startPc="268436582"/>
+        <entry arg="true" endPc="268436832" name="H" stackId="3" startPc="268436582"/>
+        <entry arg="true" endPc="268436832" name="cx" stackId="4" startPc="268436582"/>
+        <entry arg="true" endPc="268436832" name="cy" stackId="5" startPc="268436582"/>
+        <entry endPc="268436831" name="btnW" stackId="6" startPc="268436585"/>
+        <entry endPc="268436831" name="btnH" stackId="7" startPc="268436585"/>
+        <entry endPc="268436831" name="btnX" stackId="8" startPc="268436585"/>
+        <entry endPc="268436831" name="btnY" stackId="9" startPc="268436585"/>
+        <entry arg="true" endPc="268436953" name="dc" stackId="1" startPc="268436833"/>
+        <entry arg="true" endPc="268436953" name="W" stackId="2" startPc="268436833"/>
+        <entry arg="true" endPc="268436953" name="H" stackId="3" startPc="268436833"/>
+        <entry arg="true" endPc="268436953" name="cx" stackId="4" startPc="268436833"/>
+        <entry arg="true" endPc="268436953" name="cy" stackId="5" startPc="268436833"/>
+        <entry arg="true" endPc="268437522" name="dc" stackId="1" startPc="268436954"/>
+        <entry arg="true" endPc="268437522" name="W" stackId="2" startPc="268436954"/>
+        <entry arg="true" endPc="268437522" name="H" stackId="3" startPc="268436954"/>
+        <entry arg="true" endPc="268437522" name="cx" stackId="4" startPc="268436954"/>
+        <entry arg="true" endPc="268437522" name="cy" stackId="5" startPc="268436954"/>
+        <entry arg="true" endPc="268437522" name="isRound" stackId="6" startPc="268436954"/>
+        <entry endPc="268437521" name="station" stackId="7" startPc="268436957"/>
+        <entry endPc="268437521" name="sType" stackId="8" startPc="268436957"/>
+        <entry endPc="268437521" name="sLabel" stackId="9" startPc="268436957"/>
+        <entry endPc="268437521" name="accent" stackId="10" startPc="268436957"/>
+        <entry endPc="268437521" name="isTrans" stackId="11" startPc="268436957"/>
+        <entry endPc="268437521" name="tagText" stackId="12" startPc="268436957"/>
+        <entry endPc="268437521" name="tagY" stackId="13" startPc="268436957"/>
+        <entry endPc="268437521" name="nameY" stackId="14" startPc="268436957"/>
+        <entry endPc="268437521" name="nameFont" stackId="15" startPc="268436957"/>
+        <entry endPc="268437521" name="nameCol" stackId="16" startPc="268436957"/>
+        <entry endPc="268437521" name="bigFont" stackId="17" startPc="268436957"/>
+        <entry endPc="268437521" name="timerY" stackId="18" startPc="268436957"/>
+        <entry endPc="268437521" name="totalY" stackId="19" startPc="268436957"/>
+        <entry arg="true" endPc="268437642" name="dc" stackId="1" startPc="268437523"/>
+        <entry arg="true" endPc="268437642" name="W" stackId="2" startPc="268437523"/>
+        <entry arg="true" endPc="268437642" name="H" stackId="3" startPc="268437523"/>
+        <entry arg="true" endPc="268437642" name="accent" stackId="4" startPc="268437523"/>
+        <entry endPc="268437641" name="barY" stackId="5" startPc="268437526"/>
+        <entry endPc="268437641" name="barH" stackId="6" startPc="268437526"/>
+        <entry endPc="268437641" name="fillW" stackId="7" startPc="268437526"/>
+        <entry arg="true" endPc="268437800" name="stationList" stackId="1" startPc="268437643"/>
+        <entry endPc="268437781" name="i" stackId="2" startPc="268437671"/>
+        <entry endPc="268437768" name="trans" stackId="3" startPc="268437706"/>
+        <entry endPc="268437898" name="info" stackId="1" startPc="268437804"/>
+        <entry endPc="268438063" name="payload" stackId="1" startPc="268437903"/>
+        <entry endPc="268438355" name="station" stackId="1" startPc="268438148"/>
+        <entry endPc="268438355" name="splitType" stackId="2" startPc="268438148"/>
+        <entry arg="true" endPc="268438545" name="responseCode" stackId="1" startPc="268438468"/>
+        <entry arg="true" endPc="268438545" name="data" stackId="2" startPc="268438468"/>
+        <entry endPc="268438544" name="exitTimer" stackId="3" startPc="268438471"/>
+        <entry endPc="268438705" name="names" stackId="1" startPc="268438549"/>
+        <entry endPc="268438705" name="seq" stackId="2" startPc="268438549"/>
+        <entry endPc="268438702" name="i" stackId="3" startPc="268438576"/>
+        <entry endPc="268438869" name="t" stackId="1" startPc="268438774"/>
+        <entry arg="true" endPc="268439024" name="seconds" stackId="1" startPc="268438893"/>
+        <entry endPc="268439024" name="h" stackId="2" startPc="268438896"/>
+        <entry endPc="268439024" name="m" stackId="3" startPc="268438896"/>
+        <entry endPc="268439024" name="s" stackId="4" startPc="268438896"/>
+        <entry endPc="268439219" name="settings" stackId="1" startPc="268439028"/>
+        <entry arg="true" endPc="268439356" name="msg" stackId="1" startPc="268439224"/>
+        <entry endPc="268439355" name="data" stackId="2" startPc="268439227"/>
+        <entry endPc="268439355" name="msgType" stackId="3" startPc="268439227"/>
+    </localVars>
+    <deviceInfo deviceVersion="5c7ae9cf907f88c116a91dc4ffd75be9b5b7d2e9" partNumber="006-B3905-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ShowHRTitle"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="49" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/Rez" offset="143" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/HyroxDelegate" offset="187" parentId="globals" symbolId="HyroxDelegate" type="class"/>
+        <dataEntry label="globals/HyroxView" offset="249" parentId="globals" symbolId="HyroxView" type="class"/>
+        <dataEntry label="globals/HyroxModel" offset="392" parentId="globals" symbolId="HyroxModel" type="class"/>
+        <dataEntry label="globals/HyroxApp" offset="679" parentId="globals" symbolId="HyroxApp" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="759" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="794" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435506" name="getApp" startPc="268435486">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435526" name="&lt;init&gt;" parent="Rez" startPc="268435507">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435538" name="&lt;init&gt;" parent="HyroxDelegate" startPc="268435527">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435550" name="&lt;init&gt;" parent="HyroxView" startPc="268435539">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="HyroxModel">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435562" name="&lt;init&gt;" parent="HyroxApp" startPc="268435551">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435590" name="onBack" parent="HyroxDelegate" startPc="268435563">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435605" name="initialize" parent="HyroxDelegate" startPc="268435591">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435719" name="onKey" parent="HyroxDelegate" startPc="268435606">
+            <param id="keyEvent"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435754" name="getBigFont" parent="HyroxView" startPc="268435720">
+            <param id="W"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435774" name="getLabelFont" parent="HyroxView" startPc="268435755">
+            <param id="W"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435962" name="drawHRPill" parent="HyroxView" startPc="268435775">
+            <param id="dc"/>
+            <param id="W"/>
+            <param id="H"/>
+            <param id="cx"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435965" name="onLayout" parent="HyroxView" startPc="268435963">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435985" name="getNameFont" parent="HyroxView" startPc="268435966">
+            <param id="W"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436330" name="drawFinish" parent="HyroxView" startPc="268435986">
+            <param id="dc"/>
+            <param id="W"/>
+            <param id="H"/>
+            <param id="cx"/>
+            <param id="cy"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436345" name="initialize" parent="HyroxView" startPc="268436331">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436581" name="onUpdate" parent="HyroxView" startPc="268436346">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436832" name="drawReady" parent="HyroxView" startPc="268436582">
+            <param id="dc"/>
+            <param id="W"/>
+            <param id="H"/>
+            <param id="cx"/>
+            <param id="cy"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436953" name="drawSaved" parent="HyroxView" startPc="268436833">
+            <param id="dc"/>
+            <param id="W"/>
+            <param id="H"/>
+            <param id="cx"/>
+            <param id="cy"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437522" name="drawActive" parent="HyroxView" startPc="268436954">
+            <param id="dc"/>
+            <param id="W"/>
+            <param id="H"/>
+            <param id="cx"/>
+            <param id="cy"/>
+            <param id="isRound"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437642" name="drawProgressBar" parent="HyroxView" startPc="268437523">
+            <param id="dc"/>
+            <param id="W"/>
+            <param id="H"/>
+            <param id="accent"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437800" name="setStationsFromMessage" parent="HyroxModel" startPc="268437643">
+            <param id="stationList"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437899" name="onTick" parent="HyroxModel" startPc="268437801">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438064" name="saveAndTransmit" parent="HyroxModel" startPc="268437900">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438105" name="getProgress" parent="HyroxModel" startPc="268438065">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438359" name="advance" parent="HyroxModel" startPc="268438106">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438467" name="startSession" parent="HyroxModel" startPc="268438360">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438545" name="onTransmitComplete" parent="HyroxModel" startPc="268438468">
+            <param id="responseCode"/>
+            <param id="data"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438705" name="buildDefaultStations" parent="HyroxModel" startPc="268438546">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438878" name="getCurrentAccentColor" parent="HyroxModel" startPc="268438706">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438892" name="doExit" parent="HyroxModel" startPc="268438879">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439024" name="formatTime" parent="HyroxModel" startPc="268438893">
+            <param id="seconds"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439220" name="initialize" parent="HyroxModel" startPc="268439025">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439223" name="onStart" parent="HyroxApp" startPc="268439221">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439356" name="onPhoneMessage" parent="HyroxApp" startPc="268439224">
+            <param id="msg"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439405" name="getInitialView" parent="HyroxApp" startPc="268439357">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439489" name="initialize" parent="HyroxApp" startPc="268439406">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439492" name="onStop" parent="HyroxApp" startPc="268439490">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

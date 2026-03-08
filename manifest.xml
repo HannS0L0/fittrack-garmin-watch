@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="1">
+  <iq:application
+    entry="HyroxApp"
+    id="a3412cef-b8a4-4d1e-9c5b-2f7e8d9a0b1c"
+    launcherIcon="@Drawables.LauncherIcon"
+    minSdkVersion="3.2.0"
+    name="@Strings.AppName"
+    type="watch-app">
+
+    <iq:products>
+      <iq:product id="fenix7"/>
+      <iq:product id="fenix7s"/>
+      <iq:product id="fenix7x"/>
+      <iq:product id="fenix6"/>
+      <iq:product id="fenix6s"/>
+      <iq:product id="fenix6x"/>
+      <iq:product id="fenix5"/>
+      <iq:product id="fenix5s"/>
+      <iq:product id="fenix5x"/>
+      <iq:product id="forerunner245"/>
+      <iq:product id="forerunner255"/>
+      <iq:product id="forerunner265"/>
+      <iq:product id="forerunner945"/>
+      <iq:product id="forerunner955"/>
+      <iq:product id="vivoactive3"/>
+      <iq:product id="vivoactive4"/>
+      <iq:product id="vivoactive4s"/>
+      <iq:product id="venu"/>
+      <iq:product id="venu2"/>
+      <iq:product id="venu2s"/>
+      <iq:product id="venu3"/>
+      <iq:product id="venu3s"/>
+      <iq:product id="epix2"/>
+    </iq:products>
+
+    <iq:permissions>
+      <iq:uses-permission id="FitContributor"/>
+      <iq:uses-permission id="Communications"/>
+      <iq:uses-permission id="SensorHistory"/>
+    </iq:permissions>
+
+    <iq:languages>
+      <iq:language>eng</iq:language>
+    </iq:languages>
+
+  </iq:application>
+</iq:manifest>

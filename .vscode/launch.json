@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run on fenix7s Simulator",
+            "request": "launch",
+            "type": "monkeyc",
+            "device": "fenix7s",
+            "simulatorOptions": ""
+        }
+    ]
+}
