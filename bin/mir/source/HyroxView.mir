@@ -330,1330 +330,1402 @@ C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin
         ret %tmp.7;
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_52_59_55_4_stop:
     }
-    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 59; @symbol_functiondef = [drawReady,59,13,22]; @symbol_param<0> = [dc,59,23,25]; @symbol_param<0>_type<0> = [Graphics,59,29,37]; @symbol_param<0>_type<1> = [Dc,59,38,40]; @symbol_param<1> = [W,59,42,43]; @symbol_param<1>_type<0> = [Number,59,47,53]; @symbol_param<2> = [H,59,55,56]; @symbol_param<2>_type<0> = [Number,59,60,66]; @symbol_param<3> = [cx,60,23,25]; @symbol_param<3>_type<0> = [Number,60,29,35]; @symbol_param<4> = [cy,60,37,39]; @symbol_param<4>_type<0> = [Number,60,43,49]; ]
+    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 59; @symbol_functiondef = [truncateLabel,59,13,26]; @symbol_param<0> = [label,59,27,32]; @symbol_param<0>_type<0> = [String,59,36,42]; @symbol_param<1> = [maxLen,59,44,50]; @symbol_param<1>_type<0> = [Number,59,54,60]; @symbol_return<0> = [String,59,65,71]; ]
+    function truncateLabel(label as String, maxLen as Number) as String {
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_59_72_64_4_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 60 8 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_8_62_8_if_stmt:
+        %tmp.1 = lgetv %label;
+        symbol [ label %tmp.1 60 12 17 ];
+        symbol [ length %tmp.2 60 18 24 ];
+        %tmp.2 = getv function %tmp.1 :length;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = lgetv %maxLen;
+        symbol [ maxLen %tmp.4 60 29 35 ];
+        %tmp.5 = gt %tmp.3 %tmp.4;
+        bf %tmp.5 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_8_62_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_8_62_8_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_37_62_8_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 61 12 ]
+        %tmp.6 = lgetv %label;
+        symbol [ label %tmp.6 61 19 24 ];
+        symbol [ substring %tmp.7 61 25 34 ];
+        %tmp.7 = getv function %tmp.6 :substring;
+        %tmp.8 = 0;
+        %tmp.9 = lgetv %maxLen;
+        symbol [ maxLen %tmp.9 61 38 44 ];
+        %tmp.10 = 3;
+        %tmp.11 = sub %tmp.9 %tmp.10;
+        %tmp.12 = invoke %tmp.6 %tmp.7(%tmp.8, %tmp.11);
+        %tmp.13 = "...";
+        %tmp.14 = add %tmp.12 %tmp.13;
+        ret %tmp.14;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_37_62_8_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_8_62_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_8_62_8_if_end:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 63 8 ]
+        %tmp.15 = lgetv %label;
+        symbol [ label %tmp.15 63 15 20 ];
+        ret %tmp.15;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_59_72_64_4_stop:
+    }
+    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 68; @symbol_functiondef = [drawReady,68,13,22]; @symbol_param<0> = [dc,68,23,25]; @symbol_param<0>_type<0> = [Graphics,68,29,37]; @symbol_param<0>_type<1> = [Dc,68,38,40]; @symbol_param<1> = [W,68,42,43]; @symbol_param<1>_type<0> = [Number,68,47,53]; @symbol_param<2> = [H,68,55,56]; @symbol_param<2>_type<0> = [Number,68,60,66]; @symbol_param<3> = [cx,69,23,25]; @symbol_param<3>_type<0> = [Number,69,29,35]; @symbol_param<4> = [cy,69,37,39]; @symbol_param<4>_type<0> = [Number,69,43,49]; ]
     function drawReady(dc as Graphics.Dc, W as Number, H as Number, cx as Number, cy as Number) as Void {
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 62 8 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 71 8 ]
         %tmp.1 = lgetv %dc;
-        symbol [ dc %tmp.1 62 8 10 ];
-        symbol [ setColor %tmp.2 62 11 19 ];
+        symbol [ dc %tmp.1 71 8 10 ];
+        symbol [ setColor %tmp.2 71 11 19 ];
         %tmp.2 = getv function %tmp.1 :setColor;
-        symbol [ COLOR_MUTED %tmp.4 62 20 31 ];
+        symbol [ COLOR_MUTED %tmp.4 71 20 31 ];
         %tmp.4 = getv ? :COLOR_MUTED;
-        symbol [ Graphics %tmp.5 62 33 41 ];
+        symbol [ Graphics %tmp.5 71 33 41 ];
         %tmp.5 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.6 62 42 59 ];
+        symbol [ COLOR_TRANSPARENT %tmp.6 71 42 59 ];
         %tmp.6 = getv %tmp.5 :COLOR_TRANSPARENT;
         invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 63 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 72 8 ]
         %tmp.7 = lgetv %dc;
-        symbol [ dc %tmp.7 63 8 10 ];
-        symbol [ drawText %tmp.8 63 11 19 ];
+        symbol [ dc %tmp.7 72 8 10 ];
+        symbol [ drawText %tmp.8 72 11 19 ];
         %tmp.8 = getv function %tmp.7 :drawText;
         %tmp.9 = lgetv %cx;
-        symbol [ cx %tmp.9 63 20 22 ];
+        symbol [ cx %tmp.9 72 20 22 ];
         %tmp.10 = lgetv %H;
-        symbol [ H %tmp.10 63 25 26 ];
+        symbol [ H %tmp.10 72 25 26 ];
         %tmp.11 = 0.33;
         %tmp.12 = mul %tmp.10 %tmp.11;
-        symbol [ toNumber %tmp.13 63 35 43 ];
+        symbol [ toNumber %tmp.13 72 35 43 ];
         %tmp.13 = getv function %tmp.12 :toNumber;
         %tmp.14 = invoke %tmp.12 %tmp.13();
-        symbol [ Graphics %tmp.15 64 12 20 ];
+        symbol [ Graphics %tmp.15 73 12 20 ];
         %tmp.15 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.16 64 21 30 ];
+        symbol [ FONT_TINY %tmp.16 73 21 30 ];
         %tmp.16 = getv %tmp.15 :FONT_TINY;
         %tmp.17 = "F I T T R A C K";
-        symbol [ Graphics %tmp.18 65 12 20 ];
+        symbol [ Graphics %tmp.18 74 12 20 ];
         %tmp.18 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.19 65 21 40 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.19 74 21 40 ];
         %tmp.19 = getv %tmp.18 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.20 65 43 51 ];
+        symbol [ Graphics %tmp.20 74 43 51 ];
         %tmp.20 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.21 65 52 72 ];
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.21 74 52 72 ];
         %tmp.21 = getv %tmp.20 :TEXT_JUSTIFY_VCENTER;
         %tmp.22 = bitor %tmp.19 %tmp.21;
         invoke %tmp.7 %tmp.8(%tmp.9, %tmp.14, %tmp.16, %tmp.17, %tmp.22);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 68 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 77 8 ]
         %tmp.23 = lgetv %dc;
-        symbol [ dc %tmp.23 68 8 10 ];
-        symbol [ setColor %tmp.24 68 11 19 ];
+        symbol [ dc %tmp.23 77 8 10 ];
+        symbol [ setColor %tmp.24 77 11 19 ];
         %tmp.24 = getv function %tmp.23 :setColor;
-        symbol [ COLOR_YELLOW %tmp.26 68 20 32 ];
+        symbol [ COLOR_YELLOW %tmp.26 77 20 32 ];
         %tmp.26 = getv ? :COLOR_YELLOW;
-        symbol [ Graphics %tmp.27 68 34 42 ];
+        symbol [ Graphics %tmp.27 77 34 42 ];
         %tmp.27 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.28 68 43 60 ];
+        symbol [ COLOR_TRANSPARENT %tmp.28 77 43 60 ];
         %tmp.28 = getv %tmp.27 :COLOR_TRANSPARENT;
         invoke %tmp.23 %tmp.24(%tmp.26, %tmp.28);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 69 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 78 8 ]
         %tmp.29 = lgetv %dc;
-        symbol [ dc %tmp.29 69 8 10 ];
-        symbol [ drawText %tmp.30 69 11 19 ];
+        symbol [ dc %tmp.29 78 8 10 ];
+        symbol [ drawText %tmp.30 78 11 19 ];
         %tmp.30 = getv function %tmp.29 :drawText;
         %tmp.31 = lgetv %cx;
-        symbol [ cx %tmp.31 69 20 22 ];
+        symbol [ cx %tmp.31 78 20 22 ];
         %tmp.32 = lgetv %H;
-        symbol [ H %tmp.32 69 25 26 ];
+        symbol [ H %tmp.32 78 25 26 ];
         %tmp.33 = 0.48;
         %tmp.34 = mul %tmp.32 %tmp.33;
-        symbol [ toNumber %tmp.35 69 35 43 ];
+        symbol [ toNumber %tmp.35 78 35 43 ];
         %tmp.35 = getv function %tmp.34 :toNumber;
         %tmp.36 = invoke %tmp.34 %tmp.35();
-        symbol [ Graphics %tmp.37 70 12 20 ];
+        symbol [ Graphics %tmp.37 79 12 20 ];
         %tmp.37 = getm $.Toybox.Graphics;
-        symbol [ FONT_LARGE %tmp.38 70 21 31 ];
+        symbol [ FONT_LARGE %tmp.38 79 21 31 ];
         %tmp.38 = getv %tmp.37 :FONT_LARGE;
         %tmp.39 = "HYROX";
-        symbol [ Graphics %tmp.40 71 12 20 ];
+        symbol [ Graphics %tmp.40 80 12 20 ];
         %tmp.40 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.41 71 21 40 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.41 80 21 40 ];
         %tmp.41 = getv %tmp.40 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.42 71 43 51 ];
+        symbol [ Graphics %tmp.42 80 43 51 ];
         %tmp.42 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.43 71 52 72 ];
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.43 80 52 72 ];
         %tmp.43 = getv %tmp.42 :TEXT_JUSTIFY_VCENTER;
         %tmp.44 = bitor %tmp.41 %tmp.43;
         invoke %tmp.29 %tmp.30(%tmp.31, %tmp.36, %tmp.38, %tmp.39, %tmp.44);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 74 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_stop" ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 83 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_stop" ]
         %btnW.1 = local;
-        symbol [ btnW %btnW.1 74 12 16 ];
+        symbol [ btnW %btnW.1 83 12 16 ];
         %tmp.45 = lgetv %W;
-        symbol [ W %tmp.45 74 20 21 ];
+        symbol [ W %tmp.45 83 20 21 ];
         %tmp.46 = 0.58;
         %tmp.47 = mul %tmp.45 %tmp.46;
-        symbol [ toNumber %tmp.48 74 30 38 ];
+        symbol [ toNumber %tmp.48 83 30 38 ];
         %tmp.48 = getv function %tmp.47 :toNumber;
         %tmp.49 = invoke %tmp.47 %tmp.48();
         lputv %btnW.1 %tmp.49;
-        symbol [ btnW %btnW.1 74 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 75 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_stop" ]
+        symbol [ btnW %btnW.1 83 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 84 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_stop" ]
         %btnH.2 = local;
-        symbol [ btnH %btnH.2 75 12 16 ];
+        symbol [ btnH %btnH.2 84 12 16 ];
         %tmp.50 = lgetv %H;
-        symbol [ H %tmp.50 75 20 21 ];
+        symbol [ H %tmp.50 84 20 21 ];
         %tmp.51 = 0.14;
         %tmp.52 = mul %tmp.50 %tmp.51;
-        symbol [ toNumber %tmp.53 75 30 38 ];
+        symbol [ toNumber %tmp.53 84 30 38 ];
         %tmp.53 = getv function %tmp.52 :toNumber;
         %tmp.54 = invoke %tmp.52 %tmp.53();
         lputv %btnH.2 %tmp.54;
-        symbol [ btnH %btnH.2 75 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 76 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_stop" ]
+        symbol [ btnH %btnH.2 84 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 85 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_stop" ]
         %btnX.3 = local;
-        symbol [ btnX %btnX.3 76 12 16 ];
+        symbol [ btnX %btnX.3 85 12 16 ];
         %tmp.55 = lgetv %cx;
-        symbol [ cx %tmp.55 76 19 21 ];
+        symbol [ cx %tmp.55 85 19 21 ];
         %tmp.56 = lgetv %btnW.1;
-        symbol [ btnW %tmp.56 76 24 28 ];
+        symbol [ btnW %tmp.56 85 24 28 ];
         %tmp.57 = 2;
         %tmp.58 = div %tmp.56 %tmp.57;
         %tmp.59 = sub %tmp.55 %tmp.58;
         lputv %btnX.3 %tmp.59;
-        symbol [ btnX %btnX.3 76 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 77 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_stop" ]
+        symbol [ btnX %btnX.3 85 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 86 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_stop" ]
         %btnY.4 = local;
-        symbol [ btnY %btnY.4 77 12 16 ];
+        symbol [ btnY %btnY.4 86 12 16 ];
         %tmp.60 = lgetv %H;
-        symbol [ H %tmp.60 77 20 21 ];
+        symbol [ H %tmp.60 86 20 21 ];
         %tmp.61 = 0.64;
         %tmp.62 = mul %tmp.60 %tmp.61;
-        symbol [ toNumber %tmp.63 77 30 38 ];
+        symbol [ toNumber %tmp.63 86 30 38 ];
         %tmp.63 = getv function %tmp.62 :toNumber;
         %tmp.64 = invoke %tmp.62 %tmp.63();
         lputv %btnY.4 %tmp.64;
-        symbol [ btnY %btnY.4 77 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 78 8 ]
+        symbol [ btnY %btnY.4 86 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 87 8 ]
         %tmp.65 = lgetv %dc;
-        symbol [ dc %tmp.65 78 8 10 ];
-        symbol [ setColor %tmp.66 78 11 19 ];
+        symbol [ dc %tmp.65 87 8 10 ];
+        symbol [ setColor %tmp.66 87 11 19 ];
         %tmp.66 = getv function %tmp.65 :setColor;
-        symbol [ COLOR_YELLOW %tmp.68 78 20 32 ];
+        symbol [ COLOR_YELLOW %tmp.68 87 20 32 ];
         %tmp.68 = getv ? :COLOR_YELLOW;
-        symbol [ Graphics %tmp.69 78 34 42 ];
+        symbol [ Graphics %tmp.69 87 34 42 ];
         %tmp.69 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.70 78 43 60 ];
+        symbol [ COLOR_TRANSPARENT %tmp.70 87 43 60 ];
         %tmp.70 = getv %tmp.69 :COLOR_TRANSPARENT;
         invoke %tmp.65 %tmp.66(%tmp.68, %tmp.70);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 79 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 88 8 ]
         %tmp.71 = lgetv %dc;
-        symbol [ dc %tmp.71 79 8 10 ];
-        symbol [ fillRoundedRectangle %tmp.72 79 11 31 ];
+        symbol [ dc %tmp.71 88 8 10 ];
+        symbol [ fillRoundedRectangle %tmp.72 88 11 31 ];
         %tmp.72 = getv function %tmp.71 :fillRoundedRectangle;
         %tmp.73 = lgetv %btnX.3;
-        symbol [ btnX %tmp.73 79 32 36 ];
+        symbol [ btnX %tmp.73 88 32 36 ];
         %tmp.74 = lgetv %btnY.4;
-        symbol [ btnY %tmp.74 79 38 42 ];
+        symbol [ btnY %tmp.74 88 38 42 ];
         %tmp.75 = lgetv %btnW.1;
-        symbol [ btnW %tmp.75 79 44 48 ];
+        symbol [ btnW %tmp.75 88 44 48 ];
         %tmp.76 = lgetv %btnH.2;
-        symbol [ btnH %tmp.76 79 50 54 ];
+        symbol [ btnH %tmp.76 88 50 54 ];
         %tmp.77 = lgetv %btnH.2;
-        symbol [ btnH %tmp.77 79 56 60 ];
+        symbol [ btnH %tmp.77 88 56 60 ];
         %tmp.78 = 2;
         %tmp.79 = div %tmp.77 %tmp.78;
         invoke %tmp.71 %tmp.72(%tmp.73, %tmp.74, %tmp.75, %tmp.76, %tmp.79);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 80 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 89 8 ]
         %tmp.80 = lgetv %dc;
-        symbol [ dc %tmp.80 80 8 10 ];
-        symbol [ setColor %tmp.81 80 11 19 ];
+        symbol [ dc %tmp.80 89 8 10 ];
+        symbol [ setColor %tmp.81 89 11 19 ];
         %tmp.81 = getv function %tmp.80 :setColor;
-        symbol [ COLOR_BG %tmp.83 80 20 28 ];
+        symbol [ COLOR_BG %tmp.83 89 20 28 ];
         %tmp.83 = getv ? :COLOR_BG;
-        symbol [ Graphics %tmp.84 80 30 38 ];
+        symbol [ Graphics %tmp.84 89 30 38 ];
         %tmp.84 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.85 80 39 56 ];
+        symbol [ COLOR_TRANSPARENT %tmp.85 89 39 56 ];
         %tmp.85 = getv %tmp.84 :COLOR_TRANSPARENT;
         invoke %tmp.80 %tmp.81(%tmp.83, %tmp.85);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 81 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 90 8 ]
         %tmp.86 = lgetv %dc;
-        symbol [ dc %tmp.86 81 8 10 ];
-        symbol [ drawText %tmp.87 81 11 19 ];
+        symbol [ dc %tmp.86 90 8 10 ];
+        symbol [ drawText %tmp.87 90 11 19 ];
         %tmp.87 = getv function %tmp.86 :drawText;
         %tmp.88 = lgetv %cx;
-        symbol [ cx %tmp.88 81 20 22 ];
+        symbol [ cx %tmp.88 90 20 22 ];
         %tmp.89 = lgetv %btnY.4;
-        symbol [ btnY %tmp.89 81 24 28 ];
+        symbol [ btnY %tmp.89 90 24 28 ];
         %tmp.90 = lgetv %btnH.2;
-        symbol [ btnH %tmp.90 81 31 35 ];
+        symbol [ btnH %tmp.90 90 31 35 ];
         %tmp.91 = 2;
         %tmp.92 = div %tmp.90 %tmp.91;
         %tmp.93 = add %tmp.89 %tmp.92;
-        symbol [ Graphics %tmp.94 82 12 20 ];
+        symbol [ Graphics %tmp.94 91 12 20 ];
         %tmp.94 = getm $.Toybox.Graphics;
-        symbol [ FONT_SMALL %tmp.95 82 21 31 ];
+        symbol [ FONT_SMALL %tmp.95 91 21 31 ];
         %tmp.95 = getv %tmp.94 :FONT_SMALL;
         %tmp.96 = "> START";
-        symbol [ Graphics %tmp.97 83 12 20 ];
+        symbol [ Graphics %tmp.97 92 12 20 ];
         %tmp.97 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.98 83 21 40 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.98 92 21 40 ];
         %tmp.98 = getv %tmp.97 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.99 83 43 51 ];
+        symbol [ Graphics %tmp.99 92 43 51 ];
         %tmp.99 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.100 83 52 72 ];
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.100 92 52 72 ];
         %tmp.100 = getv %tmp.99 :TEXT_JUSTIFY_VCENTER;
         %tmp.101 = bitor %tmp.98 %tmp.100;
         invoke %tmp.86 %tmp.87(%tmp.88, %tmp.93, %tmp.95, %tmp.96, %tmp.101);
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_60_59_84_4_stop:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_69_59_93_4_stop:
     }
-    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 88; @symbol_functiondef = [drawActive,88,13,23]; @symbol_param<0> = [dc,88,24,26]; @symbol_param<0>_type<0> = [Graphics,88,30,38]; @symbol_param<0>_type<1> = [Dc,88,39,41]; @symbol_param<1> = [W,88,43,44]; @symbol_param<1>_type<0> = [Number,88,48,54]; @symbol_param<2> = [H,88,56,57]; @symbol_param<2>_type<0> = [Number,88,61,67]; @symbol_param<3> = [cx,89,24,26]; @symbol_param<3>_type<0> = [Number,89,30,36]; @symbol_param<4> = [cy,89,38,40]; @symbol_param<4>_type<0> = [Number,89,44,50]; @symbol_param<5> = [isRound,90,24,31]; @symbol_param<5>_type<0> = [Boolean,90,35,42]; ]
+    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 97; @symbol_functiondef = [drawActive,97,13,23]; @symbol_param<0> = [dc,97,24,26]; @symbol_param<0>_type<0> = [Graphics,97,30,38]; @symbol_param<0>_type<1> = [Dc,97,39,41]; @symbol_param<1> = [W,97,43,44]; @symbol_param<1>_type<0> = [Number,97,48,54]; @symbol_param<2> = [H,97,56,57]; @symbol_param<2>_type<0> = [Number,97,61,67]; @symbol_param<3> = [cx,98,24,26]; @symbol_param<3>_type<0> = [Number,98,30,36]; @symbol_param<4> = [cy,98,38,40]; @symbol_param<4>_type<0> = [Number,98,44,50]; @symbol_param<5> = [isRound,99,24,31]; @symbol_param<5>_type<0> = [Boolean,99,35,42]; ]
     function drawActive(dc as Graphics.Dc, W as Number, H as Number, cx as Number, cy as Number, isRound as Boolean) as Void {
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 91 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 100 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %station.1 = local;
-        symbol [ station %station.1 91 12 19 ];
-        symbol [ gModel %tmp.2 91 22 28 ];
+        symbol [ station %station.1 100 12 19 ];
+        symbol [ gModel %tmp.2 100 22 28 ];
         %tmp.2 = getv ? :gModel;
-        symbol [ stations %tmp.3 91 29 37 ];
+        symbol [ stations %tmp.3 100 29 37 ];
         %tmp.3 = getv %tmp.2 :stations;
-        symbol [ gModel %tmp.5 91 38 44 ];
+        symbol [ gModel %tmp.5 100 38 44 ];
         %tmp.5 = getv ? :gModel;
-        symbol [ currentStep %tmp.6 91 45 56 ];
+        symbol [ currentStep %tmp.6 100 45 56 ];
         %tmp.6 = getv %tmp.5 :currentStep;
         %tmp.7 = agetv %tmp.3 %tmp.6;
         lputv %station.1 %tmp.7;
-        symbol [ station %station.1 91 12 19 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 92 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+        symbol [ station %station.1 100 12 19 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 101 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %sType.2 = local;
-        symbol [ sType %sType.2 92 12 17 ];
+        symbol [ sType %sType.2 101 12 17 ];
         %tmp.8 = lgetv %station.1;
-        symbol [ station %tmp.8 92 22 29 ];
+        symbol [ station %tmp.8 101 22 29 ];
         %tmp.9 = "type";
         %tmp.10 = agetv %tmp.8 %tmp.9;
         %tmp.11 = as %tmp.10 String;
-        symbol [ String %tmp.11 92 41 47 ];
+        symbol [ String %tmp.11 101 41 47 ];
         lputv %sType.2 %tmp.11;
-        symbol [ sType %sType.2 92 12 17 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 93 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+        symbol [ sType %sType.2 101 12 17 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 102 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %sLabel.3 = local;
-        symbol [ sLabel %sLabel.3 93 12 18 ];
+        symbol [ sLabel %sLabel.3 102 12 18 ];
         %tmp.12 = lgetv %station.1;
-        symbol [ station %tmp.12 93 22 29 ];
+        symbol [ station %tmp.12 102 22 29 ];
         %tmp.13 = "label";
         %tmp.14 = agetv %tmp.12 %tmp.13;
         %tmp.15 = as %tmp.14 String;
-        symbol [ String %tmp.15 93 42 48 ];
+        symbol [ String %tmp.15 102 42 48 ];
         lputv %sLabel.3 %tmp.15;
-        symbol [ sLabel %sLabel.3 93 12 18 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 94 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+        symbol [ sLabel %sLabel.3 102 12 18 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 103 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %accent.4 = local;
-        symbol [ accent %accent.4 94 12 18 ];
-        symbol [ gModel %tmp.17 94 22 28 ];
+        symbol [ accent %accent.4 103 12 18 ];
+        symbol [ gModel %tmp.17 103 22 28 ];
         %tmp.17 = getv ? :gModel;
-        symbol [ getCurrentAccentColor %tmp.18 94 29 50 ];
+        symbol [ getCurrentAccentColor %tmp.18 103 29 50 ];
         %tmp.18 = getv function %tmp.17 :getCurrentAccentColor;
         %tmp.19 = invoke %tmp.17 %tmp.18();
         lputv %accent.4 %tmp.19;
-        symbol [ accent %accent.4 94 12 18 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 95 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+        symbol [ accent %accent.4 103 12 18 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 104 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %isTrans.5 = local;
-        symbol [ isTrans %isTrans.5 95 12 19 ];
+        symbol [ isTrans %isTrans.5 104 12 19 ];
         %tmp.20 = lgetv %sType.2;
-        symbol [ sType %tmp.20 95 22 27 ];
-        symbol [ equals %tmp.21 95 28 34 ];
+        symbol [ sType %tmp.20 104 22 27 ];
+        symbol [ equals %tmp.21 104 28 34 ];
         %tmp.21 = getv function %tmp.20 :equals;
         %tmp.22 = "transition";
         %tmp.23 = invoke %tmp.20 %tmp.21(%tmp.22);
         lputv %isTrans.5 %tmp.23;
-        symbol [ isTrans %isTrans.5 95 12 19 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 98 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+        symbol [ isTrans %isTrans.5 104 12 19 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 107 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %tagText.6 = local;
-        symbol [ tagText %tagText.6 98 12 19 ];
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_begin:
+        symbol [ tagText %tagText.6 107 12 19 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_begin:
         %tmp.24 = lgetv %isTrans.5;
-        symbol [ isTrans %tmp.24 98 22 29 ];
-        bf %tmp.24 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_true:
+        symbol [ isTrans %tmp.24 107 22 29 ];
+        bf %tmp.24 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_true:
         %tmp.25 = "TRANSITION";
         push %tmp.25;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_else_false:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_begin:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_else_false:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_begin:
         %tmp.26 = lgetv %sType.2;
-        symbol [ sType %tmp.26 98 48 53 ];
-        symbol [ equals %tmp.27 98 54 60 ];
+        symbol [ sType %tmp.26 107 48 53 ];
+        symbol [ equals %tmp.27 107 54 60 ];
         %tmp.27 = getv function %tmp.26 :equals;
         %tmp.28 = "run";
         %tmp.29 = invoke %tmp.26 %tmp.27(%tmp.28);
-        bf %tmp.29 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_true:
+        bf %tmp.29 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_true:
         %tmp.30 = "RUN";
         push %tmp.30;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_else_false:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_else_false:
         %tmp.31 = "EXERCISE";
         push %tmp.31;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_end:
-        %tmp.32 = phi [%tmp.29 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_begin] [%tmp.30 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_true] [%tmp.31 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_else_false] [%tmp.32 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_48_98_78_end];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_end:
+        %tmp.32 = phi [%tmp.29 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_begin] [%tmp.30 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_true] [%tmp.31 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_else_false] [%tmp.32 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_48_107_78_end];
         push %tmp.32;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_end:
-        %tmp.33 = phi [%tmp.24 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_begin] [%tmp.25 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_true] [%tmp.32 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_else_false] [%tmp.33 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_98_22_98_88_end];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_end:
+        %tmp.33 = phi [%tmp.24 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_begin] [%tmp.25 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_true] [%tmp.32 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_else_false] [%tmp.33 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_22_107_88_end];
         lputv %tagText.6 %tmp.33;
-        symbol [ tagText %tagText.6 98 12 19 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 99 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+        symbol [ tagText %tagText.6 107 12 19 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 108 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %tagY.7 = local;
-        symbol [ tagY %tagY.7 99 12 16 ];
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_begin:
+        symbol [ tagY %tagY.7 108 12 16 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_begin:
         %tmp.34 = lgetv %isRound;
-        symbol [ isRound %tmp.34 99 22 29 ];
-        bf %tmp.34 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_true:
+        symbol [ isRound %tmp.34 108 22 29 ];
+        bf %tmp.34 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_true:
         %tmp.35 = lgetv %H;
-        symbol [ H %tmp.35 99 33 34 ];
+        symbol [ H %tmp.35 108 33 34 ];
         %tmp.36 = 0.16;
         %tmp.37 = mul %tmp.35 %tmp.36;
-        symbol [ toNumber %tmp.38 99 43 51 ];
+        symbol [ toNumber %tmp.38 108 43 51 ];
         %tmp.38 = getv function %tmp.37 :toNumber;
         %tmp.39 = invoke %tmp.37 %tmp.38();
         push %tmp.39;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_else_false:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_else_false:
         %tmp.40 = 14;
         push %tmp.40;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_end:
-        %tmp.41 = phi [%tmp.34 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_begin] [%tmp.39 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_true] [%tmp.40 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_else_false] [%tmp.41 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_22_99_56_end];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_end:
+        %tmp.41 = phi [%tmp.34 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_begin] [%tmp.39 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_true] [%tmp.40 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_else_false] [%tmp.41 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_108_22_108_56_end];
         lputv %tagY.7 %tmp.41;
-        symbol [ tagY %tagY.7 99 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 100 8 ]
+        symbol [ tagY %tagY.7 108 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 109 8 ]
         %tmp.42 = lgetv %dc;
-        symbol [ dc %tmp.42 100 8 10 ];
-        symbol [ setColor %tmp.43 100 11 19 ];
+        symbol [ dc %tmp.42 109 8 10 ];
+        symbol [ setColor %tmp.43 109 11 19 ];
         %tmp.43 = getv function %tmp.42 :setColor;
         %tmp.44 = lgetv %accent.4;
-        symbol [ accent %tmp.44 100 20 26 ];
-        symbol [ Graphics %tmp.45 100 28 36 ];
+        symbol [ accent %tmp.44 109 20 26 ];
+        symbol [ Graphics %tmp.45 109 28 36 ];
         %tmp.45 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.46 100 37 54 ];
+        symbol [ COLOR_TRANSPARENT %tmp.46 109 37 54 ];
         %tmp.46 = getv %tmp.45 :COLOR_TRANSPARENT;
         invoke %tmp.42 %tmp.43(%tmp.44, %tmp.46);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 101 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 110 8 ]
         %tmp.47 = lgetv %dc;
-        symbol [ dc %tmp.47 101 8 10 ];
-        symbol [ drawText %tmp.48 101 11 19 ];
+        symbol [ dc %tmp.47 110 8 10 ];
+        symbol [ drawText %tmp.48 110 11 19 ];
         %tmp.48 = getv function %tmp.47 :drawText;
         %tmp.49 = lgetv %cx;
-        symbol [ cx %tmp.49 101 20 22 ];
+        symbol [ cx %tmp.49 110 20 22 ];
         %tmp.50 = lgetv %tagY.7;
-        symbol [ tagY %tmp.50 101 24 28 ];
+        symbol [ tagY %tmp.50 110 24 28 ];
         %tmp.51 = self;
-        symbol [ getLabelFont %tmp.52 101 30 42 ];
+        symbol [ getLabelFont %tmp.52 110 30 42 ];
         %tmp.52 = getv function %tmp.51 :getLabelFont;
         %tmp.53 = lgetv %W;
-        symbol [ W %tmp.53 101 43 44 ];
+        symbol [ W %tmp.53 110 43 44 ];
         %tmp.54 = invoke %tmp.51 %tmp.52(%tmp.53);
         %tmp.55 = lgetv %tagText.6;
-        symbol [ tagText %tmp.55 101 47 54 ];
-        symbol [ Graphics %tmp.56 102 12 20 ];
+        symbol [ tagText %tmp.55 110 47 54 ];
+        symbol [ Graphics %tmp.56 111 12 20 ];
         %tmp.56 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.57 102 21 40 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.57 111 21 40 ];
         %tmp.57 = getv %tmp.56 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.58 102 43 51 ];
+        symbol [ Graphics %tmp.58 111 43 51 ];
         %tmp.58 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.59 102 52 72 ];
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.59 111 52 72 ];
         %tmp.59 = getv %tmp.58 :TEXT_JUSTIFY_VCENTER;
         %tmp.60 = bitor %tmp.57 %tmp.59;
         invoke %tmp.47 %tmp.48(%tmp.49, %tmp.50, %tmp.54, %tmp.55, %tmp.60);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 105 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 114 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %nameY.8 = local;
-        symbol [ nameY %nameY.8 105 12 17 ];
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_begin:
+        symbol [ nameY %nameY.8 114 12 17 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_begin:
         %tmp.61 = lgetv %isRound;
-        symbol [ isRound %tmp.61 105 23 30 ];
-        bf %tmp.61 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_true:
+        symbol [ isRound %tmp.61 114 23 30 ];
+        bf %tmp.61 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_true:
         %tmp.62 = lgetv %H;
-        symbol [ H %tmp.62 105 34 35 ];
+        symbol [ H %tmp.62 114 34 35 ];
         %tmp.63 = 0.27;
         %tmp.64 = mul %tmp.62 %tmp.63;
-        symbol [ toNumber %tmp.65 105 44 52 ];
+        symbol [ toNumber %tmp.65 114 44 52 ];
         %tmp.65 = getv function %tmp.64 :toNumber;
         %tmp.66 = invoke %tmp.64 %tmp.65();
         push %tmp.66;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_else_false:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_else_false:
         %tmp.67 = lgetv %tagY.7;
-        symbol [ tagY %tmp.67 105 58 62 ];
+        symbol [ tagY %tmp.67 114 58 62 ];
         %tmp.68 = 22;
         %tmp.69 = add %tmp.67 %tmp.68;
         push %tmp.69;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_end:
-        %tmp.70 = phi [%tmp.61 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_begin] [%tmp.66 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_true] [%tmp.69 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_else_false] [%tmp.70 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_105_23_105_67_end];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_end:
+        %tmp.70 = phi [%tmp.61 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_begin] [%tmp.66 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_true] [%tmp.69 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_else_false] [%tmp.70 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_23_114_67_end];
         lputv %nameY.8 %tmp.70;
-        symbol [ nameY %nameY.8 105 12 17 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 106 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+        symbol [ nameY %nameY.8 114 12 17 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 115 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %nameFont.9 = local;
-        symbol [ nameFont %nameFont.9 106 12 20 ];
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_begin:
+        symbol [ nameFont %nameFont.9 115 12 20 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_begin:
         %tmp.71 = lgetv %isTrans.5;
-        symbol [ isTrans %tmp.71 106 23 30 ];
-        bf %tmp.71 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_true:
-        symbol [ Graphics %tmp.72 106 33 41 ];
+        symbol [ isTrans %tmp.71 115 23 30 ];
+        bf %tmp.71 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_true:
+        symbol [ Graphics %tmp.72 115 33 41 ];
         %tmp.72 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.73 106 42 51 ];
+        symbol [ FONT_TINY %tmp.73 115 42 51 ];
         %tmp.73 = getv %tmp.72 :FONT_TINY;
         push %tmp.73;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_else_false:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_else_false:
         %tmp.74 = self;
-        symbol [ getNameFont %tmp.75 106 54 65 ];
+        symbol [ getNameFont %tmp.75 115 54 65 ];
         %tmp.75 = getv function %tmp.74 :getNameFont;
         %tmp.76 = lgetv %W;
-        symbol [ W %tmp.76 106 66 67 ];
+        symbol [ W %tmp.76 115 66 67 ];
         %tmp.77 = invoke %tmp.74 %tmp.75(%tmp.76);
         push %tmp.77;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_end:
-        %tmp.78 = phi [%tmp.71 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_begin] [%tmp.73 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_true] [%tmp.77 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_else_false] [%tmp.78 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_106_23_106_67_end];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_end:
+        %tmp.78 = phi [%tmp.71 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_begin] [%tmp.73 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_true] [%tmp.77 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_else_false] [%tmp.78 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_115_23_115_67_end];
         lputv %nameFont.9 %tmp.78;
-        symbol [ nameFont %nameFont.9 106 12 20 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 107 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
+        symbol [ nameFont %nameFont.9 115 12 20 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 116 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
         %nameCol.10 = local;
-        symbol [ nameCol %nameCol.10 107 12 19 ];
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_begin:
+        symbol [ nameCol %nameCol.10 116 12 19 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_begin:
         %tmp.79 = lgetv %isTrans.5;
-        symbol [ isTrans %tmp.79 107 23 30 ];
-        bf %tmp.79 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_true:
-        symbol [ COLOR_MUTED %tmp.81 107 33 44 ];
+        symbol [ isTrans %tmp.79 116 23 30 ];
+        bf %tmp.79 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_true:
+        symbol [ COLOR_MUTED %tmp.81 116 33 44 ];
         %tmp.81 = getv ? :COLOR_MUTED;
         push %tmp.81;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_else_false:
-        symbol [ COLOR_CREAM %tmp.83 107 47 58 ];
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_else_false:
+        symbol [ COLOR_CREAM %tmp.83 116 47 58 ];
         %tmp.83 = getv ? :COLOR_CREAM;
         push %tmp.83;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_end:
-        %tmp.84 = phi [%tmp.79 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_begin] [%tmp.81 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_true] [%tmp.83 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_else_false] [%tmp.84 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_107_23_107_47_end];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_end:
+        %tmp.84 = phi [%tmp.79 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_begin] [%tmp.81 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_true] [%tmp.83 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_else_false] [%tmp.84 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_116_23_116_47_end];
         lputv %nameCol.10 %tmp.84;
-        symbol [ nameCol %nameCol.10 107 12 19 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 108 8 ]
-        %tmp.85 = lgetv %dc;
-        symbol [ dc %tmp.85 108 8 10 ];
-        symbol [ setColor %tmp.86 108 11 19 ];
-        %tmp.86 = getv function %tmp.85 :setColor;
-        %tmp.87 = lgetv %nameCol.10;
-        symbol [ nameCol %tmp.87 108 20 27 ];
-        symbol [ Graphics %tmp.88 108 29 37 ];
-        %tmp.88 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.89 108 38 55 ];
-        %tmp.89 = getv %tmp.88 :COLOR_TRANSPARENT;
-        invoke %tmp.85 %tmp.86(%tmp.87, %tmp.89);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 109 8 ]
-        %tmp.90 = lgetv %dc;
-        symbol [ dc %tmp.90 109 8 10 ];
-        symbol [ drawText %tmp.91 109 11 19 ];
-        %tmp.91 = getv function %tmp.90 :drawText;
-        %tmp.92 = lgetv %cx;
-        symbol [ cx %tmp.92 109 20 22 ];
-        %tmp.93 = lgetv %nameY.8;
-        symbol [ nameY %tmp.93 109 24 29 ];
-        %tmp.94 = lgetv %nameFont.9;
-        symbol [ nameFont %tmp.94 109 31 39 ];
-        %tmp.95 = lgetv %sLabel.3;
-        symbol [ sLabel %tmp.95 109 41 47 ];
-        symbol [ Graphics %tmp.96 110 12 20 ];
+        symbol [ nameCol %nameCol.10 116 12 19 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 117 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
+        %nameText.11 = local;
+        symbol [ nameText %nameText.11 117 12 20 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_begin:
+        %tmp.85 = lgetv %isTrans.5;
+        symbol [ isTrans %tmp.85 117 23 30 ];
+        bf %tmp.85 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_true:
+        %tmp.86 = self;
+        symbol [ truncateLabel %tmp.87 117 33 46 ];
+        %tmp.87 = getv function %tmp.86 :truncateLabel;
+        %tmp.88 = lgetv %sLabel.3;
+        symbol [ sLabel %tmp.88 117 47 53 ];
+        %tmp.89 = 25;
+        %tmp.90 = invoke %tmp.86 %tmp.87(%tmp.88, %tmp.89);
+        push %tmp.90;
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_else_false:
+        %tmp.91 = lgetv %sLabel.3;
+        symbol [ sLabel %tmp.91 117 61 67 ];
+        push %tmp.91;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_end:
+        %tmp.92 = phi [%tmp.85 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_begin] [%tmp.90 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_true] [%tmp.91 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_else_false] [%tmp.92 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_117_23_117_61_end];
+        lputv %nameText.11 %tmp.92;
+        symbol [ nameText %nameText.11 117 12 20 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 118 8 ]
+        %tmp.93 = lgetv %dc;
+        symbol [ dc %tmp.93 118 8 10 ];
+        symbol [ setColor %tmp.94 118 11 19 ];
+        %tmp.94 = getv function %tmp.93 :setColor;
+        %tmp.95 = lgetv %nameCol.10;
+        symbol [ nameCol %tmp.95 118 20 27 ];
+        symbol [ Graphics %tmp.96 118 29 37 ];
         %tmp.96 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.97 110 21 40 ];
-        %tmp.97 = getv %tmp.96 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.98 110 43 51 ];
-        %tmp.98 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.99 110 52 72 ];
-        %tmp.99 = getv %tmp.98 :TEXT_JUSTIFY_VCENTER;
-        %tmp.100 = bitor %tmp.97 %tmp.99;
-        invoke %tmp.90 %tmp.91(%tmp.92, %tmp.93, %tmp.94, %tmp.95, %tmp.100);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 113 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
-        %bigFont.11 = local;
-        symbol [ bigFont %bigFont.11 113 12 19 ];
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_begin:
-        %tmp.101 = lgetv %isTrans.5;
-        symbol [ isTrans %tmp.101 113 22 29 ];
-        bf %tmp.101 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_true:
-        %tmp.102 = self;
-        symbol [ getNameFont %tmp.103 113 32 43 ];
-        %tmp.103 = getv function %tmp.102 :getNameFont;
-        %tmp.104 = lgetv %W;
-        symbol [ W %tmp.104 113 44 45 ];
-        %tmp.105 = invoke %tmp.102 %tmp.103(%tmp.104);
-        push %tmp.105;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_else_false:
-        %tmp.106 = self;
-        symbol [ getBigFont %tmp.107 113 49 59 ];
-        %tmp.107 = getv function %tmp.106 :getBigFont;
-        %tmp.108 = lgetv %W;
-        symbol [ W %tmp.108 113 60 61 ];
-        %tmp.109 = invoke %tmp.106 %tmp.107(%tmp.108);
-        push %tmp.109;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_end:
-        %tmp.110 = phi [%tmp.101 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_begin] [%tmp.105 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_true] [%tmp.109 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_else_false] [%tmp.110 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_113_22_113_61_end];
-        lputv %bigFont.11 %tmp.110;
-        symbol [ bigFont %bigFont.11 113 12 19 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 114 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
-        %timerY.12 = local;
-        symbol [ timerY %timerY.12 114 12 18 ];
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_begin:
-        %tmp.111 = lgetv %isRound;
-        symbol [ isRound %tmp.111 114 22 29 ];
-        bf %tmp.111 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_true:
-        %tmp.112 = lgetv %H;
-        symbol [ H %tmp.112 114 33 34 ];
-        %tmp.113 = 0.47;
-        %tmp.114 = mul %tmp.112 %tmp.113;
-        symbol [ toNumber %tmp.115 114 43 51 ];
-        %tmp.115 = getv function %tmp.114 :toNumber;
-        %tmp.116 = invoke %tmp.114 %tmp.115();
-        push %tmp.116;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_else_false:
-        %tmp.117 = lgetv %H;
-        symbol [ H %tmp.117 114 57 58 ];
-        %tmp.118 = 0.45;
-        %tmp.119 = mul %tmp.117 %tmp.118;
-        symbol [ toNumber %tmp.120 114 67 75 ];
-        %tmp.120 = getv function %tmp.119 :toNumber;
-        %tmp.121 = invoke %tmp.119 %tmp.120();
-        push %tmp.121;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_end:
-        %tmp.122 = phi [%tmp.111 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_begin] [%tmp.116 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_true] [%tmp.121 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_else_false] [%tmp.122 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_114_22_114_76_end];
-        lputv %timerY.12 %tmp.122;
-        symbol [ timerY %timerY.12 114 12 18 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 115 8 ]
-        %tmp.123 = lgetv %dc;
-        symbol [ dc %tmp.123 115 8 10 ];
-        symbol [ setColor %tmp.124 115 11 19 ];
-        %tmp.124 = getv function %tmp.123 :setColor;
-        %tmp.125 = lgetv %accent.4;
-        symbol [ accent %tmp.125 115 20 26 ];
-        symbol [ Graphics %tmp.126 115 28 36 ];
-        %tmp.126 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.127 115 37 54 ];
-        %tmp.127 = getv %tmp.126 :COLOR_TRANSPARENT;
-        invoke %tmp.123 %tmp.124(%tmp.125, %tmp.127);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 116 8 ]
-        %tmp.128 = lgetv %dc;
-        symbol [ dc %tmp.128 116 8 10 ];
-        symbol [ drawText %tmp.129 116 11 19 ];
-        %tmp.129 = getv function %tmp.128 :drawText;
-        %tmp.130 = lgetv %cx;
-        symbol [ cx %tmp.130 116 20 22 ];
-        %tmp.131 = lgetv %timerY.12;
-        symbol [ timerY %tmp.131 116 24 30 ];
-        %tmp.132 = lgetv %bigFont.11;
-        symbol [ bigFont %tmp.132 116 32 39 ];
-        symbol [ gModel %tmp.134 117 12 18 ];
-        %tmp.134 = getv ? :gModel;
-        symbol [ formatTime %tmp.135 117 19 29 ];
-        %tmp.135 = getv function %tmp.134 :formatTime;
-        symbol [ gModel %tmp.137 117 30 36 ];
-        %tmp.137 = getv ? :gModel;
-        symbol [ splitTimer %tmp.138 117 37 47 ];
-        %tmp.138 = getv %tmp.137 :splitTimer;
-        %tmp.139 = invoke %tmp.134 %tmp.135(%tmp.138);
-        symbol [ Graphics %tmp.140 118 12 20 ];
-        %tmp.140 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.141 118 21 40 ];
-        %tmp.141 = getv %tmp.140 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.142 118 43 51 ];
-        %tmp.142 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.143 118 52 72 ];
-        %tmp.143 = getv %tmp.142 :TEXT_JUSTIFY_VCENTER;
-        %tmp.144 = bitor %tmp.141 %tmp.143;
-        invoke %tmp.128 %tmp.129(%tmp.130, %tmp.131, %tmp.132, %tmp.139, %tmp.144);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 121 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop" ]
-        %totalY.13 = local;
-        symbol [ totalY %totalY.13 121 12 18 ];
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_begin:
-        %tmp.145 = lgetv %isRound;
-        symbol [ isRound %tmp.145 121 21 28 ];
-        bf %tmp.145 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_true:
-        %tmp.146 = lgetv %H;
-        symbol [ H %tmp.146 121 32 33 ];
-        %tmp.147 = 0.64;
-        %tmp.148 = mul %tmp.146 %tmp.147;
-        symbol [ toNumber %tmp.149 121 42 50 ];
-        %tmp.149 = getv function %tmp.148 :toNumber;
-        %tmp.150 = invoke %tmp.148 %tmp.149();
-        push %tmp.150;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_else_false:
-        %tmp.151 = lgetv %H;
-        symbol [ H %tmp.151 121 56 57 ];
-        %tmp.152 = 0.62;
-        %tmp.153 = mul %tmp.151 %tmp.152;
-        symbol [ toNumber %tmp.154 121 66 74 ];
-        %tmp.154 = getv function %tmp.153 :toNumber;
-        %tmp.155 = invoke %tmp.153 %tmp.154();
-        push %tmp.155;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_end:
-        %tmp.156 = phi [%tmp.145 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_begin] [%tmp.150 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_true] [%tmp.155 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_else_false] [%tmp.156 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_121_21_121_75_end];
-        lputv %totalY.13 %tmp.156;
-        symbol [ totalY %totalY.13 121 12 18 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 122 8 ]
-        %tmp.157 = lgetv %dc;
-        symbol [ dc %tmp.157 122 8 10 ];
-        symbol [ setColor %tmp.158 122 11 19 ];
-        %tmp.158 = getv function %tmp.157 :setColor;
-        symbol [ COLOR_MUTED %tmp.160 122 20 31 ];
-        %tmp.160 = getv ? :COLOR_MUTED;
-        symbol [ Graphics %tmp.161 122 33 41 ];
-        %tmp.161 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.162 122 42 59 ];
-        %tmp.162 = getv %tmp.161 :COLOR_TRANSPARENT;
-        invoke %tmp.157 %tmp.158(%tmp.160, %tmp.162);
+        symbol [ COLOR_TRANSPARENT %tmp.97 118 38 55 ];
+        %tmp.97 = getv %tmp.96 :COLOR_TRANSPARENT;
+        invoke %tmp.93 %tmp.94(%tmp.95, %tmp.97);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 119 8 ]
+        %tmp.98 = lgetv %dc;
+        symbol [ dc %tmp.98 119 8 10 ];
+        symbol [ drawText %tmp.99 119 11 19 ];
+        %tmp.99 = getv function %tmp.98 :drawText;
+        %tmp.100 = lgetv %cx;
+        symbol [ cx %tmp.100 119 20 22 ];
+        %tmp.101 = lgetv %nameY.8;
+        symbol [ nameY %tmp.101 119 24 29 ];
+        %tmp.102 = lgetv %nameFont.9;
+        symbol [ nameFont %tmp.102 119 31 39 ];
+        %tmp.103 = lgetv %nameText.11;
+        symbol [ nameText %tmp.103 119 41 49 ];
+        symbol [ Graphics %tmp.104 120 12 20 ];
+        %tmp.104 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.105 120 21 40 ];
+        %tmp.105 = getv %tmp.104 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.106 120 43 51 ];
+        %tmp.106 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.107 120 52 72 ];
+        %tmp.107 = getv %tmp.106 :TEXT_JUSTIFY_VCENTER;
+        %tmp.108 = bitor %tmp.105 %tmp.107;
+        invoke %tmp.98 %tmp.99(%tmp.100, %tmp.101, %tmp.102, %tmp.103, %tmp.108);
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 123 8 ]
-        %tmp.163 = lgetv %dc;
-        symbol [ dc %tmp.163 123 8 10 ];
-        symbol [ drawText %tmp.164 123 11 19 ];
-        %tmp.164 = getv function %tmp.163 :drawText;
-        %tmp.165 = lgetv %cx;
-        symbol [ cx %tmp.165 123 20 22 ];
-        %tmp.166 = lgetv %totalY.13;
-        symbol [ totalY %tmp.166 123 24 30 ];
-        symbol [ Graphics %tmp.167 123 32 40 ];
-        %tmp.167 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.168 123 41 50 ];
-        %tmp.168 = getv %tmp.167 :FONT_TINY;
-        %tmp.169 = "Total  ";
-        symbol [ gModel %tmp.171 124 24 30 ];
-        %tmp.171 = getv ? :gModel;
-        symbol [ formatTime %tmp.172 124 31 41 ];
-        %tmp.172 = getv function %tmp.171 :formatTime;
-        symbol [ gModel %tmp.174 124 42 48 ];
-        %tmp.174 = getv ? :gModel;
-        symbol [ totalTimer %tmp.175 124 49 59 ];
-        %tmp.175 = getv %tmp.174 :totalTimer;
-        %tmp.176 = invoke %tmp.171 %tmp.172(%tmp.175);
-        %tmp.177 = add %tmp.169 %tmp.176;
-        symbol [ Graphics %tmp.178 125 12 20 ];
-        %tmp.178 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.179 125 21 40 ];
-        %tmp.179 = getv %tmp.178 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.180 125 43 51 ];
-        %tmp.180 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.181 125 52 72 ];
-        %tmp.181 = getv %tmp.180 :TEXT_JUSTIFY_VCENTER;
-        %tmp.182 = bitor %tmp.179 %tmp.181;
-        invoke %tmp.163 %tmp.164(%tmp.165, %tmp.166, %tmp.168, %tmp.177, %tmp.182);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 128 8 ]
-        %tmp.183 = self;
-        symbol [ drawProgressBar %tmp.184 128 8 23 ];
-        %tmp.184 = getv function %tmp.183 :drawProgressBar;
-        %tmp.185 = lgetv %dc;
-        symbol [ dc %tmp.185 128 24 26 ];
-        %tmp.186 = lgetv %W;
-        symbol [ W %tmp.186 128 28 29 ];
-        %tmp.187 = lgetv %H;
-        symbol [ H %tmp.187 128 31 32 ];
-        %tmp.188 = lgetv %accent.4;
-        symbol [ accent %tmp.188 128 34 40 ];
-        invoke %tmp.183 %tmp.184(%tmp.185, %tmp.186, %tmp.187, %tmp.188);
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
+        %bigFont.12 = local;
+        symbol [ bigFont %bigFont.12 123 12 19 ];
+        %tmp.109 = self;
+        symbol [ getBigFont %tmp.110 123 22 32 ];
+        %tmp.110 = getv function %tmp.109 :getBigFont;
+        %tmp.111 = lgetv %W;
+        symbol [ W %tmp.111 123 33 34 ];
+        %tmp.112 = invoke %tmp.109 %tmp.110(%tmp.111);
+        lputv %bigFont.12 %tmp.112;
+        symbol [ bigFont %bigFont.12 123 12 19 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 124 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
+        %timerY.13 = local;
+        symbol [ timerY %timerY.13 124 12 18 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_begin:
+        %tmp.113 = lgetv %isRound;
+        symbol [ isRound %tmp.113 124 22 29 ];
+        bf %tmp.113 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_true:
+        %tmp.114 = lgetv %H;
+        symbol [ H %tmp.114 124 33 34 ];
+        %tmp.115 = 0.47;
+        %tmp.116 = mul %tmp.114 %tmp.115;
+        symbol [ toNumber %tmp.117 124 43 51 ];
+        %tmp.117 = getv function %tmp.116 :toNumber;
+        %tmp.118 = invoke %tmp.116 %tmp.117();
+        push %tmp.118;
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_else_false:
+        %tmp.119 = lgetv %H;
+        symbol [ H %tmp.119 124 57 58 ];
+        %tmp.120 = 0.45;
+        %tmp.121 = mul %tmp.119 %tmp.120;
+        symbol [ toNumber %tmp.122 124 67 75 ];
+        %tmp.122 = getv function %tmp.121 :toNumber;
+        %tmp.123 = invoke %tmp.121 %tmp.122();
+        push %tmp.123;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_end:
+        %tmp.124 = phi [%tmp.113 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_begin] [%tmp.118 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_true] [%tmp.123 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_else_false] [%tmp.124 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_124_22_124_76_end];
+        lputv %timerY.13 %tmp.124;
+        symbol [ timerY %timerY.13 124 12 18 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 125 8 ]
+        %tmp.125 = lgetv %dc;
+        symbol [ dc %tmp.125 125 8 10 ];
+        symbol [ setColor %tmp.126 125 11 19 ];
+        %tmp.126 = getv function %tmp.125 :setColor;
+        %tmp.127 = lgetv %accent.4;
+        symbol [ accent %tmp.127 125 20 26 ];
+        symbol [ Graphics %tmp.128 125 28 36 ];
+        %tmp.128 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.129 125 37 54 ];
+        %tmp.129 = getv %tmp.128 :COLOR_TRANSPARENT;
+        invoke %tmp.125 %tmp.126(%tmp.127, %tmp.129);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 126 8 ]
+        %tmp.130 = lgetv %dc;
+        symbol [ dc %tmp.130 126 8 10 ];
+        symbol [ drawText %tmp.131 126 11 19 ];
+        %tmp.131 = getv function %tmp.130 :drawText;
+        %tmp.132 = lgetv %cx;
+        symbol [ cx %tmp.132 126 20 22 ];
+        %tmp.133 = lgetv %timerY.13;
+        symbol [ timerY %tmp.133 126 24 30 ];
+        %tmp.134 = lgetv %bigFont.12;
+        symbol [ bigFont %tmp.134 126 32 39 ];
+        symbol [ gModel %tmp.136 127 12 18 ];
+        %tmp.136 = getv ? :gModel;
+        symbol [ formatTime %tmp.137 127 19 29 ];
+        %tmp.137 = getv function %tmp.136 :formatTime;
+        symbol [ gModel %tmp.139 127 30 36 ];
+        %tmp.139 = getv ? :gModel;
+        symbol [ splitTimer %tmp.140 127 37 47 ];
+        %tmp.140 = getv %tmp.139 :splitTimer;
+        %tmp.141 = invoke %tmp.136 %tmp.137(%tmp.140);
+        symbol [ Graphics %tmp.142 128 12 20 ];
+        %tmp.142 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.143 128 21 40 ];
+        %tmp.143 = getv %tmp.142 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.144 128 43 51 ];
+        %tmp.144 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.145 128 52 72 ];
+        %tmp.145 = getv %tmp.144 :TEXT_JUSTIFY_VCENTER;
+        %tmp.146 = bitor %tmp.143 %tmp.145;
+        invoke %tmp.130 %tmp.131(%tmp.132, %tmp.133, %tmp.134, %tmp.141, %tmp.146);
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 131 8 ]
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_8_133_8_if_stmt:
-        symbol [ gModel %tmp.190 131 12 18 ];
-        %tmp.190 = getv ? :gModel;
-        symbol [ showHR %tmp.191 131 19 25 ];
-        %tmp.191 = getv %tmp.190 :showHR;
-        bf %tmp.191 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_8_133_8_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_8_133_8_if_true:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_27_133_8_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 132 12 ]
-        %tmp.192 = self;
-        symbol [ drawHRPill %tmp.193 132 12 22 ];
-        %tmp.193 = getv function %tmp.192 :drawHRPill;
-        %tmp.194 = lgetv %dc;
-        symbol [ dc %tmp.194 132 23 25 ];
-        %tmp.195 = lgetv %W;
-        symbol [ W %tmp.195 132 27 28 ];
-        %tmp.196 = lgetv %H;
-        symbol [ H %tmp.196 132 30 31 ];
-        %tmp.197 = lgetv %cx;
-        symbol [ cx %tmp.197 132 33 35 ];
-        invoke %tmp.192 %tmp.193(%tmp.194, %tmp.195, %tmp.196, %tmp.197);
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_27_133_8_stop:
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_8_133_8_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_8_133_8_if_end:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_90_52_134_4_stop:
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop" ]
+        %totalY.14 = local;
+        symbol [ totalY %totalY.14 131 12 18 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_begin:
+        %tmp.147 = lgetv %isRound;
+        symbol [ isRound %tmp.147 131 21 28 ];
+        bf %tmp.147 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_true:
+        %tmp.148 = lgetv %H;
+        symbol [ H %tmp.148 131 32 33 ];
+        %tmp.149 = 0.64;
+        %tmp.150 = mul %tmp.148 %tmp.149;
+        symbol [ toNumber %tmp.151 131 42 50 ];
+        %tmp.151 = getv function %tmp.150 :toNumber;
+        %tmp.152 = invoke %tmp.150 %tmp.151();
+        push %tmp.152;
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_else_false:
+        %tmp.153 = lgetv %H;
+        symbol [ H %tmp.153 131 56 57 ];
+        %tmp.154 = 0.62;
+        %tmp.155 = mul %tmp.153 %tmp.154;
+        symbol [ toNumber %tmp.156 131 66 74 ];
+        %tmp.156 = getv function %tmp.155 :toNumber;
+        %tmp.157 = invoke %tmp.155 %tmp.156();
+        push %tmp.157;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_end:
+        %tmp.158 = phi [%tmp.147 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_begin] [%tmp.152 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_true] [%tmp.157 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_else_false] [%tmp.158 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_131_21_131_75_end];
+        lputv %totalY.14 %tmp.158;
+        symbol [ totalY %totalY.14 131 12 18 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 132 8 ]
+        %tmp.159 = lgetv %dc;
+        symbol [ dc %tmp.159 132 8 10 ];
+        symbol [ setColor %tmp.160 132 11 19 ];
+        %tmp.160 = getv function %tmp.159 :setColor;
+        symbol [ COLOR_MUTED %tmp.162 132 20 31 ];
+        %tmp.162 = getv ? :COLOR_MUTED;
+        symbol [ Graphics %tmp.163 132 33 41 ];
+        %tmp.163 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.164 132 42 59 ];
+        %tmp.164 = getv %tmp.163 :COLOR_TRANSPARENT;
+        invoke %tmp.159 %tmp.160(%tmp.162, %tmp.164);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 133 8 ]
+        %tmp.165 = lgetv %dc;
+        symbol [ dc %tmp.165 133 8 10 ];
+        symbol [ drawText %tmp.166 133 11 19 ];
+        %tmp.166 = getv function %tmp.165 :drawText;
+        %tmp.167 = lgetv %cx;
+        symbol [ cx %tmp.167 133 20 22 ];
+        %tmp.168 = lgetv %totalY.14;
+        symbol [ totalY %tmp.168 133 24 30 ];
+        symbol [ Graphics %tmp.169 133 32 40 ];
+        %tmp.169 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.170 133 41 50 ];
+        %tmp.170 = getv %tmp.169 :FONT_TINY;
+        %tmp.171 = "Total  ";
+        symbol [ gModel %tmp.173 134 24 30 ];
+        %tmp.173 = getv ? :gModel;
+        symbol [ formatTime %tmp.174 134 31 41 ];
+        %tmp.174 = getv function %tmp.173 :formatTime;
+        symbol [ gModel %tmp.176 134 42 48 ];
+        %tmp.176 = getv ? :gModel;
+        symbol [ totalTimer %tmp.177 134 49 59 ];
+        %tmp.177 = getv %tmp.176 :totalTimer;
+        %tmp.178 = invoke %tmp.173 %tmp.174(%tmp.177);
+        %tmp.179 = add %tmp.171 %tmp.178;
+        symbol [ Graphics %tmp.180 135 12 20 ];
+        %tmp.180 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.181 135 21 40 ];
+        %tmp.181 = getv %tmp.180 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.182 135 43 51 ];
+        %tmp.182 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.183 135 52 72 ];
+        %tmp.183 = getv %tmp.182 :TEXT_JUSTIFY_VCENTER;
+        %tmp.184 = bitor %tmp.181 %tmp.183;
+        invoke %tmp.165 %tmp.166(%tmp.167, %tmp.168, %tmp.170, %tmp.179, %tmp.184);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 138 8 ]
+        %tmp.185 = self;
+        symbol [ drawProgressBar %tmp.186 138 8 23 ];
+        %tmp.186 = getv function %tmp.185 :drawProgressBar;
+        %tmp.187 = lgetv %dc;
+        symbol [ dc %tmp.187 138 24 26 ];
+        %tmp.188 = lgetv %W;
+        symbol [ W %tmp.188 138 28 29 ];
+        %tmp.189 = lgetv %H;
+        symbol [ H %tmp.189 138 31 32 ];
+        %tmp.190 = lgetv %accent.4;
+        symbol [ accent %tmp.190 138 34 40 ];
+        invoke %tmp.185 %tmp.186(%tmp.187, %tmp.188, %tmp.189, %tmp.190);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 141 8 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_141_8_143_8_if_stmt:
+        symbol [ gModel %tmp.192 141 12 18 ];
+        %tmp.192 = getv ? :gModel;
+        symbol [ showHR %tmp.193 141 19 25 ];
+        %tmp.193 = getv %tmp.192 :showHR;
+        bf %tmp.193 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_141_8_143_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_141_8_143_8_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_141_27_143_8_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 142 12 ]
+        %tmp.194 = self;
+        symbol [ drawHRPill %tmp.195 142 12 22 ];
+        %tmp.195 = getv function %tmp.194 :drawHRPill;
+        %tmp.196 = lgetv %dc;
+        symbol [ dc %tmp.196 142 23 25 ];
+        %tmp.197 = lgetv %W;
+        symbol [ W %tmp.197 142 27 28 ];
+        %tmp.198 = lgetv %H;
+        symbol [ H %tmp.198 142 30 31 ];
+        %tmp.199 = lgetv %cx;
+        symbol [ cx %tmp.199 142 33 35 ];
+        invoke %tmp.194 %tmp.195(%tmp.196, %tmp.197, %tmp.198, %tmp.199);
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_141_27_143_8_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_141_8_143_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_141_8_143_8_if_end:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_99_52_144_4_stop:
     }
-    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 138; @symbol_functiondef = [drawProgressBar,138,13,28]; @symbol_param<0> = [dc,138,29,31]; @symbol_param<0>_type<0> = [Graphics,138,35,43]; @symbol_param<0>_type<1> = [Dc,138,44,46]; @symbol_param<1> = [W,138,48,49]; @symbol_param<1>_type<0> = [Number,138,53,59]; @symbol_param<2> = [H,138,61,62]; @symbol_param<2>_type<0> = [Number,138,66,72]; @symbol_param<3> = [accent,139,30,36]; @symbol_param<3>_type<0> = [Number,139,40,46]; ]
+    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 148; @symbol_functiondef = [drawProgressBar,148,13,28]; @symbol_param<0> = [dc,148,29,31]; @symbol_param<0>_type<0> = [Graphics,148,35,43]; @symbol_param<0>_type<1> = [Dc,148,44,46]; @symbol_param<1> = [W,148,48,49]; @symbol_param<1>_type<0> = [Number,148,53,59]; @symbol_param<2> = [H,148,61,62]; @symbol_param<2>_type<0> = [Number,148,66,72]; @symbol_param<3> = [accent,149,30,36]; @symbol_param<3>_type<0> = [Number,149,40,46]; ]
     function drawProgressBar(dc as Graphics.Dc, W as Number, H as Number, accent as Number) as Void {
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_139_56_153_4_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 140 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_139_56_153_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_139_56_153_4_stop" ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_56_163_4_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 150 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_56_163_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_56_163_4_stop" ]
         %barY.1 = local;
-        symbol [ barY %barY.1 140 12 16 ];
+        symbol [ barY %barY.1 150 12 16 ];
         %tmp.1 = lgetv %H;
-        symbol [ H %tmp.1 140 20 21 ];
+        symbol [ H %tmp.1 150 20 21 ];
         %tmp.2 = 0.74;
         %tmp.3 = mul %tmp.1 %tmp.2;
-        symbol [ toNumber %tmp.4 140 30 38 ];
+        symbol [ toNumber %tmp.4 150 30 38 ];
         %tmp.4 = getv function %tmp.3 :toNumber;
         %tmp.5 = invoke %tmp.3 %tmp.4();
         lputv %barY.1 %tmp.5;
-        symbol [ barY %barY.1 140 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 141 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_139_56_153_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_139_56_153_4_stop" ]
+        symbol [ barY %barY.1 150 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 151 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_56_163_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_56_163_4_stop" ]
         %barH.2 = local;
-        symbol [ barH %barH.2 141 12 16 ];
+        symbol [ barH %barH.2 151 12 16 ];
         %tmp.6 = 4;
         lputv %barH.2 %tmp.6;
-        symbol [ barH %barH.2 141 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 144 8 ]
+        symbol [ barH %barH.2 151 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 154 8 ]
         %tmp.7 = lgetv %dc;
-        symbol [ dc %tmp.7 144 8 10 ];
-        symbol [ setColor %tmp.8 144 11 19 ];
+        symbol [ dc %tmp.7 154 8 10 ];
+        symbol [ setColor %tmp.8 154 11 19 ];
         %tmp.8 = getv function %tmp.7 :setColor;
-        symbol [ COLOR_BORDER %tmp.10 144 20 32 ];
-        %tmp.10 = getv ? :COLOR_BORDER;
-        symbol [ Graphics %tmp.11 144 34 42 ];
+        symbol [ COLOR_SURFACE %tmp.10 154 20 33 ];
+        %tmp.10 = getv ? :COLOR_SURFACE;
+        symbol [ Graphics %tmp.11 154 35 43 ];
         %tmp.11 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.12 144 43 60 ];
+        symbol [ COLOR_TRANSPARENT %tmp.12 154 44 61 ];
         %tmp.12 = getv %tmp.11 :COLOR_TRANSPARENT;
         invoke %tmp.7 %tmp.8(%tmp.10, %tmp.12);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 145 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 155 8 ]
         %tmp.13 = lgetv %dc;
-        symbol [ dc %tmp.13 145 8 10 ];
-        symbol [ fillRectangle %tmp.14 145 11 24 ];
+        symbol [ dc %tmp.13 155 8 10 ];
+        symbol [ fillRectangle %tmp.14 155 11 24 ];
         %tmp.14 = getv function %tmp.13 :fillRectangle;
         %tmp.15 = 0;
         %tmp.16 = lgetv %barY.1;
-        symbol [ barY %tmp.16 145 28 32 ];
+        symbol [ barY %tmp.16 155 28 32 ];
         %tmp.17 = lgetv %W;
-        symbol [ W %tmp.17 145 34 35 ];
+        symbol [ W %tmp.17 155 34 35 ];
         %tmp.18 = lgetv %barH.2;
-        symbol [ barH %tmp.18 145 37 41 ];
+        symbol [ barH %tmp.18 155 37 41 ];
         invoke %tmp.13 %tmp.14(%tmp.15, %tmp.16, %tmp.17, %tmp.18);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 148 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_139_56_153_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_139_56_153_4_stop" ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 158 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_56_163_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_56_163_4_stop" ]
         %fillW.3 = local;
-        symbol [ fillW %fillW.3 148 12 17 ];
-        symbol [ gModel %tmp.20 148 21 27 ];
+        symbol [ fillW %fillW.3 158 12 17 ];
+        symbol [ gModel %tmp.20 158 21 27 ];
         %tmp.20 = getv ? :gModel;
-        symbol [ getProgress %tmp.21 148 28 39 ];
+        symbol [ getProgress %tmp.21 158 28 39 ];
         %tmp.21 = getv function %tmp.20 :getProgress;
         %tmp.22 = invoke %tmp.20 %tmp.21();
         %tmp.23 = lgetv %W;
-        symbol [ W %tmp.23 148 44 45 ];
+        symbol [ W %tmp.23 158 44 45 ];
         %tmp.24 = mul %tmp.22 %tmp.23;
-        symbol [ toNumber %tmp.25 148 47 55 ];
+        symbol [ toNumber %tmp.25 158 47 55 ];
         %tmp.25 = getv function %tmp.24 :toNumber;
         %tmp.26 = invoke %tmp.24 %tmp.25();
         lputv %fillW.3 %tmp.26;
-        symbol [ fillW %fillW.3 148 12 17 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 149 8 ]
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_8_152_8_if_stmt:
+        symbol [ fillW %fillW.3 158 12 17 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 159 8 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_159_8_162_8_if_stmt:
         %tmp.27 = lgetv %fillW.3;
-        symbol [ fillW %tmp.27 149 12 17 ];
+        symbol [ fillW %tmp.27 159 12 17 ];
         %tmp.28 = 0;
         %tmp.29 = gt %tmp.27 %tmp.28;
-        bf %tmp.29 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_8_152_8_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_8_152_8_if_true:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_23_152_8_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 150 12 ]
+        bf %tmp.29 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_159_8_162_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_159_8_162_8_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_159_23_162_8_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 160 12 ]
         %tmp.30 = lgetv %dc;
-        symbol [ dc %tmp.30 150 12 14 ];
-        symbol [ setColor %tmp.31 150 15 23 ];
+        symbol [ dc %tmp.30 160 12 14 ];
+        symbol [ setColor %tmp.31 160 15 23 ];
         %tmp.31 = getv function %tmp.30 :setColor;
         %tmp.32 = lgetv %accent;
-        symbol [ accent %tmp.32 150 24 30 ];
-        symbol [ Graphics %tmp.33 150 32 40 ];
+        symbol [ accent %tmp.32 160 24 30 ];
+        symbol [ Graphics %tmp.33 160 32 40 ];
         %tmp.33 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.34 150 41 58 ];
+        symbol [ COLOR_TRANSPARENT %tmp.34 160 41 58 ];
         %tmp.34 = getv %tmp.33 :COLOR_TRANSPARENT;
         invoke %tmp.30 %tmp.31(%tmp.32, %tmp.34);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 151 12 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 161 12 ]
         %tmp.35 = lgetv %dc;
-        symbol [ dc %tmp.35 151 12 14 ];
-        symbol [ fillRectangle %tmp.36 151 15 28 ];
+        symbol [ dc %tmp.35 161 12 14 ];
+        symbol [ fillRectangle %tmp.36 161 15 28 ];
         %tmp.36 = getv function %tmp.35 :fillRectangle;
         %tmp.37 = 0;
         %tmp.38 = lgetv %barY.1;
-        symbol [ barY %tmp.38 151 32 36 ];
+        symbol [ barY %tmp.38 161 32 36 ];
         %tmp.39 = lgetv %fillW.3;
-        symbol [ fillW %tmp.39 151 38 43 ];
+        symbol [ fillW %tmp.39 161 38 43 ];
         %tmp.40 = lgetv %barH.2;
-        symbol [ barH %tmp.40 151 45 49 ];
+        symbol [ barH %tmp.40 161 45 49 ];
         invoke %tmp.35 %tmp.36(%tmp.37, %tmp.38, %tmp.39, %tmp.40);
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_23_152_8_stop:
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_8_152_8_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_8_152_8_if_end:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_139_56_153_4_stop:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_159_23_162_8_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_159_8_162_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_159_8_162_8_if_end:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_149_56_163_4_stop:
     }
-    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 157; @symbol_functiondef = [drawHRPill,157,13,23]; @symbol_param<0> = [dc,157,24,26]; @symbol_param<0>_type<0> = [Graphics,157,30,38]; @symbol_param<0>_type<1> = [Dc,157,39,41]; @symbol_param<1> = [W,157,43,44]; @symbol_param<1>_type<0> = [Number,157,48,54]; @symbol_param<2> = [H,157,56,57]; @symbol_param<2>_type<0> = [Number,157,61,67]; @symbol_param<3> = [cx,158,24,26]; @symbol_param<3>_type<0> = [Number,158,30,36]; ]
+    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 167; @symbol_functiondef = [drawHRPill,167,13,23]; @symbol_param<0> = [dc,167,24,26]; @symbol_param<0>_type<0> = [Graphics,167,30,38]; @symbol_param<0>_type<1> = [Dc,167,39,41]; @symbol_param<1> = [W,167,43,44]; @symbol_param<1>_type<0> = [Number,167,48,54]; @symbol_param<2> = [H,167,56,57]; @symbol_param<2>_type<0> = [Number,167,61,67]; @symbol_param<3> = [cx,168,24,26]; @symbol_param<3>_type<0> = [Number,168,30,36]; ]
     function drawHRPill(dc as Graphics.Dc, W as Number, H as Number, cx as Number) as Void {
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 159 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_stop" ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 169 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_stop" ]
         %pillW.1 = local;
-        symbol [ pillW %pillW.1 159 12 17 ];
+        symbol [ pillW %pillW.1 169 12 17 ];
         %tmp.1 = lgetv %W;
-        symbol [ W %tmp.1 159 21 22 ];
+        symbol [ W %tmp.1 169 21 22 ];
         %tmp.2 = 0.36;
         %tmp.3 = mul %tmp.1 %tmp.2;
-        symbol [ toNumber %tmp.4 159 31 39 ];
+        symbol [ toNumber %tmp.4 169 31 39 ];
         %tmp.4 = getv function %tmp.3 :toNumber;
         %tmp.5 = invoke %tmp.3 %tmp.4();
         lputv %pillW.1 %tmp.5;
-        symbol [ pillW %pillW.1 159 12 17 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 160 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_stop" ]
+        symbol [ pillW %pillW.1 169 12 17 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 170 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_stop" ]
         %pillH.2 = local;
-        symbol [ pillH %pillH.2 160 12 17 ];
+        symbol [ pillH %pillH.2 170 12 17 ];
         %tmp.6 = 26;
         lputv %pillH.2 %tmp.6;
-        symbol [ pillH %pillH.2 160 12 17 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 161 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_stop" ]
+        symbol [ pillH %pillH.2 170 12 17 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 171 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_stop" ]
         %pillX.3 = local;
-        symbol [ pillX %pillX.3 161 12 17 ];
+        symbol [ pillX %pillX.3 171 12 17 ];
         %tmp.7 = lgetv %cx;
-        symbol [ cx %tmp.7 161 20 22 ];
+        symbol [ cx %tmp.7 171 20 22 ];
         %tmp.8 = lgetv %pillW.1;
-        symbol [ pillW %tmp.8 161 25 30 ];
+        symbol [ pillW %tmp.8 171 25 30 ];
         %tmp.9 = 2;
         %tmp.10 = div %tmp.8 %tmp.9;
         %tmp.11 = sub %tmp.7 %tmp.10;
         lputv %pillX.3 %tmp.11;
-        symbol [ pillX %pillX.3 161 12 17 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 162 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_stop" ]
+        symbol [ pillX %pillX.3 171 12 17 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 172 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_stop" ]
         %pillY.4 = local;
-        symbol [ pillY %pillY.4 162 12 17 ];
+        symbol [ pillY %pillY.4 172 12 17 ];
         %tmp.12 = lgetv %H;
-        symbol [ H %tmp.12 162 21 22 ];
+        symbol [ H %tmp.12 172 21 22 ];
         %tmp.13 = 0.87;
         %tmp.14 = mul %tmp.12 %tmp.13;
-        symbol [ toNumber %tmp.15 162 31 39 ];
+        symbol [ toNumber %tmp.15 172 31 39 ];
         %tmp.15 = getv function %tmp.14 :toNumber;
         %tmp.16 = invoke %tmp.14 %tmp.15();
         %tmp.17 = lgetv %pillH.2;
-        symbol [ pillH %tmp.17 162 44 49 ];
+        symbol [ pillH %tmp.17 172 44 49 ];
         %tmp.18 = 2;
         %tmp.19 = div %tmp.17 %tmp.18;
         %tmp.20 = sub %tmp.16 %tmp.19;
         lputv %pillY.4 %tmp.20;
-        symbol [ pillY %pillY.4 162 12 17 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 164 8 ]
+        symbol [ pillY %pillY.4 172 12 17 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 175 8 ]
         %tmp.21 = lgetv %dc;
-        symbol [ dc %tmp.21 164 8 10 ];
-        symbol [ setColor %tmp.22 164 11 19 ];
+        symbol [ dc %tmp.21 175 8 10 ];
+        symbol [ setColor %tmp.22 175 11 19 ];
         %tmp.22 = getv function %tmp.21 :setColor;
-        symbol [ COLOR_SURFACE %tmp.24 164 20 33 ];
-        %tmp.24 = getv ? :COLOR_SURFACE;
-        symbol [ Graphics %tmp.25 164 35 43 ];
+        symbol [ COLOR_BORDER %tmp.24 175 20 32 ];
+        %tmp.24 = getv ? :COLOR_BORDER;
+        symbol [ Graphics %tmp.25 175 34 42 ];
         %tmp.25 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.26 164 44 61 ];
+        symbol [ COLOR_TRANSPARENT %tmp.26 175 43 60 ];
         %tmp.26 = getv %tmp.25 :COLOR_TRANSPARENT;
         invoke %tmp.21 %tmp.22(%tmp.24, %tmp.26);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 165 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 176 8 ]
         %tmp.27 = lgetv %dc;
-        symbol [ dc %tmp.27 165 8 10 ];
-        symbol [ fillRoundedRectangle %tmp.28 165 11 31 ];
+        symbol [ dc %tmp.27 176 8 10 ];
+        symbol [ fillRoundedRectangle %tmp.28 176 11 31 ];
         %tmp.28 = getv function %tmp.27 :fillRoundedRectangle;
         %tmp.29 = lgetv %pillX.3;
-        symbol [ pillX %tmp.29 165 32 37 ];
-        %tmp.30 = lgetv %pillY.4;
-        symbol [ pillY %tmp.30 165 39 44 ];
-        %tmp.31 = lgetv %pillW.1;
-        symbol [ pillW %tmp.31 165 46 51 ];
-        %tmp.32 = lgetv %pillH.2;
-        symbol [ pillH %tmp.32 165 53 58 ];
-        %tmp.33 = 13;
-        invoke %tmp.27 %tmp.28(%tmp.29, %tmp.30, %tmp.31, %tmp.32, %tmp.33);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 167 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_stop" ]
-        %hrStr.5 = local;
-        symbol [ hrStr %hrStr.5 167 12 17 ];
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_begin:
-        symbol [ gModel %tmp.35 167 21 27 ];
-        %tmp.35 = getv ? :gModel;
-        symbol [ hrValue %tmp.36 167 28 35 ];
-        %tmp.36 = getv %tmp.35 :hrValue;
-        %tmp.37 = null;
-        %tmp.38 = ne %tmp.36 %tmp.37;
-        bf %tmp.38 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_else_false;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_true:
-        %tmp.39 = "HR ";
-        symbol [ gModel %tmp.41 168 23 29 ];
-        %tmp.41 = getv ? :gModel;
-        symbol [ hrValue %tmp.42 168 30 37 ];
-        %tmp.42 = getv %tmp.41 :hrValue;
-        symbol [ format %tmp.43 168 38 44 ];
-        %tmp.43 = getv function %tmp.42 :format;
-        %tmp.44 = "%d";
-        %tmp.45 = invoke %tmp.42 %tmp.43(%tmp.44);
-        %tmp.46 = add %tmp.39 %tmp.45;
-        push %tmp.46;
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_else_false:
-        %tmp.47 = "HR --";
-        push %tmp.47;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_end:
-        %tmp.48 = phi [%tmp.38 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_begin] [%tmp.46 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_true] [%tmp.47 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_else_false] [%tmp.48 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_167_20_169_14_end];
-        lputv %hrStr.5 %tmp.48;
-        symbol [ hrStr %hrStr.5 167 12 17 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 170 8 ]
-        %tmp.49 = lgetv %dc;
-        symbol [ dc %tmp.49 170 8 10 ];
-        symbol [ setColor %tmp.50 170 11 19 ];
-        %tmp.50 = getv function %tmp.49 :setColor;
-        symbol [ COLOR_RED %tmp.52 170 20 29 ];
-        %tmp.52 = getv ? :COLOR_RED;
-        symbol [ Graphics %tmp.53 170 31 39 ];
-        %tmp.53 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.54 170 40 57 ];
-        %tmp.54 = getv %tmp.53 :COLOR_TRANSPARENT;
-        invoke %tmp.49 %tmp.50(%tmp.52, %tmp.54);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 171 8 ]
-        %tmp.55 = lgetv %dc;
-        symbol [ dc %tmp.55 171 8 10 ];
-        symbol [ drawText %tmp.56 171 11 19 ];
-        %tmp.56 = getv function %tmp.55 :drawText;
-        %tmp.57 = lgetv %cx;
-        symbol [ cx %tmp.57 171 20 22 ];
-        %tmp.58 = lgetv %pillY.4;
-        symbol [ pillY %tmp.58 171 24 29 ];
-        %tmp.59 = lgetv %pillH.2;
-        symbol [ pillH %tmp.59 171 32 37 ];
-        %tmp.60 = 2;
-        %tmp.61 = div %tmp.59 %tmp.60;
-        %tmp.62 = add %tmp.58 %tmp.61;
-        symbol [ Graphics %tmp.63 172 12 20 ];
-        %tmp.63 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.64 172 21 30 ];
-        %tmp.64 = getv %tmp.63 :FONT_TINY;
-        %tmp.65 = lgetv %hrStr.5;
-        symbol [ hrStr %tmp.65 172 32 37 ];
-        symbol [ Graphics %tmp.66 173 12 20 ];
-        %tmp.66 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.67 173 21 40 ];
-        %tmp.67 = getv %tmp.66 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.68 173 43 51 ];
-        %tmp.68 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.69 173 52 72 ];
-        %tmp.69 = getv %tmp.68 :TEXT_JUSTIFY_VCENTER;
-        %tmp.70 = bitor %tmp.67 %tmp.69;
-        invoke %tmp.55 %tmp.56(%tmp.57, %tmp.62, %tmp.64, %tmp.65, %tmp.70);
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_158_46_174_4_stop:
-    }
-    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 178; @symbol_functiondef = [drawFinish,178,13,23]; @symbol_param<0> = [dc,178,24,26]; @symbol_param<0>_type<0> = [Graphics,178,30,38]; @symbol_param<0>_type<1> = [Dc,178,39,41]; @symbol_param<1> = [W,178,43,44]; @symbol_param<1>_type<0> = [Number,178,48,54]; @symbol_param<2> = [H,178,56,57]; @symbol_param<2>_type<0> = [Number,178,61,67]; @symbol_param<3> = [cx,179,24,26]; @symbol_param<3>_type<0> = [Number,179,30,36]; @symbol_param<4> = [cy,179,38,40]; @symbol_param<4>_type<0> = [Number,179,44,50]; ]
-    function drawFinish(dc as Graphics.Dc, W as Number, H as Number, cx as Number, cy as Number) as Void {
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_start:
+        symbol [ pillX %tmp.29 176 32 37 ];
+        %tmp.30 = 1;
+        %tmp.31 = sub %tmp.29 %tmp.30;
+        %tmp.32 = lgetv %pillY.4;
+        symbol [ pillY %tmp.32 176 43 48 ];
+        %tmp.33 = 1;
+        %tmp.34 = sub %tmp.32 %tmp.33;
+        %tmp.35 = lgetv %pillW.1;
+        symbol [ pillW %tmp.35 176 54 59 ];
+        %tmp.36 = 2;
+        %tmp.37 = add %tmp.35 %tmp.36;
+        %tmp.38 = lgetv %pillH.2;
+        symbol [ pillH %tmp.38 176 65 70 ];
+        %tmp.39 = 2;
+        %tmp.40 = add %tmp.38 %tmp.39;
+        %tmp.41 = 14;
+        invoke %tmp.27 %tmp.28(%tmp.31, %tmp.34, %tmp.37, %tmp.40, %tmp.41);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 177 8 ]
+        %tmp.42 = lgetv %dc;
+        symbol [ dc %tmp.42 177 8 10 ];
+        symbol [ setColor %tmp.43 177 11 19 ];
+        %tmp.43 = getv function %tmp.42 :setColor;
+        symbol [ COLOR_SURFACE %tmp.45 177 20 33 ];
+        %tmp.45 = getv ? :COLOR_SURFACE;
+        symbol [ Graphics %tmp.46 177 35 43 ];
+        %tmp.46 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.47 177 44 61 ];
+        %tmp.47 = getv %tmp.46 :COLOR_TRANSPARENT;
+        invoke %tmp.42 %tmp.43(%tmp.45, %tmp.47);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 178 8 ]
+        %tmp.48 = lgetv %dc;
+        symbol [ dc %tmp.48 178 8 10 ];
+        symbol [ fillRoundedRectangle %tmp.49 178 11 31 ];
+        %tmp.49 = getv function %tmp.48 :fillRoundedRectangle;
+        %tmp.50 = lgetv %pillX.3;
+        symbol [ pillX %tmp.50 178 32 37 ];
+        %tmp.51 = lgetv %pillY.4;
+        symbol [ pillY %tmp.51 178 39 44 ];
+        %tmp.52 = lgetv %pillW.1;
+        symbol [ pillW %tmp.52 178 46 51 ];
+        %tmp.53 = lgetv %pillH.2;
+        symbol [ pillH %tmp.53 178 53 58 ];
+        %tmp.54 = 13;
+        invoke %tmp.48 %tmp.49(%tmp.50, %tmp.51, %tmp.52, %tmp.53, %tmp.54);
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 180 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_stop" ]
+        %hrStr.5 = local;
+        symbol [ hrStr %hrStr.5 180 12 17 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_begin:
+        symbol [ gModel %tmp.56 180 21 27 ];
+        %tmp.56 = getv ? :gModel;
+        symbol [ hrValue %tmp.57 180 28 35 ];
+        %tmp.57 = getv %tmp.56 :hrValue;
+        %tmp.58 = null;
+        %tmp.59 = ne %tmp.57 %tmp.58;
+        bf %tmp.59 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_else_false;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_true:
+        %tmp.60 = "HR ";
+        symbol [ gModel %tmp.62 181 23 29 ];
+        %tmp.62 = getv ? :gModel;
+        symbol [ hrValue %tmp.63 181 30 37 ];
+        %tmp.63 = getv %tmp.62 :hrValue;
+        symbol [ format %tmp.64 181 38 44 ];
+        %tmp.64 = getv function %tmp.63 :format;
+        %tmp.65 = "%d";
+        %tmp.66 = invoke %tmp.63 %tmp.64(%tmp.65);
+        %tmp.67 = add %tmp.60 %tmp.66;
+        push %tmp.67;
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_else_false:
+        %tmp.68 = "HR --";
+        push %tmp.68;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_end:
+        %tmp.69 = phi [%tmp.59 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_begin] [%tmp.67 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_true] [%tmp.68 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_else_false] [%tmp.69 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_180_20_182_14_end];
+        lputv %hrStr.5 %tmp.69;
+        symbol [ hrStr %hrStr.5 180 12 17 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 183 8 ]
+        %tmp.70 = lgetv %dc;
+        symbol [ dc %tmp.70 183 8 10 ];
+        symbol [ setColor %tmp.71 183 11 19 ];
+        %tmp.71 = getv function %tmp.70 :setColor;
+        symbol [ COLOR_RED %tmp.73 183 20 29 ];
+        %tmp.73 = getv ? :COLOR_RED;
+        symbol [ Graphics %tmp.74 183 31 39 ];
+        %tmp.74 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.75 183 40 57 ];
+        %tmp.75 = getv %tmp.74 :COLOR_TRANSPARENT;
+        invoke %tmp.70 %tmp.71(%tmp.73, %tmp.75);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 184 8 ]
+        %tmp.76 = lgetv %dc;
+        symbol [ dc %tmp.76 184 8 10 ];
+        symbol [ drawText %tmp.77 184 11 19 ];
+        %tmp.77 = getv function %tmp.76 :drawText;
+        %tmp.78 = lgetv %cx;
+        symbol [ cx %tmp.78 184 20 22 ];
+        %tmp.79 = lgetv %pillY.4;
+        symbol [ pillY %tmp.79 184 24 29 ];
+        %tmp.80 = lgetv %pillH.2;
+        symbol [ pillH %tmp.80 184 32 37 ];
+        %tmp.81 = 2;
+        %tmp.82 = div %tmp.80 %tmp.81;
+        %tmp.83 = add %tmp.79 %tmp.82;
+        symbol [ Graphics %tmp.84 185 12 20 ];
+        %tmp.84 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.85 185 21 30 ];
+        %tmp.85 = getv %tmp.84 :FONT_TINY;
+        %tmp.86 = lgetv %hrStr.5;
+        symbol [ hrStr %tmp.86 185 32 37 ];
+        symbol [ Graphics %tmp.87 186 12 20 ];
+        %tmp.87 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.88 186 21 40 ];
+        %tmp.88 = getv %tmp.87 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.89 186 43 51 ];
+        %tmp.89 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.90 186 52 72 ];
+        %tmp.90 = getv %tmp.89 :TEXT_JUSTIFY_VCENTER;
+        %tmp.91 = bitor %tmp.88 %tmp.90;
+        invoke %tmp.76 %tmp.77(%tmp.78, %tmp.83, %tmp.85, %tmp.86, %tmp.91);
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_168_46_187_4_stop:
+    }
+    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 191; @symbol_functiondef = [drawFinish,191,13,23]; @symbol_param<0> = [dc,191,24,26]; @symbol_param<0>_type<0> = [Graphics,191,30,38]; @symbol_param<0>_type<1> = [Dc,191,39,41]; @symbol_param<1> = [W,191,43,44]; @symbol_param<1>_type<0> = [Number,191,48,54]; @symbol_param<2> = [H,191,56,57]; @symbol_param<2>_type<0> = [Number,191,61,67]; @symbol_param<3> = [cx,192,24,26]; @symbol_param<3>_type<0> = [Number,192,30,36]; @symbol_param<4> = [cy,192,38,40]; @symbol_param<4>_type<0> = [Number,192,44,50]; ]
+    function drawFinish(dc as Graphics.Dc, W as Number, H as Number, cx as Number, cy as Number) as Void {
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 193 8 ]
         %tmp.1 = lgetv %dc;
-        symbol [ dc %tmp.1 180 8 10 ];
-        symbol [ setColor %tmp.2 180 11 19 ];
+        symbol [ dc %tmp.1 193 8 10 ];
+        symbol [ setColor %tmp.2 193 11 19 ];
         %tmp.2 = getv function %tmp.1 :setColor;
-        symbol [ COLOR_YELLOW %tmp.4 180 20 32 ];
+        symbol [ COLOR_YELLOW %tmp.4 193 20 32 ];
         %tmp.4 = getv ? :COLOR_YELLOW;
-        symbol [ Graphics %tmp.5 180 34 42 ];
+        symbol [ Graphics %tmp.5 193 34 42 ];
         %tmp.5 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.6 180 43 60 ];
+        symbol [ COLOR_TRANSPARENT %tmp.6 193 43 60 ];
         %tmp.6 = getv %tmp.5 :COLOR_TRANSPARENT;
         invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 181 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 194 8 ]
         %tmp.7 = lgetv %dc;
-        symbol [ dc %tmp.7 181 8 10 ];
-        symbol [ drawText %tmp.8 181 11 19 ];
+        symbol [ dc %tmp.7 194 8 10 ];
+        symbol [ drawText %tmp.8 194 11 19 ];
         %tmp.8 = getv function %tmp.7 :drawText;
         %tmp.9 = lgetv %cx;
-        symbol [ cx %tmp.9 181 20 22 ];
+        symbol [ cx %tmp.9 194 20 22 ];
         %tmp.10 = lgetv %H;
-        symbol [ H %tmp.10 181 25 26 ];
-        %tmp.11 = 0.24;
+        symbol [ H %tmp.10 194 25 26 ];
+        %tmp.11 = 0.16;
         %tmp.12 = mul %tmp.10 %tmp.11;
-        symbol [ toNumber %tmp.13 181 35 43 ];
+        symbol [ toNumber %tmp.13 194 35 43 ];
         %tmp.13 = getv function %tmp.12 :toNumber;
         %tmp.14 = invoke %tmp.12 %tmp.13();
         %tmp.15 = self;
-        symbol [ getNameFont %tmp.16 182 12 23 ];
+        symbol [ getNameFont %tmp.16 195 12 23 ];
         %tmp.16 = getv function %tmp.15 :getNameFont;
         %tmp.17 = lgetv %W;
-        symbol [ W %tmp.17 182 24 25 ];
+        symbol [ W %tmp.17 195 24 25 ];
         %tmp.18 = invoke %tmp.15 %tmp.16(%tmp.17);
         %tmp.19 = "DONE";
-        symbol [ Graphics %tmp.20 183 12 20 ];
+        symbol [ Graphics %tmp.20 196 12 20 ];
         %tmp.20 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.21 183 21 40 ];
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.21 196 21 40 ];
         %tmp.21 = getv %tmp.20 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.22 183 43 51 ];
+        symbol [ Graphics %tmp.22 196 43 51 ];
         %tmp.22 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.23 183 52 72 ];
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.23 196 52 72 ];
         %tmp.23 = getv %tmp.22 :TEXT_JUSTIFY_VCENTER;
         %tmp.24 = bitor %tmp.21 %tmp.23;
         invoke %tmp.7 %tmp.8(%tmp.9, %tmp.14, %tmp.18, %tmp.19, %tmp.24);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 185 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 198 8 ]
         %tmp.25 = lgetv %dc;
-        symbol [ dc %tmp.25 185 8 10 ];
-        symbol [ setColor %tmp.26 185 11 19 ];
+        symbol [ dc %tmp.25 198 8 10 ];
+        symbol [ setColor %tmp.26 198 11 19 ];
         %tmp.26 = getv function %tmp.25 :setColor;
-        symbol [ COLOR_CREAM %tmp.28 185 20 31 ];
+        symbol [ COLOR_CREAM %tmp.28 198 20 31 ];
         %tmp.28 = getv ? :COLOR_CREAM;
-        symbol [ Graphics %tmp.29 185 33 41 ];
+        symbol [ Graphics %tmp.29 198 33 41 ];
         %tmp.29 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.30 185 42 59 ];
+        symbol [ COLOR_TRANSPARENT %tmp.30 198 42 59 ];
         %tmp.30 = getv %tmp.29 :COLOR_TRANSPARENT;
         invoke %tmp.25 %tmp.26(%tmp.28, %tmp.30);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 186 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 199 8 ]
         %tmp.31 = lgetv %dc;
-        symbol [ dc %tmp.31 186 8 10 ];
-        symbol [ drawText %tmp.32 186 11 19 ];
+        symbol [ dc %tmp.31 199 8 10 ];
+        symbol [ drawText %tmp.32 199 11 19 ];
         %tmp.32 = getv function %tmp.31 :drawText;
         %tmp.33 = lgetv %cx;
-        symbol [ cx %tmp.33 186 20 22 ];
-        %tmp.34 = lgetv %cy;
-        symbol [ cy %tmp.34 186 24 26 ];
-        %tmp.35 = lgetv %H;
-        symbol [ H %tmp.35 186 30 31 ];
-        %tmp.36 = 0.04;
-        %tmp.37 = mul %tmp.35 %tmp.36;
-        symbol [ toNumber %tmp.38 186 40 48 ];
-        %tmp.38 = getv function %tmp.37 :toNumber;
-        %tmp.39 = invoke %tmp.37 %tmp.38();
-        %tmp.40 = sub %tmp.34 %tmp.39;
-        %tmp.41 = self;
-        symbol [ getBigFont %tmp.42 187 12 22 ];
-        %tmp.42 = getv function %tmp.41 :getBigFont;
-        %tmp.43 = lgetv %W;
-        symbol [ W %tmp.43 187 23 24 ];
-        %tmp.44 = invoke %tmp.41 %tmp.42(%tmp.43);
-        symbol [ gModel %tmp.46 187 27 33 ];
-        %tmp.46 = getv ? :gModel;
-        symbol [ formatTime %tmp.47 187 34 44 ];
-        %tmp.47 = getv function %tmp.46 :formatTime;
-        symbol [ gModel %tmp.49 187 45 51 ];
-        %tmp.49 = getv ? :gModel;
-        symbol [ totalTimer %tmp.50 187 52 62 ];
-        %tmp.50 = getv %tmp.49 :totalTimer;
-        %tmp.51 = invoke %tmp.46 %tmp.47(%tmp.50);
-        symbol [ Graphics %tmp.52 188 12 20 ];
+        symbol [ cx %tmp.33 199 20 22 ];
+        %tmp.34 = lgetv %H;
+        symbol [ H %tmp.34 199 25 26 ];
+        %tmp.35 = 0.36;
+        %tmp.36 = mul %tmp.34 %tmp.35;
+        symbol [ toNumber %tmp.37 199 35 43 ];
+        %tmp.37 = getv function %tmp.36 :toNumber;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        %tmp.39 = self;
+        symbol [ getBigFont %tmp.40 200 12 22 ];
+        %tmp.40 = getv function %tmp.39 :getBigFont;
+        %tmp.41 = lgetv %W;
+        symbol [ W %tmp.41 200 23 24 ];
+        %tmp.42 = invoke %tmp.39 %tmp.40(%tmp.41);
+        symbol [ gModel %tmp.44 200 27 33 ];
+        %tmp.44 = getv ? :gModel;
+        symbol [ formatTime %tmp.45 200 34 44 ];
+        %tmp.45 = getv function %tmp.44 :formatTime;
+        symbol [ gModel %tmp.47 200 45 51 ];
+        %tmp.47 = getv ? :gModel;
+        symbol [ totalTimer %tmp.48 200 52 62 ];
+        %tmp.48 = getv %tmp.47 :totalTimer;
+        %tmp.49 = invoke %tmp.44 %tmp.45(%tmp.48);
+        symbol [ Graphics %tmp.50 201 12 20 ];
+        %tmp.50 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.51 201 21 40 ];
+        %tmp.51 = getv %tmp.50 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.52 201 43 51 ];
         %tmp.52 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.53 188 21 40 ];
-        %tmp.53 = getv %tmp.52 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.54 188 43 51 ];
-        %tmp.54 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.55 188 52 72 ];
-        %tmp.55 = getv %tmp.54 :TEXT_JUSTIFY_VCENTER;
-        %tmp.56 = bitor %tmp.53 %tmp.55;
-        invoke %tmp.31 %tmp.32(%tmp.33, %tmp.40, %tmp.44, %tmp.51, %tmp.56);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 190 8 ]
-        %tmp.57 = lgetv %dc;
-        symbol [ dc %tmp.57 190 8 10 ];
-        symbol [ setColor %tmp.58 190 11 19 ];
-        %tmp.58 = getv function %tmp.57 :setColor;
-        symbol [ COLOR_MUTED %tmp.60 190 20 31 ];
-        %tmp.60 = getv ? :COLOR_MUTED;
-        symbol [ Graphics %tmp.61 190 33 41 ];
-        %tmp.61 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.62 190 42 59 ];
-        %tmp.62 = getv %tmp.61 :COLOR_TRANSPARENT;
-        invoke %tmp.57 %tmp.58(%tmp.60, %tmp.62);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 191 8 ]
-        %tmp.63 = lgetv %dc;
-        symbol [ dc %tmp.63 191 8 10 ];
-        symbol [ drawText %tmp.64 191 11 19 ];
-        %tmp.64 = getv function %tmp.63 :drawText;
-        %tmp.65 = lgetv %cx;
-        symbol [ cx %tmp.65 191 20 22 ];
-        %tmp.66 = lgetv %H;
-        symbol [ H %tmp.66 191 25 26 ];
-        %tmp.67 = 0.62;
-        %tmp.68 = mul %tmp.66 %tmp.67;
-        symbol [ toNumber %tmp.69 191 35 43 ];
-        %tmp.69 = getv function %tmp.68 :toNumber;
-        %tmp.70 = invoke %tmp.68 %tmp.69();
-        symbol [ Graphics %tmp.71 192 12 20 ];
-        %tmp.71 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.72 192 21 30 ];
-        %tmp.72 = getv %tmp.71 :FONT_TINY;
-        %tmp.73 = "total time";
-        symbol [ Graphics %tmp.74 193 12 20 ];
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.53 201 52 72 ];
+        %tmp.53 = getv %tmp.52 :TEXT_JUSTIFY_VCENTER;
+        %tmp.54 = bitor %tmp.51 %tmp.53;
+        invoke %tmp.31 %tmp.32(%tmp.33, %tmp.38, %tmp.42, %tmp.49, %tmp.54);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 203 8 ]
+        %tmp.55 = lgetv %dc;
+        symbol [ dc %tmp.55 203 8 10 ];
+        symbol [ setColor %tmp.56 203 11 19 ];
+        %tmp.56 = getv function %tmp.55 :setColor;
+        symbol [ COLOR_MUTED %tmp.58 203 20 31 ];
+        %tmp.58 = getv ? :COLOR_MUTED;
+        symbol [ Graphics %tmp.59 203 33 41 ];
+        %tmp.59 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.60 203 42 59 ];
+        %tmp.60 = getv %tmp.59 :COLOR_TRANSPARENT;
+        invoke %tmp.55 %tmp.56(%tmp.58, %tmp.60);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 204 8 ]
+        %tmp.61 = lgetv %dc;
+        symbol [ dc %tmp.61 204 8 10 ];
+        symbol [ drawText %tmp.62 204 11 19 ];
+        %tmp.62 = getv function %tmp.61 :drawText;
+        %tmp.63 = lgetv %cx;
+        symbol [ cx %tmp.63 204 20 22 ];
+        %tmp.64 = lgetv %H;
+        symbol [ H %tmp.64 204 25 26 ];
+        %tmp.65 = 0.54;
+        %tmp.66 = mul %tmp.64 %tmp.65;
+        symbol [ toNumber %tmp.67 204 35 43 ];
+        %tmp.67 = getv function %tmp.66 :toNumber;
+        %tmp.68 = invoke %tmp.66 %tmp.67();
+        symbol [ Graphics %tmp.69 205 12 20 ];
+        %tmp.69 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.70 205 21 30 ];
+        %tmp.70 = getv %tmp.69 :FONT_TINY;
+        %tmp.71 = "TOTAL TIME";
+        symbol [ Graphics %tmp.72 206 12 20 ];
+        %tmp.72 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.73 206 21 40 ];
+        %tmp.73 = getv %tmp.72 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.74 206 43 51 ];
         %tmp.74 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.75 193 21 40 ];
-        %tmp.75 = getv %tmp.74 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.76 193 43 51 ];
-        %tmp.76 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.77 193 52 72 ];
-        %tmp.77 = getv %tmp.76 :TEXT_JUSTIFY_VCENTER;
-        %tmp.78 = bitor %tmp.75 %tmp.77;
-        invoke %tmp.63 %tmp.64(%tmp.65, %tmp.70, %tmp.72, %tmp.73, %tmp.78);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 195 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_stop" ]
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.75 206 52 72 ];
+        %tmp.75 = getv %tmp.74 :TEXT_JUSTIFY_VCENTER;
+        %tmp.76 = bitor %tmp.73 %tmp.75;
+        invoke %tmp.61 %tmp.62(%tmp.63, %tmp.68, %tmp.70, %tmp.71, %tmp.76);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 209 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_stop" ]
         %btnW.1 = local;
-        symbol [ btnW %btnW.1 195 12 16 ];
-        %tmp.79 = lgetv %W;
-        symbol [ W %tmp.79 195 20 21 ];
-        %tmp.80 = 0.52;
-        %tmp.81 = mul %tmp.79 %tmp.80;
-        symbol [ toNumber %tmp.82 195 30 38 ];
-        %tmp.82 = getv function %tmp.81 :toNumber;
-        %tmp.83 = invoke %tmp.81 %tmp.82();
-        lputv %btnW.1 %tmp.83;
-        symbol [ btnW %btnW.1 195 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 196 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_stop" ]
+        symbol [ btnW %btnW.1 209 12 16 ];
+        %tmp.77 = lgetv %W;
+        symbol [ W %tmp.77 209 20 21 ];
+        %tmp.78 = 0.52;
+        %tmp.79 = mul %tmp.77 %tmp.78;
+        symbol [ toNumber %tmp.80 209 30 38 ];
+        %tmp.80 = getv function %tmp.79 :toNumber;
+        %tmp.81 = invoke %tmp.79 %tmp.80();
+        lputv %btnW.1 %tmp.81;
+        symbol [ btnW %btnW.1 209 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 210 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_stop" ]
         %btnH.2 = local;
-        symbol [ btnH %btnH.2 196 12 16 ];
-        %tmp.84 = lgetv %H;
-        symbol [ H %tmp.84 196 20 21 ];
-        %tmp.85 = 0.12;
-        %tmp.86 = mul %tmp.84 %tmp.85;
-        symbol [ toNumber %tmp.87 196 30 38 ];
-        %tmp.87 = getv function %tmp.86 :toNumber;
-        %tmp.88 = invoke %tmp.86 %tmp.87();
-        lputv %btnH.2 %tmp.88;
-        symbol [ btnH %btnH.2 196 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 197 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_stop" ]
-        %btnX.3 = local;
-        symbol [ btnX %btnX.3 197 12 16 ];
-        %tmp.89 = lgetv %cx;
-        symbol [ cx %tmp.89 197 19 21 ];
-        %tmp.90 = lgetv %btnW.1;
-        symbol [ btnW %tmp.90 197 24 28 ];
-        %tmp.91 = 2;
-        %tmp.92 = div %tmp.90 %tmp.91;
-        %tmp.93 = sub %tmp.89 %tmp.92;
-        lputv %btnX.3 %tmp.93;
-        symbol [ btnX %btnX.3 197 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 198 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_stop" ]
-        %btnY.4 = local;
-        symbol [ btnY %btnY.4 198 12 16 ];
-        %tmp.94 = lgetv %H;
-        symbol [ H %tmp.94 198 20 21 ];
-        %tmp.95 = 0.74;
-        %tmp.96 = mul %tmp.94 %tmp.95;
-        symbol [ toNumber %tmp.97 198 30 38 ];
-        %tmp.97 = getv function %tmp.96 :toNumber;
-        %tmp.98 = invoke %tmp.96 %tmp.97();
-        lputv %btnY.4 %tmp.98;
-        symbol [ btnY %btnY.4 198 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 199 8 ]
-        %tmp.99 = lgetv %dc;
-        symbol [ dc %tmp.99 199 8 10 ];
-        symbol [ setColor %tmp.100 199 11 19 ];
-        %tmp.100 = getv function %tmp.99 :setColor;
-        symbol [ COLOR_YELLOW %tmp.102 199 20 32 ];
-        %tmp.102 = getv ? :COLOR_YELLOW;
-        symbol [ Graphics %tmp.103 199 34 42 ];
-        %tmp.103 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.104 199 43 60 ];
-        %tmp.104 = getv %tmp.103 :COLOR_TRANSPARENT;
-        invoke %tmp.99 %tmp.100(%tmp.102, %tmp.104);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 200 8 ]
-        %tmp.105 = lgetv %dc;
-        symbol [ dc %tmp.105 200 8 10 ];
-        symbol [ fillRoundedRectangle %tmp.106 200 11 31 ];
-        %tmp.106 = getv function %tmp.105 :fillRoundedRectangle;
-        %tmp.107 = lgetv %btnX.3;
-        symbol [ btnX %tmp.107 200 32 36 ];
-        %tmp.108 = lgetv %btnY.4;
-        symbol [ btnY %tmp.108 200 38 42 ];
-        %tmp.109 = lgetv %btnW.1;
-        symbol [ btnW %tmp.109 200 44 48 ];
-        %tmp.110 = lgetv %btnH.2;
-        symbol [ btnH %tmp.110 200 50 54 ];
-        %tmp.111 = 10;
-        invoke %tmp.105 %tmp.106(%tmp.107, %tmp.108, %tmp.109, %tmp.110, %tmp.111);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 201 8 ]
-        %tmp.112 = lgetv %dc;
-        symbol [ dc %tmp.112 201 8 10 ];
-        symbol [ setColor %tmp.113 201 11 19 ];
-        %tmp.113 = getv function %tmp.112 :setColor;
-        symbol [ COLOR_BG %tmp.115 201 20 28 ];
-        %tmp.115 = getv ? :COLOR_BG;
-        symbol [ Graphics %tmp.116 201 30 38 ];
-        %tmp.116 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.117 201 39 56 ];
-        %tmp.117 = getv %tmp.116 :COLOR_TRANSPARENT;
-        invoke %tmp.112 %tmp.113(%tmp.115, %tmp.117);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 202 8 ]
-        %tmp.118 = lgetv %dc;
-        symbol [ dc %tmp.118 202 8 10 ];
-        symbol [ drawText %tmp.119 202 11 19 ];
-        %tmp.119 = getv function %tmp.118 :drawText;
-        %tmp.120 = lgetv %cx;
-        symbol [ cx %tmp.120 202 20 22 ];
-        %tmp.121 = lgetv %btnY.4;
-        symbol [ btnY %tmp.121 202 24 28 ];
-        %tmp.122 = lgetv %btnH.2;
-        symbol [ btnH %tmp.122 202 31 35 ];
-        %tmp.123 = 2;
-        %tmp.124 = div %tmp.122 %tmp.123;
-        %tmp.125 = add %tmp.121 %tmp.124;
-        %tmp.126 = self;
-        symbol [ getNameFont %tmp.127 203 12 23 ];
-        %tmp.127 = getv function %tmp.126 :getNameFont;
-        %tmp.128 = lgetv %W;
-        symbol [ W %tmp.128 203 24 25 ];
-        %tmp.129 = invoke %tmp.126 %tmp.127(%tmp.128);
-        %tmp.130 = "SAVE";
-        symbol [ Graphics %tmp.131 204 12 20 ];
-        %tmp.131 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.132 204 21 40 ];
-        %tmp.132 = getv %tmp.131 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.133 204 43 51 ];
-        %tmp.133 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.134 204 52 72 ];
-        %tmp.134 = getv %tmp.133 :TEXT_JUSTIFY_VCENTER;
-        %tmp.135 = bitor %tmp.132 %tmp.134;
-        invoke %tmp.118 %tmp.119(%tmp.120, %tmp.125, %tmp.129, %tmp.130, %tmp.135);
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_179_60_205_4_stop:
-    }
-    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 209; @symbol_functiondef = [drawSaved,209,13,22]; @symbol_param<0> = [dc,209,23,25]; @symbol_param<0>_type<0> = [Graphics,209,29,37]; @symbol_param<0>_type<1> = [Dc,209,38,40]; @symbol_param<1> = [W,209,42,43]; @symbol_param<1>_type<0> = [Number,209,47,53]; @symbol_param<2> = [H,209,55,56]; @symbol_param<2>_type<0> = [Number,209,60,66]; @symbol_param<3> = [cx,210,23,25]; @symbol_param<3>_type<0> = [Number,210,29,35]; @symbol_param<4> = [cy,210,37,39]; @symbol_param<4>_type<0> = [Number,210,43,49]; ]
-    function drawSaved(dc as Graphics.Dc, W as Number, H as Number, cx as Number, cy as Number) as Void {
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_210_59_220_4_start:
+        symbol [ btnH %btnH.2 210 12 16 ];
+        %tmp.82 = lgetv %H;
+        symbol [ H %tmp.82 210 20 21 ];
+        %tmp.83 = 0.12;
+        %tmp.84 = mul %tmp.82 %tmp.83;
+        symbol [ toNumber %tmp.85 210 30 38 ];
+        %tmp.85 = getv function %tmp.84 :toNumber;
+        %tmp.86 = invoke %tmp.84 %tmp.85();
+        lputv %btnH.2 %tmp.86;
+        symbol [ btnH %btnH.2 210 12 16 ];
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 211 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_stop" ]
+        %btnX.3 = local;
+        symbol [ btnX %btnX.3 211 12 16 ];
+        %tmp.87 = lgetv %cx;
+        symbol [ cx %tmp.87 211 19 21 ];
+        %tmp.88 = lgetv %btnW.1;
+        symbol [ btnW %tmp.88 211 24 28 ];
+        %tmp.89 = 2;
+        %tmp.90 = div %tmp.88 %tmp.89;
+        %tmp.91 = sub %tmp.87 %tmp.90;
+        lputv %btnX.3 %tmp.91;
+        symbol [ btnX %btnX.3 211 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 212 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_stop" ]
+        %btnY.4 = local;
+        symbol [ btnY %btnY.4 212 12 16 ];
+        %tmp.92 = lgetv %H;
+        symbol [ H %tmp.92 212 20 21 ];
+        %tmp.93 = 0.68;
+        %tmp.94 = mul %tmp.92 %tmp.93;
+        symbol [ toNumber %tmp.95 212 30 38 ];
+        %tmp.95 = getv function %tmp.94 :toNumber;
+        %tmp.96 = invoke %tmp.94 %tmp.95();
+        lputv %btnY.4 %tmp.96;
+        symbol [ btnY %btnY.4 212 12 16 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 213 8 ]
+        %tmp.97 = lgetv %dc;
+        symbol [ dc %tmp.97 213 8 10 ];
+        symbol [ setColor %tmp.98 213 11 19 ];
+        %tmp.98 = getv function %tmp.97 :setColor;
+        symbol [ COLOR_YELLOW %tmp.100 213 20 32 ];
+        %tmp.100 = getv ? :COLOR_YELLOW;
+        symbol [ Graphics %tmp.101 213 34 42 ];
+        %tmp.101 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.102 213 43 60 ];
+        %tmp.102 = getv %tmp.101 :COLOR_TRANSPARENT;
+        invoke %tmp.97 %tmp.98(%tmp.100, %tmp.102);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 214 8 ]
+        %tmp.103 = lgetv %dc;
+        symbol [ dc %tmp.103 214 8 10 ];
+        symbol [ fillRoundedRectangle %tmp.104 214 11 31 ];
+        %tmp.104 = getv function %tmp.103 :fillRoundedRectangle;
+        %tmp.105 = lgetv %btnX.3;
+        symbol [ btnX %tmp.105 214 32 36 ];
+        %tmp.106 = lgetv %btnY.4;
+        symbol [ btnY %tmp.106 214 38 42 ];
+        %tmp.107 = lgetv %btnW.1;
+        symbol [ btnW %tmp.107 214 44 48 ];
+        %tmp.108 = lgetv %btnH.2;
+        symbol [ btnH %tmp.108 214 50 54 ];
+        %tmp.109 = 10;
+        invoke %tmp.103 %tmp.104(%tmp.105, %tmp.106, %tmp.107, %tmp.108, %tmp.109);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 215 8 ]
+        %tmp.110 = lgetv %dc;
+        symbol [ dc %tmp.110 215 8 10 ];
+        symbol [ setColor %tmp.111 215 11 19 ];
+        %tmp.111 = getv function %tmp.110 :setColor;
+        symbol [ COLOR_BG %tmp.113 215 20 28 ];
+        %tmp.113 = getv ? :COLOR_BG;
+        symbol [ Graphics %tmp.114 215 30 38 ];
+        %tmp.114 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.115 215 39 56 ];
+        %tmp.115 = getv %tmp.114 :COLOR_TRANSPARENT;
+        invoke %tmp.110 %tmp.111(%tmp.113, %tmp.115);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 216 8 ]
+        %tmp.116 = lgetv %dc;
+        symbol [ dc %tmp.116 216 8 10 ];
+        symbol [ drawText %tmp.117 216 11 19 ];
+        %tmp.117 = getv function %tmp.116 :drawText;
+        %tmp.118 = lgetv %cx;
+        symbol [ cx %tmp.118 216 20 22 ];
+        %tmp.119 = lgetv %btnY.4;
+        symbol [ btnY %tmp.119 216 24 28 ];
+        %tmp.120 = lgetv %btnH.2;
+        symbol [ btnH %tmp.120 216 31 35 ];
+        %tmp.121 = 2;
+        %tmp.122 = div %tmp.120 %tmp.121;
+        %tmp.123 = add %tmp.119 %tmp.122;
+        %tmp.124 = self;
+        symbol [ getNameFont %tmp.125 217 12 23 ];
+        %tmp.125 = getv function %tmp.124 :getNameFont;
+        %tmp.126 = lgetv %W;
+        symbol [ W %tmp.126 217 24 25 ];
+        %tmp.127 = invoke %tmp.124 %tmp.125(%tmp.126);
+        %tmp.128 = "SAVE";
+        symbol [ Graphics %tmp.129 218 12 20 ];
+        %tmp.129 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.130 218 21 40 ];
+        %tmp.130 = getv %tmp.129 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.131 218 43 51 ];
+        %tmp.131 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.132 218 52 72 ];
+        %tmp.132 = getv %tmp.131 :TEXT_JUSTIFY_VCENTER;
+        %tmp.133 = bitor %tmp.130 %tmp.132;
+        invoke %tmp.116 %tmp.117(%tmp.118, %tmp.123, %tmp.127, %tmp.128, %tmp.133);
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_192_60_220_4_stop:
+    }
+    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 224; @symbol_functiondef = [drawSaved,224,13,22]; @symbol_param<0> = [dc,224,23,25]; @symbol_param<0>_type<0> = [Graphics,224,29,37]; @symbol_param<0>_type<1> = [Dc,224,38,40]; @symbol_param<1> = [W,224,42,43]; @symbol_param<1>_type<0> = [Number,224,47,53]; @symbol_param<2> = [H,224,55,56]; @symbol_param<2>_type<0> = [Number,224,60,66]; @symbol_param<3> = [cx,225,23,25]; @symbol_param<3>_type<0> = [Number,225,29,35]; @symbol_param<4> = [cy,225,37,39]; @symbol_param<4>_type<0> = [Number,225,43,49]; ]
+    function drawSaved(dc as Graphics.Dc, W as Number, H as Number, cx as Number, cy as Number) as Void {
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_225_59_235_4_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 226 8 ]
         %tmp.1 = lgetv %dc;
-        symbol [ dc %tmp.1 211 8 10 ];
-        symbol [ setColor %tmp.2 211 11 19 ];
+        symbol [ dc %tmp.1 226 8 10 ];
+        symbol [ setColor %tmp.2 226 11 19 ];
         %tmp.2 = getv function %tmp.1 :setColor;
-        symbol [ COLOR_YELLOW %tmp.4 211 20 32 ];
+        symbol [ COLOR_YELLOW %tmp.4 226 20 32 ];
         %tmp.4 = getv ? :COLOR_YELLOW;
-        symbol [ Graphics %tmp.5 211 34 42 ];
+        symbol [ Graphics %tmp.5 226 34 42 ];
         %tmp.5 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.6 211 43 60 ];
+        symbol [ COLOR_TRANSPARENT %tmp.6 226 43 60 ];
         %tmp.6 = getv %tmp.5 :COLOR_TRANSPARENT;
         invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 212 8 ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 227 8 ]
         %tmp.7 = lgetv %dc;
-        symbol [ dc %tmp.7 212 8 10 ];
-        symbol [ drawText %tmp.8 212 11 19 ];
+        symbol [ dc %tmp.7 227 8 10 ];
+        symbol [ drawText %tmp.8 227 11 19 ];
         %tmp.8 = getv function %tmp.7 :drawText;
         %tmp.9 = lgetv %cx;
-        symbol [ cx %tmp.9 212 20 22 ];
+        symbol [ cx %tmp.9 227 20 22 ];
         %tmp.10 = lgetv %cy;
-        symbol [ cy %tmp.10 212 24 26 ];
-        %tmp.11 = lgetv %H;
-        symbol [ H %tmp.11 212 30 31 ];
-        %tmp.12 = 0.08;
-        %tmp.13 = mul %tmp.11 %tmp.12;
-        symbol [ toNumber %tmp.14 212 40 48 ];
-        %tmp.14 = getv function %tmp.13 :toNumber;
-        %tmp.15 = invoke %tmp.13 %tmp.14();
-        %tmp.16 = sub %tmp.10 %tmp.15;
-        %tmp.17 = self;
-        symbol [ getNameFont %tmp.18 213 12 23 ];
-        %tmp.18 = getv function %tmp.17 :getNameFont;
-        %tmp.19 = lgetv %W;
-        symbol [ W %tmp.19 213 24 25 ];
-        %tmp.20 = invoke %tmp.17 %tmp.18(%tmp.19);
-        %tmp.21 = "Saved!";
-        symbol [ Graphics %tmp.22 214 12 20 ];
-        %tmp.22 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.23 214 21 40 ];
-        %tmp.23 = getv %tmp.22 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.24 214 43 51 ];
-        %tmp.24 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.25 214 52 72 ];
-        %tmp.25 = getv %tmp.24 :TEXT_JUSTIFY_VCENTER;
-        %tmp.26 = bitor %tmp.23 %tmp.25;
-        invoke %tmp.7 %tmp.8(%tmp.9, %tmp.16, %tmp.20, %tmp.21, %tmp.26);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 216 8 ]
+        symbol [ cy %tmp.10 227 24 26 ];
+        %tmp.11 = self;
+        symbol [ getNameFont %tmp.12 228 12 23 ];
+        %tmp.12 = getv function %tmp.11 :getNameFont;
+        %tmp.13 = lgetv %W;
+        symbol [ W %tmp.13 228 24 25 ];
+        %tmp.14 = invoke %tmp.11 %tmp.12(%tmp.13);
+        %tmp.15 = "Saved!";
+        symbol [ Graphics %tmp.16 229 12 20 ];
+        %tmp.16 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.17 229 21 40 ];
+        %tmp.17 = getv %tmp.16 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.18 229 43 51 ];
+        %tmp.18 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.19 229 52 72 ];
+        %tmp.19 = getv %tmp.18 :TEXT_JUSTIFY_VCENTER;
+        %tmp.20 = bitor %tmp.17 %tmp.19;
+        invoke %tmp.7 %tmp.8(%tmp.9, %tmp.10, %tmp.14, %tmp.15, %tmp.20);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 231 8 ]
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 231 8 10 ];
+        symbol [ setColor %tmp.22 231 11 19 ];
+        %tmp.22 = getv function %tmp.21 :setColor;
+        symbol [ COLOR_MUTED %tmp.24 231 20 31 ];
+        %tmp.24 = getv ? :COLOR_MUTED;
+        symbol [ Graphics %tmp.25 231 33 41 ];
+        %tmp.25 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.26 231 42 59 ];
+        %tmp.26 = getv %tmp.25 :COLOR_TRANSPARENT;
+        invoke %tmp.21 %tmp.22(%tmp.24, %tmp.26);
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 232 8 ]
         %tmp.27 = lgetv %dc;
-        symbol [ dc %tmp.27 216 8 10 ];
-        symbol [ setColor %tmp.28 216 11 19 ];
-        %tmp.28 = getv function %tmp.27 :setColor;
-        symbol [ COLOR_MUTED %tmp.30 216 20 31 ];
-        %tmp.30 = getv ? :COLOR_MUTED;
-        symbol [ Graphics %tmp.31 216 33 41 ];
-        %tmp.31 = getm $.Toybox.Graphics;
-        symbol [ COLOR_TRANSPARENT %tmp.32 216 42 59 ];
-        %tmp.32 = getv %tmp.31 :COLOR_TRANSPARENT;
-        invoke %tmp.27 %tmp.28(%tmp.30, %tmp.32);
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc" 217 8 ]
-        %tmp.33 = lgetv %dc;
-        symbol [ dc %tmp.33 217 8 10 ];
-        symbol [ drawText %tmp.34 217 11 19 ];
-        %tmp.34 = getv function %tmp.33 :drawText;
-        %tmp.35 = lgetv %cx;
-        symbol [ cx %tmp.35 217 20 22 ];
-        %tmp.36 = lgetv %cy;
-        symbol [ cy %tmp.36 217 24 26 ];
-        %tmp.37 = lgetv %H;
-        symbol [ H %tmp.37 217 30 31 ];
-        %tmp.38 = 0.08;
-        %tmp.39 = mul %tmp.37 %tmp.38;
-        symbol [ toNumber %tmp.40 217 40 48 ];
-        %tmp.40 = getv function %tmp.39 :toNumber;
-        %tmp.41 = invoke %tmp.39 %tmp.40();
-        %tmp.42 = add %tmp.36 %tmp.41;
-        symbol [ Graphics %tmp.43 218 12 20 ];
-        %tmp.43 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.44 218 21 30 ];
-        %tmp.44 = getv %tmp.43 :FONT_TINY;
-        %tmp.45 = "Sync complete";
-        symbol [ Graphics %tmp.46 219 12 20 ];
-        %tmp.46 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.47 219 21 40 ];
-        %tmp.47 = getv %tmp.46 :TEXT_JUSTIFY_CENTER;
-        symbol [ Graphics %tmp.48 219 43 51 ];
-        %tmp.48 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_VCENTER %tmp.49 219 52 72 ];
-        %tmp.49 = getv %tmp.48 :TEXT_JUSTIFY_VCENTER;
-        %tmp.50 = bitor %tmp.47 %tmp.49;
-        invoke %tmp.33 %tmp.34(%tmp.35, %tmp.42, %tmp.44, %tmp.45, %tmp.50);
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_210_59_220_4_stop:
+        symbol [ dc %tmp.27 232 8 10 ];
+        symbol [ drawText %tmp.28 232 11 19 ];
+        %tmp.28 = getv function %tmp.27 :drawText;
+        %tmp.29 = lgetv %cx;
+        symbol [ cx %tmp.29 232 20 22 ];
+        %tmp.30 = lgetv %cy;
+        symbol [ cy %tmp.30 232 24 26 ];
+        %tmp.31 = lgetv %H;
+        symbol [ H %tmp.31 232 30 31 ];
+        %tmp.32 = 0.14;
+        %tmp.33 = mul %tmp.31 %tmp.32;
+        symbol [ toNumber %tmp.34 232 40 48 ];
+        %tmp.34 = getv function %tmp.33 :toNumber;
+        %tmp.35 = invoke %tmp.33 %tmp.34();
+        %tmp.36 = add %tmp.30 %tmp.35;
+        symbol [ Graphics %tmp.37 233 12 20 ];
+        %tmp.37 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.38 233 21 30 ];
+        %tmp.38 = getv %tmp.37 :FONT_TINY;
+        %tmp.39 = "Sync complete";
+        symbol [ Graphics %tmp.40 234 12 20 ];
+        %tmp.40 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.41 234 21 40 ];
+        %tmp.41 = getv %tmp.40 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.42 234 43 51 ];
+        %tmp.42 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.43 234 52 72 ];
+        %tmp.43 = getv %tmp.42 :TEXT_JUSTIFY_VCENTER;
+        %tmp.44 = bitor %tmp.41 %tmp.43;
+        invoke %tmp.27 %tmp.28(%tmp.29, %tmp.36, %tmp.38, %tmp.39, %tmp.44);
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxView_mc_225_59_235_4_stop:
     }
 }
 [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxView.mc"; @line = 1; ]

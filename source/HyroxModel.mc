@@ -9,6 +9,7 @@ import Toybox.Lang;
 const COLOR_BG      = 0x120F0A;
 const COLOR_YELLOW  = 0xE8D44D;
 const COLOR_CYAN    = 0x4EC9D4;
+const COLOR_MINT    = 0x2ECC71;
 const COLOR_ORANGE  = 0xE8863A;
 const COLOR_RED     = 0xD94040;
 const COLOR_CREAM   = 0xEAE0CD;
@@ -182,6 +183,19 @@ class HyroxModel {
         }
     }
 
+    function discard() as Void {
+        if (_timer != null) {
+            _timer.stop();
+            _timer = null;
+        }
+        state       = :ready;
+        currentStep = 0;
+        splitTimer  = 0;
+        totalTimer  = 0;
+        splits      = [];
+        WatchUi.requestUpdate();
+    }
+
     function onTransmitComplete(responseCode as Number, data as Dictionary?) as Void {
         state = :saved;
         WatchUi.requestUpdate();
@@ -203,8 +217,8 @@ class HyroxModel {
         if (currentStep < totalSteps) {
             var t = stations[currentStep]["type"];
             if (t.equals("run"))        { return COLOR_CYAN;   }
-            if (t.equals("exercise"))   { return COLOR_YELLOW; }
-            if (t.equals("transition")) { return COLOR_YELLOW; }
+            if (t.equals("exercise"))   { return COLOR_MINT;   }
+            if (t.equals("transition")) { return COLOR_ORANGE; }
         }
         return COLOR_CREAM;
     }

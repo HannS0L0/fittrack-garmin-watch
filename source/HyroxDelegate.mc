@@ -10,7 +10,7 @@ class HyroxDelegate extends WatchUi.BehaviorDelegate {
     function onKey(keyEvent as WatchUi.KeyEvent) as Boolean {
         var key = keyEvent.getKey();
 
-        // Primary action button (ENTER on most devices, also called LAP on some)
+        // Primary action (ENTER / START) — advance or save
         if (key == WatchUi.KEY_ENTER || key == WatchUi.KEY_START) {
             if (gModel.state == :finish) {
                 gModel.saveAndTransmit();

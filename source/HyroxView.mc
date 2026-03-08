@@ -54,6 +54,15 @@ class HyroxView extends WatchUi.View {
         return Graphics.FONT_SMALL;
     }
 
+    // ── Text helpers ──────────────────────────────────────────────────────────
+
+    function truncateLabel(label as String, maxLen as Number) as String {
+        if (label.length() > maxLen) {
+            return label.substring(0, maxLen - 3) + "...";
+        }
+        return label;
+    }
+
     // ── Screen 1: Ready ───────────────────────────────────────────────────────
 
     function drawReady(dc as Graphics.Dc, W as Number, H as Number,
@@ -101,16 +110,17 @@ class HyroxView extends WatchUi.View {
         dc.drawText(cx, tagY, getLabelFont(W), tagText,
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
-        // Station name
+        // Station name (truncate long transition labels to prevent edge clipping)
         var nameY    = isRound ? (H * 0.27).toNumber() : (tagY + 22);
         var nameFont = isTrans ? Graphics.FONT_TINY : getNameFont(W);
         var nameCol  = isTrans ? COLOR_MUTED : COLOR_CREAM;
+        var nameText = isTrans ? truncateLabel(sLabel, 25) : sLabel;
         dc.setColor(nameCol, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, nameY, nameFont, sLabel,
+        dc.drawText(cx, nameY, nameFont, nameText,
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
-        // Big split timer
-        var bigFont = isTrans ? getNameFont(W) : getBigFont(W);
+        // Big split timer — same font for all active types
+        var bigFont = getBigFont(W);
         var timerY  = isRound ? (H * 0.47).toNumber() : (H * 0.45).toNumber();
         dc.setColor(accent, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, timerY, bigFont,
@@ -140,8 +150,8 @@ class HyroxView extends WatchUi.View {
         var barY = (H * 0.74).toNumber();
         var barH = 4;
 
-        // Track
-        dc.setColor(COLOR_BORDER, Graphics.COLOR_TRANSPARENT);
+        // Track (dark neutral, not the accent)
+        dc.setColor(COLOR_SURFACE, Graphics.COLOR_TRANSPARENT);
         dc.fillRectangle(0, barY, W, barH);
 
         // Fill
@@ -161,6 +171,9 @@ class HyroxView extends WatchUi.View {
         var pillX = cx - pillW / 2;
         var pillY = (H * 0.87).toNumber() - pillH / 2;
 
+        // Border ring then fill
+        dc.setColor(COLOR_BORDER, Graphics.COLOR_TRANSPARENT);
+        dc.fillRoundedRectangle(pillX - 1, pillY - 1, pillW + 2, pillH + 2, 14);
         dc.setColor(COLOR_SURFACE, Graphics.COLOR_TRANSPARENT);
         dc.fillRoundedRectangle(pillX, pillY, pillW, pillH, 13);
 
@@ -178,30 +191,32 @@ class HyroxView extends WatchUi.View {
     function drawFinish(dc as Graphics.Dc, W as Number, H as Number,
                         cx as Number, cy as Number) as Void {
         dc.setColor(COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, (H * 0.24).toNumber(),
+        dc.drawText(cx, (H * 0.16).toNumber(),
             getNameFont(W), "DONE",
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
         dc.setColor(COLOR_CREAM, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - (H * 0.04).toNumber(),
+        dc.drawText(cx, (H * 0.36).toNumber(),
             getBigFont(W), gModel.formatTime(gModel.totalTimer),
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
         dc.setColor(COLOR_MUTED, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, (H * 0.62).toNumber(),
-            Graphics.FONT_TINY, "total time",
+        dc.drawText(cx, (H * 0.54).toNumber(),
+            Graphics.FONT_TINY, "TOTAL TIME",
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
+        // SAVE button
         var btnW = (W * 0.52).toNumber();
         var btnH = (H * 0.12).toNumber();
         var btnX = cx - btnW / 2;
-        var btnY = (H * 0.74).toNumber();
+        var btnY = (H * 0.68).toNumber();
         dc.setColor(COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
         dc.fillRoundedRectangle(btnX, btnY, btnW, btnH, 10);
         dc.setColor(COLOR_BG, Graphics.COLOR_TRANSPARENT);
         dc.drawText(cx, btnY + btnH / 2,
             getNameFont(W), "SAVE",
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+
     }
 
     // ── Screen: Saved confirmation ────────────────────────────────────────────
@@ -209,12 +224,12 @@ class HyroxView extends WatchUi.View {
     function drawSaved(dc as Graphics.Dc, W as Number, H as Number,
                        cx as Number, cy as Number) as Void {
         dc.setColor(COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy - (H * 0.08).toNumber(),
+        dc.drawText(cx, cy,
             getNameFont(W), "Saved!",
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
 
         dc.setColor(COLOR_MUTED, Graphics.COLOR_TRANSPARENT);
-        dc.drawText(cx, cy + (H * 0.08).toNumber(),
+        dc.drawText(cx, cy + (H * 0.14).toNumber(),
             Graphics.FONT_TINY, "Sync complete",
             Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
     }
