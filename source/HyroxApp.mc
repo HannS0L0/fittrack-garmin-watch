@@ -40,6 +40,17 @@ class HyroxApp extends Application.AppBase {
                 gModel.setStationsFromMessage(data["stations"]);
             }
         }
+
+        // Phone asking if there is a locally-stored result that was never
+        // delivered (e.g. phone was not reachable when Save was tapped).
+        if (msgType.equals("QUERY_PENDING")) {
+            var pending = Application.Storage.getValue("pendingSplits");
+            if (pending != null) {
+                if ((Toybox has :Communications) && (Toybox.Communications has :transmitMessage)) {
+                    Toybox.Communications.transmitMessage(pending, {}, null);
+                }
+            }
+        }
     }
 
     function onStop(state as Dictionary?) as Void {

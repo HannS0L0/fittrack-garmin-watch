@@ -173,11 +173,13 @@ class HyroxModel {
             "splits"      => splits
         };
 
+        // Always persist locally first so data survives if the phone isn't
+        // connected or the transmission fails silently.
+        Application.Storage.setValue("pendingSplits", payload);
+
         if ((Toybox has :Communications) && (Toybox.Communications has :transmitMessage)) {
             Toybox.Communications.transmitMessage(payload, {}, method(:onTransmitComplete));
         } else {
-            // Phone not connected — persist locally so data isn't lost
-            Application.Storage.setValue("pendingSplits", payload);
             state = :saved;
             WatchUi.requestUpdate();
         }
@@ -197,6 +199,11 @@ class HyroxModel {
     }
 
     function onTransmitComplete(responseCode as Number, data as Dictionary?) as Void {
+        // 200 = Communications.SUCCESS — phone received the message cleanly.
+        // On success, clear the local copy so it isn't resent on QUERY_PENDING.
+        if (responseCode == 200) {
+            Application.Storage.deleteValue("pendingSplits");
+        }
         state = :saved;
         WatchUi.requestUpdate();
         // Brief delay then exit (handled by view rendering "Saved!")
