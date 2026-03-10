@@ -82,48 +82,52 @@ C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin
     }
     [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc"; @line = 28; @symbol_functiondef = [onPhoneMessage,28,13,27]; @symbol_param<0> = [msg,28,28,31]; @symbol_param<0>_type<0> = [Communications,28,35,49]; @symbol_param<0>_type<1> = [PhoneAppMessage,28,50,65]; ]
     function onPhoneMessage(msg as Communications.PhoneAppMessage) as Void {
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_54_4_start:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_58_4_start:
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 29 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_54_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_54_4_stop" ]
-        %data.1 = local;
-        symbol [ data %data.1 29 12 16 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_29_8_29_40_if_stmt:
         %tmp.1 = lgetv %msg;
-        symbol [ msg %tmp.1 29 19 22 ];
-        symbol [ data %tmp.2 29 23 27 ];
+        symbol [ msg %tmp.1 29 12 15 ];
+        symbol [ data %tmp.2 29 16 20 ];
         %tmp.2 = getv %tmp.1 :data;
-        lputv %data.1 %tmp.2;
-        symbol [ data %data.1 29 12 16 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 30 8 ]
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_30_8_30_36_if_stmt:
-        %tmp.3 = lgetv %data.1;
-        symbol [ data %tmp.3 30 12 16 ];
-        %tmp.4 = null;
-        %tmp.5 = eq %tmp.3 %tmp.4;
-        bf %tmp.5 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_30_8_30_36_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_30_8_30_36_if_true:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_30_26_30_36_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 30 28 ]
+        %tmp.3 = null;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_29_8_29_40_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_29_8_29_40_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_29_30_29_40_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 29 32 ]
         ret ?;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_30_26_30_36_stop:
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_30_8_30_36_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_30_8_30_36_if_end:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_29_30_29_40_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_29_8_29_40_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_29_8_29_40_if_end:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 30 8 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_58_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_58_4_stop" ]
+        %data.1 = local;
+        symbol [ data %data.1 30 12 16 ];
+        %tmp.5 = lgetv %msg;
+        symbol [ msg %tmp.5 30 19 22 ];
+        symbol [ data %tmp.6 30 23 27 ];
+        %tmp.6 = getv %tmp.5 :data;
+        %tmp.7 = as %tmp.6 Dictionary;
+        symbol [ Dictionary %tmp.7 30 31 41 ];
+        lputv %data.1 %tmp.7;
+        symbol [ data %data.1 30 12 16 ];
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 32 8 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_54_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_54_4_stop" ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_58_4_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_58_4_stop" ]
         %msgType.2 = local;
         symbol [ msgType %msgType.2 32 12 19 ];
-        %tmp.6 = lgetv %data.1;
-        symbol [ data %tmp.6 32 22 26 ];
-        %tmp.7 = "type";
-        %tmp.8 = agetv %tmp.6 %tmp.7;
-        lputv %msgType.2 %tmp.8;
+        %tmp.8 = lgetv %data.1;
+        symbol [ data %tmp.8 32 22 26 ];
+        %tmp.9 = "type";
+        %tmp.10 = agetv %tmp.8 %tmp.9;
+        lputv %msgType.2 %tmp.10;
         symbol [ msgType %msgType.2 32 12 19 ];
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 33 8 ]
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_33_8_33_39_if_stmt:
-        %tmp.9 = lgetv %msgType.2;
-        symbol [ msgType %tmp.9 33 12 19 ];
-        %tmp.10 = null;
-        %tmp.11 = eq %tmp.9 %tmp.10;
-        bf %tmp.11 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_33_8_33_39_if_end;
+        %tmp.11 = lgetv %msgType.2;
+        symbol [ msgType %tmp.11 33 12 19 ];
+        %tmp.12 = null;
+        %tmp.13 = eq %tmp.11 %tmp.12;
+        bf %tmp.13 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_33_8_33_39_if_end;
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_33_8_33_39_if_true:
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_33_29_33_39_start:
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 33 31 ]
@@ -132,166 +136,258 @@ C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin
         goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_33_8_33_39_if_end;
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_33_8_33_39_if_end:
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 35 8 ]
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_42_8_if_stmt:
-        %tmp.12 = lgetv %msgType.2;
-        symbol [ msgType %tmp.12 35 12 19 ];
-        symbol [ equals %tmp.13 35 20 26 ];
-        %tmp.13 = getv function %tmp.12 :equals;
-        %tmp.14 = "START_SESSION";
-        %tmp.15 = invoke %tmp.12 %tmp.13(%tmp.14);
-        bf %tmp.15 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_42_8_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_42_8_if_true:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_45_42_8_start:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_46_8_if_stmt:
+        %tmp.14 = lgetv %msgType.2;
+        symbol [ msgType %tmp.14 35 12 19 ];
+        symbol [ equals %tmp.15 35 20 26 ];
+        %tmp.15 = getv function %tmp.14 :equals;
+        %tmp.16 = "START_SESSION";
+        %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
+        bf %tmp.17 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_46_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_46_8_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_45_46_8_start:
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 36 12 ]
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_36_12_38_12_if_stmt:
-        %tmp.16 = lgetv %data.1;
-        symbol [ data %tmp.16 36 16 20 ];
-        %tmp.17 = "simulationId";
-        %tmp.18 = agetv %tmp.16 %tmp.17;
-        %tmp.19 = null;
-        %tmp.20 = ne %tmp.18 %tmp.19;
-        bf %tmp.20 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_36_12_38_12_if_end;
+        %tmp.18 = lgetv %data.1;
+        symbol [ data %tmp.18 36 16 20 ];
+        %tmp.19 = "simulationId";
+        %tmp.20 = agetv %tmp.18 %tmp.19;
+        %tmp.21 = null;
+        %tmp.22 = ne %tmp.20 %tmp.21;
+        bf %tmp.22 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_36_12_38_12_if_end;
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_36_12_38_12_if_true:
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_36_46_38_12_start:
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 37 16 ]
-        symbol [ gModel %tmp.21 37 16 22 ];
-        %tmp.21 = getv self :gModel;
-        %tmp.22 = lgetv %data.1;
-        symbol [ data %tmp.22 37 38 42 ];
-        %tmp.23 = "simulationId";
-        %tmp.24 = agetv %tmp.22 %tmp.23;
+        symbol [ gModel %tmp.23 37 16 22 ];
+        %tmp.23 = getv self :gModel;
+        %tmp.24 = lgetv %data.1;
+        symbol [ data %tmp.24 37 38 42 ];
+        %tmp.25 = "simulationId";
+        %tmp.26 = agetv %tmp.24 %tmp.25;
         symbol [ simulationId ? 37 23 35 ];
-        putv %tmp.21 :simulationId %tmp.24;
+        putv %tmp.23 :simulationId %tmp.26;
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_36_46_38_12_stop:
         goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_36_12_38_12_if_end;
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_36_12_38_12_if_end:
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 39 12 ]
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_39_12_41_12_if_stmt:
-        %tmp.25 = lgetv %data.1;
-        symbol [ data %tmp.25 39 16 20 ];
-        %tmp.26 = "stations";
-        %tmp.27 = agetv %tmp.25 %tmp.26;
-        %tmp.28 = null;
-        %tmp.29 = ne %tmp.27 %tmp.28;
-        bf %tmp.29 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_39_12_41_12_if_end;
+        %tmp.27 = lgetv %data.1;
+        symbol [ data %tmp.27 39 16 20 ];
+        %tmp.28 = "stations";
+        %tmp.29 = agetv %tmp.27 %tmp.28;
+        %tmp.30 = null;
+        %tmp.31 = ne %tmp.29 %tmp.30;
+        bf %tmp.31 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_39_12_41_12_if_end;
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_39_12_41_12_if_true:
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_39_42_41_12_start:
 [ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 40 16 ]
-        symbol [ gModel %tmp.31 40 16 22 ];
-        %tmp.31 = getv ? :gModel;
-        symbol [ setStationsFromMessage %tmp.32 40 23 45 ];
-        %tmp.32 = getv function %tmp.31 :setStationsFromMessage;
-        %tmp.33 = lgetv %data.1;
-        symbol [ data %tmp.33 40 46 50 ];
-        %tmp.34 = "stations";
-        %tmp.35 = agetv %tmp.33 %tmp.34;
-        invoke %tmp.31 %tmp.32(%tmp.35);
+        symbol [ gModel %tmp.33 40 16 22 ];
+        %tmp.33 = getv ? :gModel;
+        symbol [ setStationsFromMessage %tmp.34 40 23 45 ];
+        %tmp.34 = getv function %tmp.33 :setStationsFromMessage;
+        %tmp.35 = lgetv %data.1;
+        symbol [ data %tmp.35 40 46 50 ];
+        %tmp.36 = "stations";
+        %tmp.37 = agetv %tmp.35 %tmp.36;
+        invoke %tmp.33 %tmp.34(%tmp.37);
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_39_42_41_12_stop:
         goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_39_12_41_12_if_end;
 C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_39_12_41_12_if_end:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_45_42_8_stop:
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_42_8_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_42_8_if_end:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 46 8 ]
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_46_8_53_8_if_stmt:
-        %tmp.36 = lgetv %msgType.2;
-        symbol [ msgType %tmp.36 46 12 19 ];
-        symbol [ equals %tmp.37 46 20 26 ];
-        %tmp.37 = getv function %tmp.36 :equals;
-        %tmp.38 = "QUERY_PENDING";
-        %tmp.39 = invoke %tmp.36 %tmp.37(%tmp.38);
-        bf %tmp.39 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_46_8_53_8_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_46_8_53_8_if_true:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_46_45_53_8_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 47 12 ]
-        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_46_45_53_8_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_46_45_53_8_stop" ]
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 42 12 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_42_12_42_83_if_stmt:
+        %tmp.38 = lgetv %data.1;
+        symbol [ data %tmp.38 42 16 20 ];
+        %tmp.39 = "userId";
+        %tmp.40 = agetv %tmp.38 %tmp.39;
+        %tmp.41 = null;
+        %tmp.42 = ne %tmp.40 %tmp.41;
+        bf %tmp.42 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_42_12_42_83_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_42_12_42_83_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_42_49_42_83_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 42 51 ]
+        symbol [ gModel %tmp.43 42 51 57 ];
+        %tmp.43 = getv self :gModel;
+        %tmp.44 = lgetv %data.1;
+        symbol [ data %tmp.44 42 67 71 ];
+        %tmp.45 = "userId";
+        %tmp.46 = agetv %tmp.44 %tmp.45;
+        symbol [ userId ? 42 58 64 ];
+        putv %tmp.43 :userId %tmp.46;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_42_49_42_83_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_42_12_42_83_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_42_12_42_83_if_end:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 43 12 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_43_12_43_94_if_stmt:
+        %tmp.47 = lgetv %data.1;
+        symbol [ data %tmp.47 43 16 20 ];
+        %tmp.48 = "supabaseUrl";
+        %tmp.49 = agetv %tmp.47 %tmp.48;
+        %tmp.50 = null;
+        %tmp.51 = ne %tmp.49 %tmp.50;
+        bf %tmp.51 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_43_12_43_94_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_43_12_43_94_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_43_50_43_94_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 43 52 ]
+        symbol [ gModel %tmp.52 43 52 58 ];
+        %tmp.52 = getv self :gModel;
+        %tmp.53 = lgetv %data.1;
+        symbol [ data %tmp.53 43 73 77 ];
+        %tmp.54 = "supabaseUrl";
+        %tmp.55 = agetv %tmp.53 %tmp.54;
+        symbol [ supabaseUrl ? 43 59 70 ];
+        putv %tmp.52 :supabaseUrl %tmp.55;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_43_50_43_94_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_43_12_43_94_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_43_12_43_94_if_end:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 44 12 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_44_12_44_102_if_stmt:
+        %tmp.56 = lgetv %data.1;
+        symbol [ data %tmp.56 44 16 20 ];
+        %tmp.57 = "supabaseAnonKey";
+        %tmp.58 = agetv %tmp.56 %tmp.57;
+        %tmp.59 = null;
+        %tmp.60 = ne %tmp.58 %tmp.59;
+        bf %tmp.60 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_44_12_44_102_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_44_12_44_102_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_44_50_44_102_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 44 52 ]
+        symbol [ gModel %tmp.61 44 52 58 ];
+        %tmp.61 = getv self :gModel;
+        %tmp.62 = lgetv %data.1;
+        symbol [ data %tmp.62 44 77 81 ];
+        %tmp.63 = "supabaseAnonKey";
+        %tmp.64 = agetv %tmp.62 %tmp.63;
+        symbol [ supabaseAnonKey ? 44 59 74 ];
+        putv %tmp.61 :supabaseAnonKey %tmp.64;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_44_50_44_102_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_44_12_44_102_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_44_12_44_102_if_end:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 45 12 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_45_12_45_94_if_stmt:
+        %tmp.65 = lgetv %data.1;
+        symbol [ data %tmp.65 45 16 20 ];
+        %tmp.66 = "accessToken";
+        %tmp.67 = agetv %tmp.65 %tmp.66;
+        %tmp.68 = null;
+        %tmp.69 = ne %tmp.67 %tmp.68;
+        bf %tmp.69 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_45_12_45_94_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_45_12_45_94_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_45_50_45_94_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 45 52 ]
+        symbol [ gModel %tmp.70 45 52 58 ];
+        %tmp.70 = getv self :gModel;
+        %tmp.71 = lgetv %data.1;
+        symbol [ data %tmp.71 45 73 77 ];
+        %tmp.72 = "accessToken";
+        %tmp.73 = agetv %tmp.71 %tmp.72;
+        symbol [ accessToken ? 45 59 70 ];
+        putv %tmp.70 :accessToken %tmp.73;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_45_50_45_94_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_45_12_45_94_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_45_12_45_94_if_end:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_45_46_8_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_46_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_35_8_46_8_if_end:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 50 8 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_50_8_57_8_if_stmt:
+        %tmp.74 = lgetv %msgType.2;
+        symbol [ msgType %tmp.74 50 12 19 ];
+        symbol [ equals %tmp.75 50 20 26 ];
+        %tmp.75 = getv function %tmp.74 :equals;
+        %tmp.76 = "QUERY_PENDING";
+        %tmp.77 = invoke %tmp.74 %tmp.75(%tmp.76);
+        bf %tmp.77 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_50_8_57_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_50_8_57_8_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_50_45_57_8_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 51 12 ]
+        [ "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_50_45_57_8_start" "C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_50_45_57_8_stop" ]
         %pending.3 = local;
-        symbol [ pending %pending.3 47 16 23 ];
-        symbol [ Application %tmp.40 47 26 37 ];
-        %tmp.40 = getm $.Toybox.Application;
-        symbol [ Storage %tmp.41 47 38 45 ];
-        %tmp.41 = getv %tmp.40 :Storage;
-        symbol [ getValue %tmp.42 47 46 54 ];
-        %tmp.42 = getv function %tmp.41 :getValue;
-        %tmp.43 = "pendingSplits";
-        %tmp.44 = invoke %tmp.41 %tmp.42(%tmp.43);
-        lputv %pending.3 %tmp.44;
-        symbol [ pending %pending.3 47 16 23 ];
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 48 12 ]
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_48_12_52_12_if_stmt:
-        %tmp.45 = lgetv %pending.3;
-        symbol [ pending %tmp.45 48 16 23 ];
-        %tmp.46 = null;
-        %tmp.47 = ne %tmp.45 %tmp.46;
-        bf %tmp.47 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_48_12_52_12_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_48_12_52_12_if_true:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_48_33_52_12_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 49 16 ]
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_16_51_16_if_stmt:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_20_49_95_begin:
-        symbol [ Toybox %tmp.49 49 21 27 ];
-        %tmp.49 = getv ? :Toybox;
-        %tmp.51 = const :Communications;
-        symbol [ Communications %tmp.51 49 33 47 const ];
-        %tmp.52 = canhazplz %tmp.49 %tmp.51;
-        bf %tmp.52 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_16_51_16_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_52_49_95_true:
-        symbol [ Toybox %tmp.54 49 53 59 ];
-        %tmp.54 = getv ? :Toybox;
-        %tmp.55 = as %tmp.54 { (interface { var Communications; }) };
-        symbol [ Communications %tmp.56 49 60 74 ];
-        %tmp.56 = getv %tmp.55 :Communications;
-        %tmp.58 = const :transmitMessage;
-        symbol [ transmitMessage %tmp.58 49 80 95 const ];
-        %tmp.59 = canhazplz %tmp.56 %tmp.58;
-        push %tmp.59;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_52_49_95_end:
-        %tmp.60 = phi [%tmp.52 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_20_49_95_begin] [%tmp.59 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_52_49_95_true] [%tmp.60 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_52_49_95_end];
-        bf %tmp.60 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_16_51_16_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_16_51_16_if_true:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_98_51_16_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 50 20 ]
-        symbol [ Toybox %tmp.62 50 20 26 ];
-        %tmp.62 = getv ? :Toybox;
-        %tmp.63 = as %tmp.62 { (interface { var Communications; }) };
-        symbol [ Communications %tmp.64 50 27 41 ];
-        %tmp.64 = getv %tmp.63 :Communications;
-        symbol [ transmitMessage %tmp.65 50 42 57 ];
-        %tmp.65 = getv function %tmp.64 :transmitMessage;
-        %tmp.66 = lgetv %pending.3;
-        symbol [ pending %tmp.66 50 58 65 ];
-        %tmp.67 = as %tmp.66 { (!Null) };
-        %tmp.68 = newd 0;
-        %tmp.69 = null;
-        invoke %tmp.64 %tmp.65(%tmp.67, %tmp.68, %tmp.69);
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_98_51_16_stop:
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_16_51_16_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_49_16_51_16_if_end:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_48_33_52_12_stop:
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_48_12_52_12_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_48_12_52_12_if_end:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_46_45_53_8_stop:
-        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_46_8_53_8_if_end;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_46_8_53_8_if_end:
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_54_4_stop:
+        symbol [ pending %pending.3 51 16 23 ];
+        symbol [ Application %tmp.78 51 26 37 ];
+        %tmp.78 = getm $.Toybox.Application;
+        symbol [ Storage %tmp.79 51 38 45 ];
+        %tmp.79 = getv %tmp.78 :Storage;
+        symbol [ getValue %tmp.80 51 46 54 ];
+        %tmp.80 = getv function %tmp.79 :getValue;
+        %tmp.81 = "pendingSplits";
+        %tmp.82 = invoke %tmp.79 %tmp.80(%tmp.81);
+        lputv %pending.3 %tmp.82;
+        symbol [ pending %pending.3 51 16 23 ];
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 52 12 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_52_12_56_12_if_stmt:
+        %tmp.83 = lgetv %pending.3;
+        symbol [ pending %tmp.83 52 16 23 ];
+        %tmp.84 = null;
+        %tmp.85 = ne %tmp.83 %tmp.84;
+        bf %tmp.85 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_52_12_56_12_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_52_12_56_12_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_52_33_56_12_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 53 16 ]
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_16_55_16_if_stmt:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_20_53_95_begin:
+        symbol [ Toybox %tmp.87 53 21 27 ];
+        %tmp.87 = getv ? :Toybox;
+        %tmp.89 = const :Communications;
+        symbol [ Communications %tmp.89 53 33 47 const ];
+        %tmp.90 = canhazplz %tmp.87 %tmp.89;
+        bf %tmp.90 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_16_55_16_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_52_53_95_true:
+        symbol [ Toybox %tmp.92 53 53 59 ];
+        %tmp.92 = getv ? :Toybox;
+        %tmp.93 = as %tmp.92 { (interface { var Communications; }) };
+        symbol [ Communications %tmp.94 53 60 74 ];
+        %tmp.94 = getv %tmp.93 :Communications;
+        %tmp.96 = const :transmitMessage;
+        symbol [ transmitMessage %tmp.96 53 80 95 const ];
+        %tmp.97 = canhazplz %tmp.94 %tmp.96;
+        push %tmp.97;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_52_53_95_end:
+        %tmp.98 = phi [%tmp.90 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_20_53_95_begin] [%tmp.97 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_52_53_95_true] [%tmp.98 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_52_53_95_end];
+        bf %tmp.98 @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_16_55_16_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_16_55_16_if_true:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_98_55_16_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 54 20 ]
+        symbol [ Toybox %tmp.100 54 20 26 ];
+        %tmp.100 = getv ? :Toybox;
+        %tmp.101 = as %tmp.100 { (interface { var Communications; }) };
+        symbol [ Communications %tmp.102 54 27 41 ];
+        %tmp.102 = getv %tmp.101 :Communications;
+        symbol [ transmitMessage %tmp.103 54 42 57 ];
+        %tmp.103 = getv function %tmp.102 :transmitMessage;
+        %tmp.104 = lgetv %pending.3;
+        symbol [ pending %tmp.104 54 58 65 ];
+        %tmp.105 = as %tmp.104 { (!Null) };
+        %tmp.106 = newd 0;
+        %tmp.107 = null;
+        invoke %tmp.102 %tmp.103(%tmp.105, %tmp.106, %tmp.107);
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_98_55_16_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_16_55_16_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_53_16_55_16_if_end:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_52_33_56_12_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_52_12_56_12_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_52_12_56_12_if_end:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_50_45_57_8_stop:
+        goto @C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_50_8_57_8_if_end;
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_50_8_57_8_if_end:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_28_75_58_4_stop:
     }
-    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc"; @line = 56; @symbol_functiondef = [onStop,56,13,19]; @symbol_param<0> = [state,56,20,25]; @symbol_param<0>_type<0> = [Dictionary,56,29,39]; ]
+    [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc"; @line = 60; @symbol_functiondef = [onStop,60,13,19]; @symbol_param<0> = [state,60,20,25]; @symbol_param<0>_type<0> = [Dictionary,60,29,39]; ]
     function onStop(state as Dictionary or Null) as Void {
     }
 }
-[ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc"; @line = 60; @symbol_functiondef = [getApp,60,9,15]; @symbol_return<0> = [HyroxApp,60,21,29]; ]
+[ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc"; @line = 64; @symbol_functiondef = [getApp,64,9,15]; @symbol_return<0> = [HyroxApp,64,21,29]; ]
 function getApp() as HyroxApp {
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_60_30_62_0_start:
-[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 61 4 ]
-    symbol [ Application %tmp.1 61 11 22 ];
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_64_30_66_0_start:
+[ "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc" 65 4 ]
+    symbol [ Application %tmp.1 65 11 22 ];
     %tmp.1 = getm $.Toybox.Application;
-    symbol [ getApp %tmp.2 61 23 29 ];
+    symbol [ getApp %tmp.2 65 23 29 ];
     %tmp.2 = getv function %tmp.1 :getApp;
     %tmp.3 = invoke %tmp.1 %tmp.2();
     %tmp.4 = as %tmp.3 HyroxApp;
-    symbol [ HyroxApp %tmp.4 61 35 43 ];
+    symbol [ HyroxApp %tmp.4 65 35 43 ];
     ret %tmp.4;
-C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_60_30_62_0_stop:
+C__Users_johan_Personal_Projects_Workout_Tracker_Workout_Tracker_fittrack_garmin_watch_source_HyroxApp_mc_64_30_66_0_stop:
 }
 [ @file = "C:\Users\johan\Personal Projects\Workout Tracker\Workout-Tracker\fittrack-garmin-watch\source\HyroxApp.mc"; @line = 1; ]
 <init> {

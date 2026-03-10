@@ -2,6 +2,9 @@ import Toybox.System;
 import Toybox.Timer;
 import Toybox.Activity;
 import Toybox.Application;
+import Toybox.Communications;
+import Toybox.Time;
+import Toybox.Time.Gregorian;
 import Toybox.WatchUi;
 import Toybox.Lang;
 
@@ -41,6 +44,12 @@ class HyroxModel {
     var stations;      // Array of Dictionaries { "type", "label" }
     var simulationId;
 
+    // Auth credentials sent from phone with START_SESSION (used for makeWebRequest fallback)
+    var userId;
+    var supabaseUrl;
+    var supabaseAnonKey;
+    var accessToken;
+
     var _timer;
 
     function initialize() {
@@ -51,15 +60,19 @@ class HyroxModel {
         centerX  = screenW / 2;
         centerY  = screenH / 2;
 
-        state        = :ready;
-        currentStep  = 0;
-        splitTimer   = 0;
-        totalTimer   = 0;
-        splits       = [];
-        hrValue      = null;
-        simulationId = null;
-        showHR       = true;
-        _timer       = null;
+        state           = :ready;
+        currentStep     = 0;
+        splitTimer      = 0;
+        totalTimer      = 0;
+        splits          = [];
+        hrValue         = null;
+        simulationId    = null;
+        showHR          = true;
+        _timer          = null;
+        userId          = null;
+        supabaseUrl     = null;
+        supabaseAnonKey = null;
+        accessToken     = null;
 
         stations   = buildDefaultStations();
         totalSteps = stations.size();
@@ -179,10 +192,69 @@ class HyroxModel {
 
         if ((Toybox has :Communications) && (Toybox.Communications has :transmitMessage)) {
             Toybox.Communications.transmitMessage(payload, {}, method(:onTransmitComplete));
+        } else if ((Toybox has :Communications) && (Toybox.Communications has :makeWebRequest)
+                   && userId != null && supabaseUrl != null
+                   && supabaseAnonKey != null && accessToken != null) {
+            // Older watches (e.g. Approach S60): POST directly to Supabase via the
+            // Garmin Connect HTTP relay (Bluetooth → phone → internet).
+            var now = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
+            var completedAt = now.year.format("%04d") + "-"
+                + now.month.format("%02d") + "-"
+                + now.day.format("%02d") + "T"
+                + now.hour.format("%02d") + ":"
+                + now.min.format("%02d") + ":"
+                + now.sec.format("%02d") + "Z";
+
+            var dbSplits = [];
+            for (var i = 0; i < splits.size(); i++) {
+                var s = splits[i] as Dictionary;
+                dbSplits.add({
+                    "order"   => s["order"],
+                    "type"    => s["type"],
+                    "label"   => s["name"],
+                    "time_ms" => s["duration"] * 1000
+                });
+            }
+
+            var body = {
+                "user_id"       => userId,
+                "simulation_id" => (simulationId != null) ? simulationId : "standalone",
+                "total_time_ms" => totalTimer * 1000,
+                "completed_at"  => completedAt,
+                "splits"        => dbSplits
+            };
+            var headers = {
+                "Content-Type"  => "application/json",
+                "apikey"        => supabaseAnonKey,
+                "Authorization" => "Bearer " + accessToken,
+                "Prefer"        => "return=minimal"
+            };
+            Communications.makeWebRequest(
+                supabaseUrl + "/rest/v1/hyrox_results",
+                body,
+                {
+                    :method       => Communications.HTTP_REQUEST_METHOD_POST,
+                    :headers      => headers,
+                    :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
+                },
+                method(:onWebRequestComplete)
+            );
         } else {
             state = :saved;
             WatchUi.requestUpdate();
         }
+    }
+
+    function onWebRequestComplete(responseCode as Number, data as Dictionary?) as Void {
+        // 201 = HTTP Created — Supabase REST API successfully stored the result.
+        // Clear the local copy so it isn't resent on QUERY_PENDING.
+        if (responseCode == 201) {
+            Application.Storage.deleteValue("pendingSplits");
+        }
+        state = :saved;
+        WatchUi.requestUpdate();
+        var exitTimer = new Timer.Timer();
+        exitTimer.start(method(:doExit), 2000, false);
     }
 
     function discard() as Void {

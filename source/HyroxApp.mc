@@ -26,8 +26,8 @@ class HyroxApp extends Application.AppBase {
 
     // ── Phone → Watch message handler ────────────────────────────────────────
     function onPhoneMessage(msg as Communications.PhoneAppMessage) as Void {
-        var data = msg.data;
-        if (data == null) { return; }
+        if (msg.data == null) { return; }
+        var data = msg.data as Dictionary;
 
         var msgType = data["type"];
         if (msgType == null) { return; }
@@ -39,6 +39,10 @@ class HyroxApp extends Application.AppBase {
             if (data["stations"] != null) {
                 gModel.setStationsFromMessage(data["stations"]);
             }
+            if (data["userId"] != null)          { gModel.userId = data["userId"]; }
+            if (data["supabaseUrl"] != null)      { gModel.supabaseUrl = data["supabaseUrl"]; }
+            if (data["supabaseAnonKey"] != null)  { gModel.supabaseAnonKey = data["supabaseAnonKey"]; }
+            if (data["accessToken"] != null)      { gModel.accessToken = data["accessToken"]; }
         }
 
         // Phone asking if there is a locally-stored result that was never

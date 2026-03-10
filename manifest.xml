@@ -19,10 +19,12 @@
       <iq:product id="fenix5s"/>
       <iq:product id="fenix5x"/>
       <iq:product id="forerunner245"/>
+
       <iq:product id="forerunner255"/>
       <iq:product id="forerunner265"/>
       <iq:product id="forerunner945"/>
       <iq:product id="forerunner955"/>
+
       <iq:product id="vivoactive3"/>
       <iq:product id="vivoactive4"/>
       <iq:product id="vivoactive4s"/>
@@ -33,6 +35,7 @@
       <iq:product id="venu3s"/>
       <iq:product id="epix2"/>
       <iq:product id="approachs60"/>
+      <!-- approachs60 is the primary development device -->
       <iq:product id="venusq"/>
       <iq:product id="venusq2"/>
       <iq:product id="venusq2m"/>
