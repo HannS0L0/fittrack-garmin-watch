@@ -45,6 +45,11 @@ class HyroxApp extends Application.AppBase {
             if (data["supabaseUrl"] != null)      { gModel.supabaseUrl = data["supabaseUrl"]; }
             if (data["supabaseAnonKey"] != null)  { gModel.supabaseAnonKey = data["supabaseAnonKey"]; }
             if (data["accessToken"] != null)      { gModel.accessToken = data["accessToken"]; }
+            // Simulation that standalone sessions are saved under (persisted so
+            // a session run later without the phone can still be uploaded)
+            if (data["standaloneSimulationId"] != null) {
+                Application.Storage.setValue("standaloneSimId", data["standaloneSimulationId"]);
+            }
         }
 
         // Phone asking if there is a locally-stored result that was never
@@ -70,6 +75,7 @@ class HyroxApp extends Application.AppBase {
                         + now.min.format("%02d") + ":"
                         + now.sec.format("%02d") + "Z";
                     var body = gModel.buildDbRow(pd, gModel.userId, completedAt);
+                    if (body == null) { return; }
                     var headers = {
                         "Content-Type"  => "application/json",
                         "apikey"        => gModel.supabaseAnonKey,

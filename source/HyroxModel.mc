@@ -324,6 +324,13 @@ class HyroxModel {
                 + now.sec.format("%02d") + "Z";
 
             var body = buildDbRow(payload, userId, completedAt);
+            if (body == null) {
+                // Standalone session and no "Watch Session" id yet: keep it in
+                // pendingSplits; the phone's QUERY_PENDING retries it after a sync.
+                state = :saved;
+                WatchUi.requestUpdate();
+                return;
+            }
             var headers = {
                 "Content-Type"  => "application/json",
                 "apikey"        => supabaseAnonKey,
@@ -393,7 +400,16 @@ class HyroxModel {
 
     // Convert a SESSION_COMPLETE payload into a hyrox_results row for the
     // Supabase REST fallback (older watches without transmitMessage).
-    function buildDbRow(payload as Dictionary, uid, completedAt as String) as Dictionary {
+    // simulation_id must be a real id: a standalone session uses the phone's
+    // "Watch Session" simulation (sent with START_SESSION and kept in Storage).
+    // Returns null when there is none yet — the caller keeps the result pending.
+    function buildDbRow(payload as Dictionary, uid, completedAt as String) as Dictionary? {
+        var simId = payload["simulationId"];
+        if (simId == null || simId.equals("standalone")) {
+            simId = Application.Storage.getValue("standaloneSimId");
+            if (simId == null) { return null; }
+        }
+
         var rawSplits = payload["splits"] as Array;
         var dbSplits = [];
         for (var i = 0; i < rawSplits.size(); i++) {
@@ -410,7 +426,7 @@ class HyroxModel {
         }
         var body = {
             "user_id"       => uid,
-            "simulation_id" => payload["simulationId"],
+            "simulation_id" => simId,
             "total_time_ms" => (payload["totalTime"] as Number) * 1000,
             "completed_at"  => completedAt,
             "splits"        => dbSplits
