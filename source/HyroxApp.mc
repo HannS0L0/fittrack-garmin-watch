@@ -67,6 +67,8 @@ class HyroxApp extends Application.AppBase {
     }
 
     function onStop(state as Dictionary?) as Void {
+        // Closed without Save: don't leave a half-recorded activity behind
+        gModel.discardActivity();
         gModel.disableHrSensor();
     }
 }
