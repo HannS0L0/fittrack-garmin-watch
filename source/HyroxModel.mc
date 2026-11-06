@@ -8,6 +8,7 @@ import Toybox.Time.Gregorian;
 import Toybox.WatchUi;
 import Toybox.Lang;
 import Toybox.Math;
+import Toybox.Sensor;
 
 // ─── Colour palette ─────────────────────────────────────────────────────────
 const COLOR_BG      = 0x120F0A;
@@ -74,6 +75,9 @@ class HyroxModel {
 
     var _timer;
 
+    var queue;            // ResultQueue — unsent results, kept until confirmed saved
+    var _saving;          // true from Save until exit — ignores repeat presses
+
     function initialize() {
         var settings = System.getDeviceSettings();
         screenW  = settings.screenWidth;
@@ -97,6 +101,8 @@ class HyroxModel {
         accessToken     = null;
 
         resetHr();
+        queue      = new ResultQueue();
+        _saving    = false;
 
         stations   = buildDefaultStations();
         totalSteps = stations.size();
@@ -159,13 +165,7 @@ class HyroxModel {
         splitTimer++;
         totalTimer++;
 
-        // Read heart rate
-        var info = Activity.getActivityInfo();
-        if (info != null && info.currentHeartRate != null) {
-            hrValue = info.currentHeartRate;
-        } else {
-            hrValue = null;
-        }
+        hrValue = readHeartRate();
         recordHr(hrValue);
 
         WatchUi.requestUpdate();
@@ -293,76 +293,71 @@ class HyroxModel {
     // ── Save & transmit ──────────────────────────────────────────────────────
 
     function saveAndTransmit() {
+        // Sending can take a few seconds; a second press must not queue a copy
+        if (_saving) { return; }
+        _saving = true;
+
         var payload = {
-            "type"        => "SESSION_COMPLETE",
-            "simulationId" => (simulationId != null) ? simulationId : "standalone",
-            "totalTime"   => totalTimer,
-            "splits"      => splits,
-            "hrSamples"   => hrSamples,
-            "hrInterval"  => hrInterval,
-            "avgHr"       => getAvgHr(),
-            "maxHr"       => getMaxHr()
+            "type"           => "SESSION_COMPLETE",
+            "clientResultId" => queue.newResultId(),
+            "completedAt"    => Time.now().value(),
+            "simulationId"   => (simulationId != null) ? simulationId : "standalone",
+            "totalTime"      => totalTimer,
+            "splits"         => splits,
+            "hrSamples"      => hrSamples,
+            "hrInterval"     => hrInterval,
+            "avgHr"          => getAvgHr(),
+            "maxHr"          => getMaxHr()
         };
 
-        // Always persist locally first so data survives if the phone isn't
-        // connected or the transmission fails silently.
-        Application.Storage.setValue("pendingSplits", payload);
+        // Persist first: the result stays on the watch until Supabase or the
+        // phone app confirms it is stored (see ResultQueue). Then send this one
+        // along with anything older still unsent, and exit when that's done.
+        queue.enqueue(payload);
+        queue.flush(method(:onSaveFlushed));
+    }
 
-        if ((Toybox has :Communications) && (Toybox.Communications has :transmitMessage)) {
-            Toybox.Communications.transmitMessage(payload, {}, method(:onTransmitComplete));
-        } else if ((Toybox has :Communications) && (Toybox.Communications has :makeWebRequest)
-                   && userId != null && supabaseUrl != null
-                   && supabaseAnonKey != null && accessToken != null) {
-            // Older watches (e.g. Approach S60): POST directly to Supabase via the
-            // Garmin Connect HTTP relay (Bluetooth → phone → internet).
-            var now = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
-            var completedAt = now.year.format("%04d") + "-"
-                + now.month.format("%02d") + "-"
-                + now.day.format("%02d") + "T"
-                + now.hour.format("%02d") + ":"
-                + now.min.format("%02d") + ":"
-                + now.sec.format("%02d") + "Z";
+    function onSaveFlushed() as Void {
+        state = :saved;
+        WatchUi.requestUpdate();
+        // Brief delay then exit (view renders "Saved!")
+        var exitTimer = new Timer.Timer();
+        exitTimer.start(method(:doExit), 2000, false);
+    }
 
-            var body = buildDbRow(payload, userId, completedAt);
-            if (body == null) {
-                // Standalone session and no "Watch Session" id yet: keep it in
-                // pendingSplits; the phone's QUERY_PENDING retries it after a sync.
-                state = :saved;
-                WatchUi.requestUpdate();
-                return;
-            }
-            var headers = {
-                "Content-Type"  => "application/json",
-                "apikey"        => supabaseAnonKey,
-                "Authorization" => "Bearer " + accessToken,
-                "Prefer"        => "return=minimal"
-            };
-            Communications.makeWebRequest(
-                supabaseUrl + "/rest/v1/hyrox_results",
-                body,
-                {
-                    :method       => Communications.HTTP_REQUEST_METHOD_POST,
-                    :headers      => headers,
-                    :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
-                },
-                method(:onWebRequestComplete)
-            );
-        } else {
-            state = :saved;
-            WatchUi.requestUpdate();
+    function hasWebCredentials() as Boolean {
+        return userId != null && supabaseUrl != null
+            && supabaseAnonKey != null && accessToken != null;
+    }
+
+    // ── Heart rate sensor ────────────────────────────────────────────────────
+
+    // Switch the optical HR sensor on explicitly. Without this some watches
+    // never report HR to a watch app that isn't recording an activity.
+    function enableHrSensor() as Void {
+        if (Toybox has :Sensor) {
+            Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
         }
     }
 
-    function onWebRequestComplete(responseCode as Number, data as Dictionary?) as Void {
-        // 201 = HTTP Created — Supabase REST API successfully stored the result.
-        // Clear the local copy so it isn't resent on QUERY_PENDING.
-        if (responseCode == 201) {
-            Application.Storage.deleteValue("pendingSplits");
+    function disableHrSensor() as Void {
+        if (Toybox has :Sensor) {
+            Sensor.setEnabledSensors([]);
         }
-        state = :saved;
-        WatchUi.requestUpdate();
-        var exitTimer = new Timer.Timer();
-        exitTimer.start(method(:doExit), 2000, false);
+    }
+
+    function readHeartRate() {
+        var info = Activity.getActivityInfo();
+        if (info != null && info.currentHeartRate != null) {
+            return info.currentHeartRate;
+        }
+        if (Toybox has :Sensor) {
+            var sensorInfo = Sensor.getInfo();
+            if (sensorInfo != null && sensorInfo.heartRate != null) {
+                return sensorInfo.heartRate;
+            }
+        }
+        return null;
     }
 
     function discard() as Void {
@@ -379,19 +374,6 @@ class HyroxModel {
         WatchUi.requestUpdate();
     }
 
-    function onTransmitComplete(responseCode as Number, data as Dictionary?) as Void {
-        // 200 = Communications.SUCCESS — phone received the message cleanly.
-        // On success, clear the local copy so it isn't resent on QUERY_PENDING.
-        if (responseCode == 200) {
-            Application.Storage.deleteValue("pendingSplits");
-        }
-        state = :saved;
-        WatchUi.requestUpdate();
-        // Brief delay then exit (handled by view rendering "Saved!")
-        var exitTimer = new Timer.Timer();
-        exitTimer.start(method(:doExit), 2000, false);
-    }
-
     function doExit() as Void {
         System.exit();
     }
@@ -399,11 +381,11 @@ class HyroxModel {
     // ── Helpers ──────────────────────────────────────────────────────────────
 
     // Convert a SESSION_COMPLETE payload into a hyrox_results row for the
-    // Supabase REST fallback (older watches without transmitMessage).
+    // direct Supabase POST (ResultQueue).
     // simulation_id must be a real id: a standalone session uses the phone's
     // "Watch Session" simulation (sent with START_SESSION and kept in Storage).
     // Returns null when there is none yet — the caller keeps the result pending.
-    function buildDbRow(payload as Dictionary, uid, completedAt as String) as Dictionary? {
+    function buildDbRow(payload as Dictionary, uid) as Dictionary? {
         var simId = payload["simulationId"];
         if (simId == null || simId.equals("standalone")) {
             simId = Application.Storage.getValue("standaloneSimId");
@@ -426,9 +408,10 @@ class HyroxModel {
         }
         var body = {
             "user_id"       => uid,
+            "client_result_id" => payload["clientResultId"],
             "simulation_id" => simId,
             "total_time_ms" => (payload["totalTime"] as Number) * 1000,
-            "completed_at"  => completedAt,
+            "completed_at"  => formatUtc(payload["completedAt"]),
             "splits"        => dbSplits
         };
         var samples = payload["hrSamples"];
@@ -457,6 +440,19 @@ class HyroxModel {
     function getProgress() {
         if (totalSteps == 0) { return 0.0f; }
         return currentStep.toFloat() / totalSteps.toFloat();
+    }
+
+    // ISO-8601 UTC timestamp for a Unix-seconds value (now if null). Uses
+    // utcInfo: the old code formatted LOCAL time and labelled it "Z".
+    function formatUtc(epochSeconds) as String {
+        var moment = (epochSeconds != null) ? new Time.Moment(epochSeconds) : Time.now();
+        var t = Gregorian.utcInfo(moment, Time.FORMAT_SHORT);
+        return t.year.format("%04d") + "-"
+            + (t.month as Number).format("%02d") + "-"
+            + t.day.format("%02d") + "T"
+            + t.hour.format("%02d") + ":"
+            + t.min.format("%02d") + ":"
+            + t.sec.format("%02d") + "Z";
     }
 
     function formatTime(seconds) {
