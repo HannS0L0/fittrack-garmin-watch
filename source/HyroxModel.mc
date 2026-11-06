@@ -2,9 +2,9 @@ import Toybox.System;
 import Toybox.Timer;
 import Toybox.Activity;
 import Toybox.Application;
-import Toybox.Communications;
+import Toybox.Math;
+import Toybox.UserProfile;
 import Toybox.Time;
-import Toybox.Time.Gregorian;
 import Toybox.WatchUi;
 import Toybox.Lang;
 
@@ -43,12 +43,8 @@ class HyroxModel {
     var showHR;        // Boolean — user setting
     var stations;      // Array of Dictionaries { "type", "label" }
     var simulationId;
-
-    // Auth credentials sent from phone with START_SESSION (used for makeWebRequest fallback)
-    var userId;
-    var supabaseUrl;
-    var supabaseAnonKey;
-    var accessToken;
+    var simulationName;
+    var hrZones;       // Array of zone upper bounds from UserProfile, or null
 
     var _timer;
 
@@ -69,13 +65,33 @@ class HyroxModel {
         simulationId    = null;
         showHR          = true;
         _timer          = null;
-        userId          = null;
-        supabaseUrl     = null;
-        supabaseAnonKey = null;
-        accessToken     = null;
+
+        simulationName  = null;
+        hrZones         = null;
 
         stations   = buildDefaultStations();
         totalSteps = stations.size();
+
+        loadSession();
+    }
+
+    // ── Loaded simulation (persisted so it survives the app being reopened) ──
+
+    function saveSession() as Void {
+        Application.Storage.setValue("session", {
+            "simulationId"   => simulationId,
+            "simulationName" => simulationName,
+            "stations"       => stations
+        });
+    }
+
+    function loadSession() as Void {
+        var s = Application.Storage.getValue("session") as Dictionary?;
+        if (s == null || s["stations"] == null) { return; }
+        simulationId   = s["simulationId"];
+        simulationName = s["simulationName"];
+        stations       = s["stations"] as Array;
+        totalSteps     = stations.size();
     }
 
     // ── Station list ─────────────────────────────────────────────────────────
@@ -125,6 +141,10 @@ class HyroxModel {
         splitTimer  = 0;
         totalTimer  = 0;
         splits      = [];
+
+        if (UserProfile has :getHeartRateZones) {
+            hrZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
+        }
 
         _timer = new Timer.Timer();
         _timer.start(method(:onTick), 1000, true);
@@ -176,85 +196,33 @@ class HyroxModel {
         }
     }
 
-    // ── Save & transmit ──────────────────────────────────────────────────────
+    // ── Save ─────────────────────────────────────────────────────────────────
 
+    // Queue the result for sync. It stays in watch Storage until the phone
+    // app or Supabase confirms it, so nothing is lost if the phone is out of
+    // range, the app is closed, or the session ran for hours.
     function saveAndTransmit() {
-        var payload = {
-            "type"        => "SESSION_COMPLETE",
+        state = :saved;
+        gSync.onSynced = method(:onSynced);
+
+        var now = Time.now().value();
+        gSync.enqueue({
+            "type"         => "SESSION_COMPLETE",
+            "resultId"     => now.format("%d") + "-" + (Math.rand() % 100000).format("%d"),
             "simulationId" => (simulationId != null) ? simulationId : "standalone",
-            "totalTime"   => totalTimer,
-            "splits"      => splits
-        };
-
-        // Always persist locally first so data survives if the phone isn't
-        // connected or the transmission fails silently.
-        Application.Storage.setValue("pendingSplits", payload);
-
-        if ((Toybox has :Communications) && (Toybox.Communications has :transmitMessage)) {
-            Toybox.Communications.transmitMessage(payload, {}, method(:onTransmitComplete));
-        } else if ((Toybox has :Communications) && (Toybox.Communications has :makeWebRequest)
-                   && userId != null && supabaseUrl != null
-                   && supabaseAnonKey != null && accessToken != null) {
-            // Older watches (e.g. Approach S60): POST directly to Supabase via the
-            // Garmin Connect HTTP relay (Bluetooth → phone → internet).
-            var now = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
-            var completedAt = now.year.format("%04d") + "-"
-                + now.month.format("%02d") + "-"
-                + now.day.format("%02d") + "T"
-                + now.hour.format("%02d") + ":"
-                + now.min.format("%02d") + ":"
-                + now.sec.format("%02d") + "Z";
-
-            var dbSplits = [];
-            for (var i = 0; i < splits.size(); i++) {
-                var s = splits[i] as Dictionary;
-                dbSplits.add({
-                    "order"   => s["order"],
-                    "type"    => s["type"],
-                    "label"   => s["name"],
-                    "time_ms" => s["duration"] * 1000
-                });
-            }
-
-            var body = {
-                "user_id"       => userId,
-                "simulation_id" => (simulationId != null) ? simulationId : "standalone",
-                "total_time_ms" => totalTimer * 1000,
-                "completed_at"  => completedAt,
-                "splits"        => dbSplits
-            };
-            var headers = {
-                "Content-Type"  => "application/json",
-                "apikey"        => supabaseAnonKey,
-                "Authorization" => "Bearer " + accessToken,
-                "Prefer"        => "return=minimal"
-            };
-            Communications.makeWebRequest(
-                supabaseUrl + "/rest/v1/hyrox_results",
-                body,
-                {
-                    :method       => Communications.HTTP_REQUEST_METHOD_POST,
-                    :headers      => headers,
-                    :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
-                },
-                method(:onWebRequestComplete)
-            );
-        } else {
-            state = :saved;
-            WatchUi.requestUpdate();
-        }
+            "totalTime"    => totalTimer,
+            "completedAt"  => now,   // Unix epoch seconds, UTC
+            "splits"       => splits
+        });
+        WatchUi.requestUpdate();
     }
 
-    function onWebRequestComplete(responseCode as Number, data as Dictionary?) as Void {
-        // 201 = HTTP Created — Supabase REST API successfully stored the result.
-        // Clear the local copy so it isn't resent on QUERY_PENDING.
-        if (responseCode == 201) {
-            Application.Storage.deleteValue("pendingSplits");
-        }
-        state = :saved;
-        WatchUi.requestUpdate();
-        var exitTimer = new Timer.Timer();
-        exitTimer.start(method(:doExit), 2000, false);
+    // Close the app shortly after the sync is confirmed. If it can't sync yet
+    // the Saved screen stays up; BACK exits and the queue retries next launch.
+    function onSynced() as Void {
+        gSync.onSynced = null;
+        _timer = new Timer.Timer();
+        _timer.start(method(:doExit), 2000, false);
     }
 
     function discard() as Void {
@@ -270,19 +238,6 @@ class HyroxModel {
         WatchUi.requestUpdate();
     }
 
-    function onTransmitComplete(responseCode as Number, data as Dictionary?) as Void {
-        // 200 = Communications.SUCCESS — phone received the message cleanly.
-        // On success, clear the local copy so it isn't resent on QUERY_PENDING.
-        if (responseCode == 200) {
-            Application.Storage.deleteValue("pendingSplits");
-        }
-        state = :saved;
-        WatchUi.requestUpdate();
-        // Brief delay then exit (handled by view rendering "Saved!")
-        var exitTimer = new Timer.Timer();
-        exitTimer.start(method(:doExit), 2000, false);
-    }
-
     function doExit() as Void {
         System.exit();
     }
@@ -296,10 +251,107 @@ class HyroxModel {
         if (currentStep < totalSteps) {
             var t = stations[currentStep]["type"];
             if (t.equals("run"))        { return COLOR_CYAN;   }
-            if (t.equals("exercise"))   { return COLOR_MINT;   }
+            if (t.equals("exercise"))   { return COLOR_YELLOW; }
             if (t.equals("transition")) { return COLOR_ORANGE; }
         }
         return COLOR_CREAM;
+    }
+
+    // ── Display helpers ──────────────────────────────────────────────────────
+
+    // Standard HYROX targets for the watch's built-in station names. Labels
+    // from the phone carry their own target in brackets: "Sled Push (50m)".
+    function standardTarget(name as String) {
+        var targets = {
+            "SkiErg" => "1000m", "Sled Push" => "50m", "Sled Pull" => "50m",
+            "Burpee Broad Jump" => "80m", "Rowing" => "1000m",
+            "Farmers Carry" => "200m", "Sandbag Lunges" => "100m",
+            "Wall Balls" => "100 reps"
+        };
+        return targets[name];
+    }
+
+    // "Sled Push (50m)" → "Sled Push"
+    function stationName(label as String) as String {
+        var i = label.find(" (");
+        return (i != null) ? label.substring(0, i) : label;
+    }
+
+    // "Sled Push (50m)" → "50m"; built-in names use the standard table
+    function stationTarget(label as String) {
+        var i = label.find(" (");
+        if (i != null && label.substring(label.length() - 1, label.length()).equals(")")) {
+            return label.substring(i + 2, label.length() - 1);
+        }
+        return standardTarget(label);
+    }
+
+    // 1-based position of step among steps of the same type, plus the total
+    // of that type: RUN 3 / 8, STATION 2 / 8.
+    function typeIndex(step as Number) as Array {
+        var type = stations[step]["type"];
+        var index = 0;
+        var total = 0;
+        for (var i = 0; i < stations.size(); i++) {
+            if (stations[i]["type"].equals(type)) {
+                total++;
+                if (i <= step) { index++; }
+            }
+        }
+        return [index, total];
+    }
+
+    function countType(type as String) as Number {
+        var n = 0;
+        for (var i = 0; i < stations.size(); i++) {
+            if (stations[i]["type"].equals(type)) { n++; }
+        }
+        return n;
+    }
+
+    // Name of the next run/station after step, or null at the end
+    function nextName(step as Number) {
+        for (var i = step + 1; i < stations.size(); i++) {
+            var s = stations[i];
+            if (s["type"].equals("run")) {
+                return "Run " + typeIndex(i)[0].format("%d");
+            }
+            if (s["type"].equals("exercise")) {
+                return stationName(s["label"] as String);
+            }
+        }
+        return null;
+    }
+
+    // Target of the next run/station (e.g. "50m"), or null
+    function nextTarget(step as Number) {
+        for (var i = step + 1; i < stations.size(); i++) {
+            var s = stations[i];
+            if (s["type"].equals("run")) { return "1km"; }
+            if (s["type"].equals("exercise")) { return stationTarget(s["label"] as String); }
+        }
+        return null;
+    }
+
+    // Seconds spent on runs / stations / transitions — splits[i] is stations[i]
+    function timeByType(type as String) as Number {
+        var sum = 0;
+        for (var i = 0; i < splits.size() && i < stations.size(); i++) {
+            if (stations[i]["type"].equals(type)) {
+                sum += splits[i]["duration"] as Number;
+            }
+        }
+        return sum;
+    }
+
+    // HR zone 1–5 from the user's Garmin profile, or null if unknown
+    function hrZone() {
+        if (hrValue == null || hrZones == null || hrZones.size() < 6) { return null; }
+        if (hrValue < hrZones[0]) { return null; }
+        for (var z = 1; z <= 5; z++) {
+            if (hrValue <= hrZones[z]) { return z; }
+        }
+        return 5;
     }
 
     function getProgress() {
