@@ -20,6 +20,8 @@ class HyroxApp extends Application.AppBase {
     }
 
     function onStart(state as Dictionary?) as Void {
+        // On from launch so the optical sensor has a lock before the race starts
+        gModel.enableHrSensor();
     }
 
     function getInitialView() as [WatchUi.Views] or [WatchUi.Views, WatchUi.InputDelegates] {
@@ -52,61 +54,20 @@ class HyroxApp extends Application.AppBase {
             }
         }
 
-        // Phone asking if there is a locally-stored result that was never
-        // delivered (e.g. phone was not reachable when Save was tapped).
+        // Phone asking for results that were never confirmed saved (e.g. the
+        // phone wasn't reachable when Save was tapped): send the whole backlog.
         if (msgType.equals("QUERY_PENDING")) {
-            var pending = Application.Storage.getValue("pendingSplits");
-            if (pending != null) {
-                if ((Toybox has :Communications) && (Toybox.Communications has :transmitMessage)) {
-                    // Modern watches: send directly to the phone app.
-                    Toybox.Communications.transmitMessage(pending, {}, null);
-                } else if ((Toybox has :Communications) && (Toybox.Communications has :makeWebRequest)
-                           && gModel.userId != null && gModel.supabaseUrl != null
-                           && gModel.supabaseAnonKey != null && gModel.accessToken != null) {
-                    // Older watches (e.g. Approach S60): retry the HTTP POST to
-                    // Supabase. The phone detects the new row via useFocusEffect.
-                    // Cast Storage Object → Dictionary before accessing string keys.
-                    var pd = pending as Dictionary;
-                    var now = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
-                    var completedAt = now.year.format("%04d") + "-"
-                        + now.month.format("%02d") + "-"
-                        + now.day.format("%02d") + "T"
-                        + now.hour.format("%02d") + ":"
-                        + now.min.format("%02d") + ":"
-                        + now.sec.format("%02d") + "Z";
-                    var body = gModel.buildDbRow(pd, gModel.userId, completedAt);
-                    if (body == null) { return; }
-                    var headers = {
-                        "Content-Type"  => "application/json",
-                        "apikey"        => gModel.supabaseAnonKey,
-                        "Authorization" => "Bearer " + gModel.accessToken,
-                        "Prefer"        => "return=minimal"
-                    };
-                    Communications.makeWebRequest(
-                        gModel.supabaseUrl + "/rest/v1/hyrox_results",
-                        body,
-                        {
-                            :method       => Communications.HTTP_REQUEST_METHOD_POST,
-                            :headers      => headers,
-                            :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
-                        },
-                        method(:onQueryPendingWebComplete)
-                    );
-                }
-            }
+            gModel.queue.flush(null);
         }
-    }
 
-    // Callback for QUERY_PENDING makeWebRequest retry.
-    // On HTTP 201 (Created) the data reached Supabase — clear local storage
-    // so it isn't re-sent on the next QUERY_PENDING.
-    function onQueryPendingWebComplete(responseCode as Number, data as Dictionary?) as Void {
-        if (responseCode == 201) {
-            Application.Storage.deleteValue("pendingSplits");
+        // Phone app stored a result we transmitted: drop it from the queue
+        if (msgType.equals("RESULT_SAVED")) {
+            gModel.queue.confirm(data["clientResultId"]);
         }
     }
 
     function onStop(state as Dictionary?) as Void {
+        gModel.disableHrSensor();
     }
 }
 
