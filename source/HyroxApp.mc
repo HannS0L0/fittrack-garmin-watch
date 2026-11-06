@@ -45,6 +45,11 @@ class HyroxApp extends Application.AppBase {
             if (data["supabaseUrl"] != null)      { gModel.supabaseUrl = data["supabaseUrl"]; }
             if (data["supabaseAnonKey"] != null)  { gModel.supabaseAnonKey = data["supabaseAnonKey"]; }
             if (data["accessToken"] != null)      { gModel.accessToken = data["accessToken"]; }
+            // Simulation that standalone sessions are saved under (persisted so
+            // a session run later without the phone can still be uploaded)
+            if (data["standaloneSimulationId"] != null) {
+                Application.Storage.setValue("standaloneSimId", data["standaloneSimulationId"]);
+            }
         }
 
         // Phone asking if there is a locally-stored result that was never
@@ -62,17 +67,6 @@ class HyroxApp extends Application.AppBase {
                     // Supabase. The phone detects the new row via useFocusEffect.
                     // Cast Storage Object → Dictionary before accessing string keys.
                     var pd = pending as Dictionary;
-                    var rawSplits = pd["splits"] as Array;
-                    var dbSplits = [] as Array;
-                    for (var i = 0; i < rawSplits.size(); i++) {
-                        var s = rawSplits[i] as Dictionary;
-                        dbSplits.add({
-                            "order"   => s["order"],
-                            "type"    => s["type"],
-                            "label"   => s["name"],
-                            "time_ms" => (s["duration"] as Number) * 1000
-                        });
-                    }
                     var now = Gregorian.info(Time.now(), Time.FORMAT_SHORT);
                     var completedAt = now.year.format("%04d") + "-"
                         + now.month.format("%02d") + "-"
@@ -80,13 +74,8 @@ class HyroxApp extends Application.AppBase {
                         + now.hour.format("%02d") + ":"
                         + now.min.format("%02d") + ":"
                         + now.sec.format("%02d") + "Z";
-                    var body = {
-                        "user_id"       => gModel.userId,
-                        "simulation_id" => pd["simulationId"],
-                        "total_time_ms" => (pd["totalTime"] as Number) * 1000,
-                        "completed_at"  => completedAt,
-                        "splits"        => dbSplits
-                    };
+                    var body = gModel.buildDbRow(pd, gModel.userId, completedAt);
+                    if (body == null) { return; }
                     var headers = {
                         "Content-Type"  => "application/json",
                         "apikey"        => gModel.supabaseAnonKey,
