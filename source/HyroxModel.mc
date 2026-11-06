@@ -7,6 +7,7 @@ import Toybox.Time;
 import Toybox.Time.Gregorian;
 import Toybox.WatchUi;
 import Toybox.Lang;
+import Toybox.Math;
 
 // ─── Colour palette ─────────────────────────────────────────────────────────
 const COLOR_BG      = 0x120F0A;
@@ -19,6 +20,14 @@ const COLOR_CREAM   = 0xEAE0CD;
 const COLOR_MUTED   = 0x948270;
 const COLOR_SURFACE = 0x1E1810;
 const COLOR_BORDER  = 0x3E3428;
+
+// ─── Heart rate recording ───────────────────────────────────────────────────
+// The whole-workout HR series is averaged into buckets of HR_BUCKET_START_S
+// seconds. When the series reaches HR_MAX_SAMPLES it is halved (pairs merged)
+// and the bucket doubles, so payload + memory stay bounded however long the
+// session runs (720 points ≈ 1 h at 5 s, 2 h at 10 s, ...).
+const HR_BUCKET_START_S = 5;
+const HR_MAX_SAMPLES    = 720;
 
 // ─── App states ──────────────────────────────────────────────────────────────
 // :ready | :active | :finish | :saved
@@ -43,6 +52,19 @@ class HyroxModel {
     var showHR;        // Boolean — user setting
     var stations;      // Array of Dictionaries { "type", "label" }
     var simulationId;
+
+    // HR recording
+    var hrSamples;        // Array of Number|null — bucket averages for the whole session
+    var hrInterval;       // seconds per hrSamples entry
+    var _hrBucketSum;     // running sum for the bucket in progress
+    var _hrBucketCount;   // valid readings in the bucket in progress
+    var _hrBucketTicks;   // ticks elapsed in the bucket in progress
+    var _splitHrSum;      // running sum for the current split
+    var _splitHrCount;
+    var _splitHrMax;
+    var _sessionHrSum;    // running sum for the whole session
+    var _sessionHrCount;
+    var _sessionHrMax;
 
     // Auth credentials sent from phone with START_SESSION (used for makeWebRequest fallback)
     var userId;
@@ -73,6 +95,8 @@ class HyroxModel {
         supabaseUrl     = null;
         supabaseAnonKey = null;
         accessToken     = null;
+
+        resetHr();
 
         stations   = buildDefaultStations();
         totalSteps = stations.size();
@@ -125,6 +149,7 @@ class HyroxModel {
         splitTimer  = 0;
         totalTimer  = 0;
         splits      = [];
+        resetHr();
 
         _timer = new Timer.Timer();
         _timer.start(method(:onTick), 1000, true);
@@ -141,6 +166,7 @@ class HyroxModel {
         } else {
             hrValue = null;
         }
+        recordHr(hrValue);
 
         WatchUi.requestUpdate();
     }
@@ -156,14 +182,22 @@ class HyroxModel {
             var station   = stations[currentStep];
             var splitType = station["type"].equals("transition") ? "transition" : "station";
 
-            splits.add({
+            var split = {
                 "order"    => splits.size() + 1,
                 "type"     => splitType,
                 "name"     => station["label"],
                 "duration" => splitTimer
-            });
+            };
+            if (_splitHrCount > 0) {
+                split["avgHr"] = Math.round(_splitHrSum.toFloat() / _splitHrCount).toNumber();
+                split["maxHr"] = _splitHrMax;
+            }
+            splits.add(split);
 
-            splitTimer  = 0;
+            splitTimer    = 0;
+            _splitHrSum   = 0;
+            _splitHrCount = 0;
+            _splitHrMax   = 0;
             currentStep = currentStep + 1;
 
             if (currentStep >= totalSteps) {
@@ -172,8 +206,88 @@ class HyroxModel {
                     _timer.stop();
                     _timer = null;
                 }
+                flushHrBucket();
             }
         }
+    }
+
+    // ── Heart rate ───────────────────────────────────────────────────────────
+
+    function resetHr() as Void {
+        hrSamples       = [];
+        hrInterval      = HR_BUCKET_START_S;
+        _hrBucketSum    = 0;
+        _hrBucketCount  = 0;
+        _hrBucketTicks  = 0;
+        _splitHrSum     = 0;
+        _splitHrCount   = 0;
+        _splitHrMax     = 0;
+        _sessionHrSum   = 0;
+        _sessionHrCount = 0;
+        _sessionHrMax   = 0;
+    }
+
+    // Called once per second while active. hr is the current reading or null.
+    function recordHr(hr) as Void {
+        if (hr != null && hr > 0) {
+            _hrBucketSum    += hr;
+            _hrBucketCount  += 1;
+            _splitHrSum     += hr;
+            _splitHrCount   += 1;
+            _sessionHrSum   += hr;
+            _sessionHrCount += 1;
+            if (hr > _splitHrMax)   { _splitHrMax   = hr; }
+            if (hr > _sessionHrMax) { _sessionHrMax = hr; }
+        }
+        _hrBucketTicks += 1;
+        if (_hrBucketTicks >= hrInterval) {
+            flushHrBucket();
+        }
+    }
+
+    // Close the bucket in progress (null when no valid readings landed in it)
+    function flushHrBucket() as Void {
+        if (_hrBucketTicks == 0) { return; }
+        if (_hrBucketCount > 0) {
+            hrSamples.add(Math.round(_hrBucketSum.toFloat() / _hrBucketCount).toNumber());
+        } else {
+            hrSamples.add(null);
+        }
+        _hrBucketSum   = 0;
+        _hrBucketCount = 0;
+        _hrBucketTicks = 0;
+
+        if (hrSamples.size() >= HR_MAX_SAMPLES) {
+            compactHrSamples();
+        }
+    }
+
+    // Merge neighbouring pairs, halving the series and doubling the interval
+    function compactHrSamples() as Void {
+        var merged = [];
+        for (var i = 0; i < hrSamples.size(); i += 2) {
+            var a = hrSamples[i];
+            var b = (i + 1 < hrSamples.size()) ? hrSamples[i + 1] : null;
+            if (a != null && b != null) {
+                merged.add(Math.round((a + b) / 2.0f).toNumber());
+            } else if (a != null) {
+                merged.add(a);
+            } else {
+                merged.add(b);
+            }
+        }
+        hrSamples  = merged;
+        hrInterval = hrInterval * 2;
+    }
+
+    function getAvgHr() {
+        if (_sessionHrCount == 0) { return null; }
+        return Math.round(_sessionHrSum.toFloat() / _sessionHrCount).toNumber();
+    }
+
+    function getMaxHr() {
+        if (_sessionHrCount == 0) { return null; }
+        return _sessionHrMax;
     }
 
     // ── Save & transmit ──────────────────────────────────────────────────────
@@ -183,7 +297,11 @@ class HyroxModel {
             "type"        => "SESSION_COMPLETE",
             "simulationId" => (simulationId != null) ? simulationId : "standalone",
             "totalTime"   => totalTimer,
-            "splits"      => splits
+            "splits"      => splits,
+            "hrSamples"   => hrSamples,
+            "hrInterval"  => hrInterval,
+            "avgHr"       => getAvgHr(),
+            "maxHr"       => getMaxHr()
         };
 
         // Always persist locally first so data survives if the phone isn't
@@ -205,24 +323,7 @@ class HyroxModel {
                 + now.min.format("%02d") + ":"
                 + now.sec.format("%02d") + "Z";
 
-            var dbSplits = [];
-            for (var i = 0; i < splits.size(); i++) {
-                var s = splits[i] as Dictionary;
-                dbSplits.add({
-                    "order"   => s["order"],
-                    "type"    => s["type"],
-                    "label"   => s["name"],
-                    "time_ms" => s["duration"] * 1000
-                });
-            }
-
-            var body = {
-                "user_id"       => userId,
-                "simulation_id" => (simulationId != null) ? simulationId : "standalone",
-                "total_time_ms" => totalTimer * 1000,
-                "completed_at"  => completedAt,
-                "splits"        => dbSplits
-            };
+            var body = buildDbRow(payload, userId, completedAt);
             var headers = {
                 "Content-Type"  => "application/json",
                 "apikey"        => supabaseAnonKey,
@@ -267,6 +368,7 @@ class HyroxModel {
         splitTimer  = 0;
         totalTimer  = 0;
         splits      = [];
+        resetHr();
         WatchUi.requestUpdate();
     }
 
@@ -288,6 +390,40 @@ class HyroxModel {
     }
 
     // ── Helpers ──────────────────────────────────────────────────────────────
+
+    // Convert a SESSION_COMPLETE payload into a hyrox_results row for the
+    // Supabase REST fallback (older watches without transmitMessage).
+    function buildDbRow(payload as Dictionary, uid, completedAt as String) as Dictionary {
+        var rawSplits = payload["splits"] as Array;
+        var dbSplits = [];
+        for (var i = 0; i < rawSplits.size(); i++) {
+            var s = rawSplits[i] as Dictionary;
+            var row = {
+                "order"   => s["order"],
+                "type"    => s["type"],
+                "label"   => s["name"],
+                "time_ms" => (s["duration"] as Number) * 1000
+            };
+            if (s["avgHr"] != null) { row["avg_hr"] = s["avgHr"]; }
+            if (s["maxHr"] != null) { row["max_hr"] = s["maxHr"]; }
+            dbSplits.add(row);
+        }
+        var body = {
+            "user_id"       => uid,
+            "simulation_id" => payload["simulationId"],
+            "total_time_ms" => (payload["totalTime"] as Number) * 1000,
+            "completed_at"  => completedAt,
+            "splits"        => dbSplits
+        };
+        var samples = payload["hrSamples"];
+        if (samples != null && (samples as Array).size() > 0) {
+            body["hr_samples"]    = samples;
+            body["hr_interval_s"] = payload["hrInterval"];
+            body["avg_hr"]        = payload["avgHr"];
+            body["max_hr"]        = payload["maxHr"];
+        }
+        return body;
+    }
 
     function getCurrentAccentColor() {
         if (state == :ready || state == :finish || state == :saved) {
