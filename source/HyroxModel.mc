@@ -9,6 +9,7 @@ import Toybox.WatchUi;
 import Toybox.Lang;
 import Toybox.Math;
 import Toybox.Sensor;
+import Toybox.ActivityRecording;
 
 // ─── Colour palette ─────────────────────────────────────────────────────────
 const COLOR_BG      = 0x120F0A;
@@ -29,6 +30,12 @@ const COLOR_BORDER  = 0x3E3428;
 // session runs (720 points ≈ 1 h at 5 s, 2 h at 10 s, ...).
 const HR_BUCKET_START_S = 5;
 const HR_MAX_SAMPLES    = 720;
+
+// ─── Garmin Connect activity type ────────────────────────────────────────────
+// FIT profile values, used as numbers because the named constants moved
+// from ActivityRecording to Activity in newer SDKs.
+const FIT_SPORT_TRAINING            = 10;
+const FIT_SUB_SPORT_CARDIO_TRAINING = 26;
 
 // ─── App states ──────────────────────────────────────────────────────────────
 // :ready | :active | :finish | :saved
@@ -77,6 +84,7 @@ class HyroxModel {
 
     var queue;            // ResultQueue — unsent results, kept until confirmed saved
     var _saving;          // true from Save until exit — ignores repeat presses
+    var _activity;        // ActivityRecording.Session — the Garmin Connect activity
 
     function initialize() {
         var settings = System.getDeviceSettings();
@@ -103,6 +111,7 @@ class HyroxModel {
         resetHr();
         queue      = new ResultQueue();
         _saving    = false;
+        _activity  = null;
 
         stations   = buildDefaultStations();
         totalSteps = stations.size();
@@ -156,6 +165,7 @@ class HyroxModel {
         totalTimer  = 0;
         splits      = [];
         resetHr();
+        startActivity();
 
         _timer = new Timer.Timer();
         _timer.start(method(:onTick), 1000, true);
@@ -207,8 +217,52 @@ class HyroxModel {
                     _timer = null;
                 }
                 flushHrBucket();
+                stopActivity();
+            } else {
+                lapActivity();
             }
         }
+    }
+
+    // ── Garmin Connect activity ──────────────────────────────────────────────
+    // The sim is also recorded as a normal Garmin activity (one lap per run,
+    // station and transition), so it shows in Garmin Connect with HR, calories
+    // and training load. Saved on Save; discarded if the app closes unsaved.
+
+    function startActivity() as Void {
+        if (!(Toybox has :ActivityRecording) || _activity != null) { return; }
+        _activity = ActivityRecording.createSession({
+            :name    => "HYROX",
+            :sport   => FIT_SPORT_TRAINING,
+            :subSport => FIT_SUB_SPORT_CARDIO_TRAINING
+        });
+        _activity.start();
+    }
+
+    function lapActivity() as Void {
+        if (_activity != null && _activity.isRecording() && (_activity has :addLap)) {
+            _activity.addLap();
+        }
+    }
+
+    function stopActivity() as Void {
+        if (_activity != null && _activity.isRecording()) {
+            _activity.stop();
+        }
+    }
+
+    function saveActivity() as Void {
+        if (_activity == null) { return; }
+        stopActivity();
+        _activity.save();
+        _activity = null;
+    }
+
+    function discardActivity() as Void {
+        if (_activity == null) { return; }
+        stopActivity();
+        _activity.discard();
+        _activity = null;
     }
 
     // ── Heart rate ───────────────────────────────────────────────────────────
@@ -310,6 +364,8 @@ class HyroxModel {
             "maxHr"          => getMaxHr()
         };
 
+        saveActivity();
+
         // Persist first: the result stays on the watch until Supabase or the
         // phone app confirms it is stored (see ResultQueue). Then send this one
         // along with anything older still unsent, and exit when that's done.
@@ -371,6 +427,7 @@ class HyroxModel {
         totalTimer  = 0;
         splits      = [];
         resetHr();
+        discardActivity();
         WatchUi.requestUpdate();
     }
 
