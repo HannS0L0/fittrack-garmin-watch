@@ -23,10 +23,12 @@ const COLOR_BORDER  = 0x3E3428;
 // ─── Heart rate recording ───────────────────────────────────────────────────
 // The whole-session HR trace is averaged into buckets of HR_BUCKET_START_S
 // seconds. At HR_MAX_SAMPLES the trace is halved (pairs merged) and the
-// bucket doubles, so the result stays small however long the session runs
-// (720 points ≈ 1 h at 5 s, 2 h at 10 s, ...).
+// bucket doubles, so the result stays small however long the session runs.
+// 540 keeps memory low on older watches (S60) while giving the same detail
+// as 720 for real sims: 1 h 15 → 450 points at 10 s, 2 h → 360 at 20 s.
+// Never more than 539 points held or sent.
 const HR_BUCKET_START_S = 5;
-const HR_MAX_SAMPLES    = 720;
+const HR_MAX_SAMPLES    = 540;
 
 // ─── App states ──────────────────────────────────────────────────────────────
 // :ready | :active | :finish | :saved
