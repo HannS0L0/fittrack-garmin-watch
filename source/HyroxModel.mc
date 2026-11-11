@@ -20,6 +20,14 @@ const COLOR_MUTED   = 0x948270;
 const COLOR_SURFACE = 0x1E1810;
 const COLOR_BORDER  = 0x3E3428;
 
+// ─── Heart rate recording ───────────────────────────────────────────────────
+// The whole-session HR trace is averaged into buckets of HR_BUCKET_START_S
+// seconds. At HR_MAX_SAMPLES the trace is halved (pairs merged) and the
+// bucket doubles, so the result stays small however long the session runs
+// (720 points ≈ 1 h at 5 s, 2 h at 10 s, ...).
+const HR_BUCKET_START_S = 5;
+const HR_MAX_SAMPLES    = 720;
+
 // ─── App states ──────────────────────────────────────────────────────────────
 // :ready | :active | :finish | :saved
 
@@ -46,6 +54,19 @@ class HyroxModel {
     var simulationName;
     var hrZones;       // Array of zone upper bounds from UserProfile, or null
 
+    // HR recording — sent with the result
+    var hrSamples;        // Array of Number|null: bucket averages, whole session
+    var hrInterval;       // seconds per hrSamples entry
+    var _hrBucketSum;
+    var _hrBucketCount;
+    var _hrBucketTicks;
+    var _splitHrSum;      // current split
+    var _splitHrCount;
+    var _splitHrMax;
+    var _sessionHrSum;    // whole session
+    var _sessionHrCount;
+    var _sessionHrMax;
+
     var _timer;
 
     function initialize() {
@@ -68,6 +89,7 @@ class HyroxModel {
 
         simulationName  = null;
         hrZones         = null;
+        resetHr();
 
         stations   = buildDefaultStations();
         totalSteps = stations.size();
@@ -141,6 +163,7 @@ class HyroxModel {
         splitTimer  = 0;
         totalTimer  = 0;
         splits      = [];
+        resetHr();
 
         if (UserProfile has :getHeartRateZones) {
             hrZones = UserProfile.getHeartRateZones(UserProfile.HR_ZONE_SPORT_GENERIC);
@@ -161,6 +184,7 @@ class HyroxModel {
         } else {
             hrValue = null;
         }
+        recordHr(hrValue);
 
         WatchUi.requestUpdate();
     }
@@ -176,14 +200,22 @@ class HyroxModel {
             var station   = stations[currentStep];
             var splitType = station["type"].equals("transition") ? "transition" : "station";
 
-            splits.add({
+            var split = {
                 "order"    => splits.size() + 1,
                 "type"     => splitType,
                 "name"     => station["label"],
                 "duration" => splitTimer
-            });
+            };
+            if (_splitHrCount > 0) {
+                split["avgHr"] = Math.round(_splitHrSum.toFloat() / _splitHrCount).toNumber();
+                split["maxHr"] = _splitHrMax;
+            }
+            splits.add(split);
 
-            splitTimer  = 0;
+            splitTimer    = 0;
+            _splitHrSum   = 0;
+            _splitHrCount = 0;
+            _splitHrMax   = 0;
             currentStep = currentStep + 1;
 
             if (currentStep >= totalSteps) {
@@ -192,6 +224,7 @@ class HyroxModel {
                     _timer.stop();
                     _timer = null;
                 }
+                flushHrBucket();
             }
         }
     }
@@ -206,14 +239,23 @@ class HyroxModel {
         gSync.onSynced = method(:onSynced);
 
         var now = Time.now().value();
-        gSync.enqueue({
+        var payload = {
             "type"         => "SESSION_COMPLETE",
             "resultId"     => now.format("%d") + "-" + (Math.rand() % 100000).format("%d"),
             "simulationId" => (simulationId != null) ? simulationId : "standalone",
             "totalTime"    => totalTimer,
             "completedAt"  => now,   // Unix epoch seconds, UTC
-            "splits"       => splits
-        });
+            "splits"       => splits    // each may carry avgHr / maxHr
+        };
+        // HR: only when the watch got readings, so older app/server code
+        // that doesn't know these keys sees exactly the old payload otherwise
+        if (_sessionHrCount > 0) {
+            payload["hrSamples"]  = hrSamples;
+            payload["hrInterval"] = hrInterval;
+            payload["avgHr"]      = Math.round(_sessionHrSum.toFloat() / _sessionHrCount).toNumber();
+            payload["maxHr"]      = _sessionHrMax;
+        }
+        gSync.enqueue(payload);
         WatchUi.requestUpdate();
     }
 
@@ -235,7 +277,76 @@ class HyroxModel {
         splitTimer  = 0;
         totalTimer  = 0;
         splits      = [];
+        resetHr();
         WatchUi.requestUpdate();
+    }
+
+    // ── Heart rate recording ─────────────────────────────────────────────────
+
+    function resetHr() as Void {
+        hrSamples       = [];
+        hrInterval      = HR_BUCKET_START_S;
+        _hrBucketSum    = 0;
+        _hrBucketCount  = 0;
+        _hrBucketTicks  = 0;
+        _splitHrSum     = 0;
+        _splitHrCount   = 0;
+        _splitHrMax     = 0;
+        _sessionHrSum   = 0;
+        _sessionHrCount = 0;
+        _sessionHrMax   = 0;
+    }
+
+    // Once per second while active; hr is the current reading or null
+    function recordHr(hr) as Void {
+        if (hr != null && hr > 0) {
+            _hrBucketSum    += hr;
+            _hrBucketCount  += 1;
+            _splitHrSum     += hr;
+            _splitHrCount   += 1;
+            _sessionHrSum   += hr;
+            _sessionHrCount += 1;
+            if (hr > _splitHrMax)   { _splitHrMax   = hr; }
+            if (hr > _sessionHrMax) { _sessionHrMax = hr; }
+        }
+        _hrBucketTicks += 1;
+        if (_hrBucketTicks >= hrInterval) {
+            flushHrBucket();
+        }
+    }
+
+    // Close the bucket in progress (null when it had no readings)
+    function flushHrBucket() as Void {
+        if (_hrBucketTicks == 0) { return; }
+        if (_hrBucketCount > 0) {
+            hrSamples.add(Math.round(_hrBucketSum.toFloat() / _hrBucketCount).toNumber());
+        } else {
+            hrSamples.add(null);
+        }
+        _hrBucketSum   = 0;
+        _hrBucketCount = 0;
+        _hrBucketTicks = 0;
+        if (hrSamples.size() >= HR_MAX_SAMPLES) {
+            compactHrSamples();
+        }
+    }
+
+    // Merge neighbouring pairs: half the points, double the interval
+    function compactHrSamples() as Void {
+        var merged = [];
+        for (var i = 0; i < hrSamples.size(); i += 2) {
+            var a = hrSamples[i];
+            var b = (i + 1 < hrSamples.size()) ? hrSamples[i + 1] : null;
+            if (a != null && b != null) {
+                merged.add(Math.round((a + b) / 2.0f).toNumber());
+            } else if (a != null) {
+                merged.add(a);
+            } else {
+                merged.add(b);
+            }
+        }
+        hrSamples  = merged;
+        hrInterval = hrInterval * 2;
     }
 
     function doExit() as Void {
